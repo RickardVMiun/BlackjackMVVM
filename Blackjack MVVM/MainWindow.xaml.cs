@@ -23,6 +23,7 @@ namespace Blackjack_MVVM
         public MainWindow()
         {
             InitializeComponent();
+            // pushar för att få ut första projektfilen
         }
     }
 }
