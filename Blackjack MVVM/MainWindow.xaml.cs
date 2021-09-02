@@ -24,6 +24,7 @@ namespace Blackjack_MVVM
         {
             InitializeComponent();
             // pushar för att få ut första projektfilen
+            //Test branch
         }
     }
 }
