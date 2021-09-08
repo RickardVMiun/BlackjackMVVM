@@ -10,5 +10,8 @@ namespace Blackjack_MVVM.ViewModels
         // tja testar detta
 
         //testing testing
+        //public int Card { get; set; } = GetCard();
+        public string Test { get; set; } = "Hej";
+
     }
 }
