@@ -6,5 +6,6 @@ namespace Blackjack_MVVM.ViewModels
 {
    public class PlayerViewModel : BaseViewModel
     {
+
     }
 }
