@@ -8,6 +8,7 @@ namespace Blackjack_MVVM.ViewModels
 {
     [AddINotifyPropertyChangedInterface]
     public class BaseViewModel
-    {    
+    {
+
     }
 }

@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Blackjack_MVVM.Data;
+using Blackjack_MVVM.ViewModels;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -23,7 +25,7 @@ namespace Blackjack_MVVM
         public MainWindow()
         {
             InitializeComponent();
-            // pushar för att få ut första projektfilen
+            DataContext = new MainViewModel();
         }
     }
 }
