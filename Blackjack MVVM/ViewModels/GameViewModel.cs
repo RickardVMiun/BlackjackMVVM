@@ -7,6 +7,6 @@ namespace Blackjack_MVVM.ViewModels
 {
     public class GameViewModel : BaseViewModel
     {
-
+        // tja testar detta
     }
 }
