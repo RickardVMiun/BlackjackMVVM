@@ -18,6 +18,7 @@
   <ItemGroup>
     <Folder Include="Commands\" />
     <Folder Include="Models\" />
+    <Folder Include="Images\" />
   </ItemGroup>
 
 </Project>

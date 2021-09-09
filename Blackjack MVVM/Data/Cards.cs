@@ -15,17 +15,8 @@ namespace Blackjack_MVVM.Data
 
         public ObservableCollection<Cards> deckofcards { get; set; }
 
-        private void FillDeck() // Fyller lista med kort
-        {
-            deckofcards = new ObservableCollection<Cards>();
-            {
+        
 
-               
-
-
-            };
-
-        }
 
         //public int SetCardValue()
         //{ 
