@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Blackjack_MVVM.Data;
+using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Windows;
@@ -16,7 +17,7 @@ namespace Blackjack_MVVM.Views
     /// <summary>
     /// Interaction logic for Hearts.xaml
     /// </summary>
-    public partial class Hearts : UserControl
+    public partial class Hearts : Cards
     {
         public Hearts()
         {

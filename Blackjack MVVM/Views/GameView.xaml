@@ -12,7 +12,7 @@
             <RowDefinition Height="500"/>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="200"/>
+            <ColumnDefinition Width="400"/>
             <ColumnDefinition Width="200"/>
             <ColumnDefinition Width="200"/>
         </Grid.ColumnDefinitions>
@@ -32,6 +32,7 @@
 
             </ItemsControl.ItemsPanel>
         </ItemsControl>-->
-        <local:Card CardValue="4"/>
+        <!--<local:Card CardValue="4"/>-->
+        <local:Hearts/>
     </Grid>
 </UserControl>
