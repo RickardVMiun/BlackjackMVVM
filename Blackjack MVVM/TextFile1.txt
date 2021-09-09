@@ -1,0 +1,10 @@
+﻿ <Rectangle
+        x:Name="Cards"
+        Fill="White"
+        Height="600"
+        Width="450"
+        Stroke="Black"
+        StrokeThickness="3"/>
+
+        public int[] Cards { get; set; } = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
+
