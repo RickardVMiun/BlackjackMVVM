@@ -12,16 +12,26 @@
             <RowDefinition Height="500"/>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="500"/>
-            <ColumnDefinition Width="500"/>
-            <ColumnDefinition Width="500"/>
+            <ColumnDefinition Width="200"/>
+            <ColumnDefinition Width="200"/>
+            <ColumnDefinition Width="200"/>
         </Grid.ColumnDefinitions>
-        <ItemsControl ItemsSource="{Binding Card}" Grid.Column="1" Grid.Row="1">
+        <!--<ItemsControl Width="150" Height="200" ItemsSource="{Binding Cards}" Grid.Column="1" Grid.Row="1">
+            <ItemsControl.ItemsPanel>
+                <stack
+            </ItemsControl.ItemsPanel>
+        </ItemsControl>-->
+        <!--<ItemsControl ItemsSource="{Binding Cards}" Grid.Column="1" Grid.Row="1">
+
             <ItemsControl.ItemsPanel>
                 <ItemsPanelTemplate>
                     <StackPanel/>
+
+
                 </ItemsPanelTemplate>
+
             </ItemsControl.ItemsPanel>
-        </ItemsControl>
+        </ItemsControl>-->
+        <local:Card CardValue="4"/>
     </Grid>
 </UserControl>

@@ -4,13 +4,10 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:Blackjack_MVVM.Views"
+             x:Name="card"
              mc:Ignorable="d" 
              d:DesignHeight="800" d:DesignWidth="450">
-    <Rectangle
-        x:Name="Card"
-        Fill="White"
-        Height="800"
-        Width="450"
-        Stroke="Black"
-        StrokeThickness="3"/>
+    <Grid Background="Aqua">
+        <TextBlock Text="{Binding CardValue, ElementName=card, FallbackValue=12}"  FontSize="100"/>
+    </Grid>
 </UserControl>

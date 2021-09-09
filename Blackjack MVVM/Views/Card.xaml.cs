@@ -18,6 +18,19 @@ namespace Blackjack_MVVM.Views
     /// </summary>
     public partial class Card : UserControl
     {
+
+
+        public string CardValue
+        {
+            get { return (string)GetValue(CardValueProperty); }
+            set { SetValue(CardValueProperty, value); }
+        }
+
+        // Using a DependencyProperty as the backing store for CardValue.  This enables animation, styling, binding, etc...
+        public static readonly DependencyProperty CardValueProperty =
+            DependencyProperty.Register("CardValue", typeof(string), typeof(Card), new PropertyMetadata("A"));
+
+
         public Card()
         {
             InitializeComponent();
