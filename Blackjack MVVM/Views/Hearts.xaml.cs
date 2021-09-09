@@ -22,6 +22,8 @@ namespace Blackjack_MVVM.Views
         public Hearts()
         {
             InitializeComponent();
+           
+            
         }
     }
 }

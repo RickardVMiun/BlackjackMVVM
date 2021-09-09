@@ -9,92 +9,84 @@ namespace Blackjack_MVVM.ViewModels
 {
     public class GameViewModel : BaseViewModel
     {
-        // tja testar detta
 
-        //testing testing
-        //public int Card { get; set; } = GetCard();
-        public string Test { get; set; } = "Hej";
+        //private static readonly Random random = new Random();
 
-        private static readonly Random random = new Random();
-
-        public string CardValue { get; set; }
+        //public string CardValue { get; set; }
 
 
-        //public int GetValue()
+        //public string GetValue()
         //{
         //    int x = random.Next(1, 14);
         //    if (x == 1 || x == 14)
         //    {
-        //        CardValue = 'A';
+        //        CardValue = "A";
         //    }
         //    else if (x == 11)
         //    {
-        //        CardValue = 'J';
+        //        CardValue = "J";
         //    }
         //    else if (x == 12)
         //    {
-        //        CardValue = 'Q';
+        //        CardValue = "Q";
         //    }
         //    else if (x == 13)
         //    {
-        //        CardValue = 'K';
+        //        CardValue = "K";
         //    }
         //    else
         //    {
-        //        CardValue = Convert.ToChar(x);
-
+        //        CardValue = x.ToString();
         //    }
         //    return CardValue;
-
         //}
 
-        public string GetValue()
-        {
-            int x = random.Next(1, 14);
-            if (x == 1 || x == 14)
-            {
-                CardValue = "A";
-            }
-            else if (x == 11)
-            {
-                CardValue = "J";
-            }
-            else if (x == 12)
-            {
-                CardValue = "Q";
-            }
-            else if (x == 13)
-            {
-                CardValue = "K";
-            }
-            else
-            {
-                CardValue = x.ToString();
-            }
-            return CardValue;
-        }
 
-
-        public ObservableCollection<Cards> Cards { get; set; }
+        public ObservableCollection<Cards> deckOfCards { get; set; } = new ObservableCollection<Cards>();
 
         public GameViewModel()
         {
-           // FillDeckOfCards();
-           // ShuffleDeck();
-            GetValue();
+           FillDeckOfCards();
+            // ShuffleDeck();
+            //GetValue();
+            GetRandomCard(deckOfCards);
+            
         }
 
-        private void ShuffleDeck()
+        private void GetRandomCard(ObservableCollection<Cards> deckOfCards)
         {
-            //throw new NotImplementedException();
+            Random randomCard = new Random();
+            randomCard.Next(1,52);
         }
 
-        protected virtual void FillDeckOfCards()
+        public void GenerateCards()
         {
-            // supercool metod
+            deckOfCards.Add(new Hearts());
+            deckOfCards.Add(new Spades());
+            deckOfCards.Add(new Clubs());
+            deckOfCards.Add(new Diamonds());
+
         }
 
-        
+        //private void ShuffleDeck()
+        //{
+        //    //throw new NotImplementedException();
+        //}
+
+        public void FillDeckOfCards()
+        {
+            int count = 0;
+
+            while (count<14)
+            {
+                GenerateCards();
+                count++;
+            }
+        }
+
+      
+
+
     }
-    
+
 }

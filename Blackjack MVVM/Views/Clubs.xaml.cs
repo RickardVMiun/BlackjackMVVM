@@ -14,18 +14,13 @@ using System.Windows.Shapes;
 namespace Blackjack_MVVM.Views
 {
     /// <summary>
-    /// Interaction logic for GameView.xaml
+    /// Interaction logic for Clubs.xaml
     /// </summary>
-    public partial class GameView : UserControl
+    public partial class Clubs : Cards
     {
-        public GameView()
+        public Clubs()
         {
             InitializeComponent();
-        }
-
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-
         }
     }
 }

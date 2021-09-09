@@ -12,10 +12,14 @@ namespace Blackjack_MVVM.Views
     {
         private static readonly Random random = new Random();
 
-        public int CardValue { get; set; }
+      
         public string CardSuit { get; set; }
 
         public ObservableCollection<Cards> deckofcards { get; set; }
+        public Cards()
+        {
+            CardValue = GetValue();
+        }
 
         public int Size
         {
@@ -30,21 +34,40 @@ namespace Blackjack_MVVM.Views
         private static void OnSizeSet(DependencyObject d, DependencyPropertyChangedEventArgs e)
         {
             var Card = d as Cards;
-            Card.CardValue = 5;
+            Card.CardValue = Convert.ToString(5);
 
         }
 
+        private static readonly Random random2= new Random();
 
-        //public int SetCardValue()
-        //{ 
+        public string CardValue { get; set; }
 
-        //}
-        //public int GetCard()
-        //{
-        //    int returnCard = Cards[random.Next(1, 10)];
 
-        //    return returnCard;
-        //}
-
+        public string GetValue()
+        {
+            int x = random2.Next(1, 14);
+            if (x == 1 || x == 14)
+            {
+                CardValue = "A";
+            }
+            else if (x == 11)
+            {
+                CardValue = "J";
+            }
+            else if (x == 12)
+            {
+                CardValue = "Q";
+            }
+            else if (x == 13)
+            {
+                CardValue = "K";
+            }
+            else
+            {
+                CardValue = x.ToString();
+            }
+            return CardValue;
+        }
+  
     }
 }

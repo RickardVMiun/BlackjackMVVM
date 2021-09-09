@@ -10,8 +10,7 @@ namespace Blackjack_MVVM.ViewModels
     {
         public BaseViewModel CurrentViewModel { get; set; } = new GameViewModel();
 
-       // public string lala { get; set; } = CardSuit.Hearts.ToString();
-       
+         
 
 
     }
