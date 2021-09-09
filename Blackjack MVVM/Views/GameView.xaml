@@ -20,8 +20,8 @@
             <ItemsControl.ItemsPanel>
                 <stack
             </ItemsControl.ItemsPanel>
-        </ItemsControl>-->
-        <!--<ItemsControl ItemsSource="{Binding Cards}" Grid.Column="1" Grid.Row="1">
+        </ItemsControl>
+        <ItemsControl ItemsSource="{Binding Cards}" Grid.Column="1" Grid.Row="1">
 
             <ItemsControl.ItemsPanel>
                 <ItemsPanelTemplate>
@@ -31,8 +31,9 @@
                 </ItemsPanelTemplate>
 
             </ItemsControl.ItemsPanel>
-        </ItemsControl>-->
-        <!--<local:Card CardValue="4"/>-->
+        </ItemsControl>
+        <local:Card CardValue="4"/>-->
         <local:Hearts/>
+
     </Grid>
 </UserControl>
