@@ -8,32 +8,23 @@
              d:DesignHeight="450" d:DesignWidth="800">
     <Grid Background="Green">
         <Grid.RowDefinitions>
-            <RowDefinition Height="500"/>
-            <RowDefinition Height="500"/>
+            <RowDefinition Height="100"/>
+            <RowDefinition Height="250"/>
+            <RowDefinition Height="100"/>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="200"/>
             <ColumnDefinition Width="400"/>
             <ColumnDefinition Width="200"/>
-            <ColumnDefinition Width="200"/>
         </Grid.ColumnDefinitions>
-        <!--<ItemsControl Width="150" Height="200" ItemsSource="{Binding Cards}" Grid.Column="1" Grid.Row="1">
-            <ItemsControl.ItemsPanel>
-                <stack
-            </ItemsControl.ItemsPanel>
-        </ItemsControl>
-        <ItemsControl ItemsSource="{Binding Cards}" Grid.Column="1" Grid.Row="1">
-
-            <ItemsControl.ItemsPanel>
-                <ItemsPanelTemplate>
-                    <StackPanel/>
-
-
-                </ItemsPanelTemplate>
-
-            </ItemsControl.ItemsPanel>
-        </ItemsControl>
-        <local:Card CardValue="4"/>-->
-        <local:Hearts/>
+        <!--<Label Content="{Binding deckOfCards[0].cardId}"></Label>
+        <Label Content="{Binding deckOfCards[0].cardSuit}"></Label>-->
+        <WrapPanel 
+            Orientation="Horizontal">
+            {Binding DeckOfCards[30]}
+              >
+        </WrapPanel>
+       
 
     </Grid>
 </UserControl>

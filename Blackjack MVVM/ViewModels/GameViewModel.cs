@@ -10,62 +10,66 @@ namespace Blackjack_MVVM.ViewModels
     public class GameViewModel : BaseViewModel
     {
 
-        //private static readonly Random random = new Random();
-
-        //public string CardValue { get; set; }
-
-
-        //public string GetValue()
-        //{
-        //    int x = random.Next(1, 14);
-        //    if (x == 1 || x == 14)
-        //    {
-        //        CardValue = "A";
-        //    }
-        //    else if (x == 11)
-        //    {
-        //        CardValue = "J";
-        //    }
-        //    else if (x == 12)
-        //    {
-        //        CardValue = "Q";
-        //    }
-        //    else if (x == 13)
-        //    {
-        //        CardValue = "K";
-        //    }
-        //    else
-        //    {
-        //        CardValue = x.ToString();
-        //    }
-        //    return CardValue;
-        //}
-
-
-        public ObservableCollection<Cards> deckOfCards { get; set; } = new ObservableCollection<Cards>();
+        public ObservableCollection<Cards> DeckOfCards { get; set; } = new ObservableCollection<Cards>();
+        public List<Cards> ListOfCards { get; set; }
 
         public GameViewModel()
         {
            FillDeckOfCards();
             // ShuffleDeck();
             //GetValue();
-            GetRandomCard(deckOfCards);
-            
+            GetRandomCard();
         }
 
-        private void GetRandomCard(ObservableCollection<Cards> deckOfCards)
+        public int SetCardId(ObservableCollection<Cards> deckOfCards, int idRandomCard, List<Cards> listOfCards)
+        { 
+            if(deckOfCards.Count == 0)
+            {  
+                deckOfCards[0] = listOfCards[idRandomCard];
+            }
+            
+
+            return deckOfCards[0];
+        }
+
+        public int GetRandomCard()
         {
+            int idRandomCard;
+            int cardId = DeckOfCards.IndexOf();
             Random randomCard = new Random();
-            randomCard.Next(1,52);
+            idRandomCard = randomCard.Next(1, 52);
+
+            return idRandomCard;
+        }
+       
+        //public List<> listOfCards()
+        //{
+
+        //}
+
+        public Cards ShowCard(int idRandomCard, ObservableCollection<Cards> deckOfCards)
+        {
+            Cards card = new Cards();
+            int x = GetRandomCard();
+           
+            foreach (var card1 in deckOfCards)
+            {
+                while (x != DeckOfCards.IndexOf;)
+                {
+
+                }
+                idRandomCard = deckOfCards[];
+            }
+
+            return card;
         }
 
         public void GenerateCards()
         {
-            deckOfCards.Add(new Hearts());
-            deckOfCards.Add(new Spades());
-            deckOfCards.Add(new Clubs());
-            deckOfCards.Add(new Diamonds());
-
+            DeckOfCards.Add(new Hearts());
+            DeckOfCards.Add(new Spades());
+            DeckOfCards.Add(new Clubs());
+            DeckOfCards.Add(new Diamonds());
         }
 
         //private void ShuffleDeck()
@@ -77,16 +81,12 @@ namespace Blackjack_MVVM.ViewModels
         {
             int count = 0;
 
-            while (count<14)
+            while (count<13)
             {
                 GenerateCards();
                 count++;
             }
         }
-
-      
-
-
     }
 
 }
