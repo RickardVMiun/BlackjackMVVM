@@ -10,9 +10,9 @@ namespace Blackjack_MVVM.Views
 {
     public class Cards : UserControl
     {
-        private static readonly Random random = new Random();
+        //private static readonly Random random = new Random();
+        public int cardId { get; set; }
 
-      
         public string CardSuit { get; set; }
 
         public ObservableCollection<Cards> deckofcards { get; set; }
