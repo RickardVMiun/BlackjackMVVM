@@ -22,7 +22,7 @@ namespace Blackjack_MVVM.ViewModels
            GetRandomCard();
 
             card1 = new Cards();
-            card2 = new Cards();
+           // card2 = new Cards();
         }
 
         public int GetRandomCard()
@@ -35,12 +35,13 @@ namespace Blackjack_MVVM.ViewModels
             return idRandomCard;
         }
 
-        public void ShowCard()
+        public Cards ShowCard()
         {
             int x = GetRandomCard();
-            int y = GetRandomCard();
+           // int y = GetRandomCard();
             card1 = DeckOfCards[x];
-            card2 = DeckOfCards[y];
+            // card2 = DeckOfCards[y];
+            return card1;
         }
 
         public void GenerateCards()

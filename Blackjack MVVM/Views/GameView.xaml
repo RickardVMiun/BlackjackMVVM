@@ -27,7 +27,14 @@
         <!--<local:Hearts>
             
         </local:Hearts>-->
-        <ItemsControl ItemsSource="{Binding DeckOfCards}" Visibility="Visible">            <ItemsControl.ItemsPanel>                <ItemsPanelTemplate>                    <StackPanel />                </ItemsPanelTemplate>            </ItemsControl.ItemsPanel>        </ItemsControl>
+        <ItemsControl ItemsSource="{Binding card1}" Visibility="Visible">
+            <ItemsControl.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <StackPanel />
+                </ItemsPanelTemplate>
+            </ItemsControl.ItemsPanel>
+
+        </ItemsControl>
 
 
     </Grid>
