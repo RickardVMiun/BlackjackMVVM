@@ -18,13 +18,17 @@
             <ColumnDefinition Width="200"/>
         </Grid.ColumnDefinitions>
         <!--<Label Content="{Binding deckOfCards[0].cardId}"></Label>
-        <Label Content="{Binding deckOfCards[0].cardSuit}"></Label>-->
+        <Label Content="{Binding deckOfCards[0].cardSuit}"></Label>
         <WrapPanel 
-            Orientation="Horizontal">
-            {Binding DeckOfCards[30]}
+            Orientation="Horizontal"
+            {Binding }
               >
-        </WrapPanel>
-       
+        </WrapPanel>-->
+        <!--<local:Hearts>
+            
+        </local:Hearts>-->
+        <ItemsControl ItemsSource="{Binding DeckOfCards}" Visibility="Visible">            <ItemsControl.ItemsPanel>                <ItemsPanelTemplate>                    <StackPanel />                </ItemsPanelTemplate>            </ItemsControl.ItemsPanel>        </ItemsControl>
+
 
     </Grid>
 </UserControl>
