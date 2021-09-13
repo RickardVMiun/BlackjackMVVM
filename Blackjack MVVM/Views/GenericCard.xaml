@@ -1,4 +1,4 @@
-﻿<local:Cards x:Class="Blackjack_MVVM.Views.Hearts"
+﻿<local:Cards x:Class="Blackjack_MVVM.Views.GenericCard"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
@@ -6,10 +6,10 @@
              xmlns:local="clr-namespace:Blackjack_MVVM.Views"
              mc:Ignorable="d" 
              d:DesignHeight="80" d:DesignWidth="50"
-             x:Name="hearts">
+             x:Name="generic">
     <Grid Background="White">
         <Border BorderBrush="Black" BorderThickness="3"/>
-        <TextBlock Text="&#9829;" Foreground="Red"  FontSize="20"/>
-        <TextBlock HorizontalAlignment="Left" Margin="30,57,0,0" Text="{Binding CardValue, ElementName=hearts, FallbackValue=10}" VerticalAlignment="Top" Height="100" Width="50" Foreground="Red"  FontSize="20" />
+        <TextBlock Text="{Binding CardSuit, ElementName=generic, FallbackValue=&#9824;}" Foreground="{Binding SuitColou}" FontSize="20"/>
+        <TextBlock HorizontalAlignment="Left" Margin="30,57,0,0" Text="{Binding CardValue, ElementName=generic, FallbackValue=10}" VerticalAlignment="Top" Height="100" Width="50" Foreground="Red"  FontSize="20" />
     </Grid>
 </local:Cards>

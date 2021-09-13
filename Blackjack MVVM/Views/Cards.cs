@@ -1,4 +1,5 @@
-﻿using Blackjack_MVVM.ViewModels;
+﻿using Blackjack_MVVM.Data;
+using Blackjack_MVVM.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -10,27 +11,55 @@ namespace Blackjack_MVVM.Views
 {
     public class Cards : UserControl
     {
-        public string CardSuit { get; set; }
+        // User control 00> dependency properties
+        //public char CardSuit { get; set; }
 
         public string CardValue { get; set; }
+
+        public string CardColor { get; set; }
+
+        public CardSuit CardSuit { get; set; }
 
         private static readonly Random random = new Random();
         public ObservableCollection<Cards> deckofcards { get; set; }
         public Cards()
         {
             CardValue = GetValue();
+            CardSuit = GetSuit();
         }
 
-        //public Cards card1
+
+        public char GetSuit()
+        {
+            int i = random.Next(1,4);
+            if (i == 1)
+            {
+                // CardSuit = '♥'; // hearts "&#9829;" '♥'
+                CardSuit = CardSuit.Hjärter;
+                
+            }
+            else if (i == 2)
+            {
+                CardSuit = '♠'; // spades &#9824;
+            }
+            else if (i == 3)
+            {
+                CardSuit = '♣'; // clubs "&#9827;"
+            }
+            else 
+            {
+                CardSuit = '♦'; // diamonds "&#9670;"
+            }
+            
+            return CardSuit;
+        }
+
+        //public string GetColor()
         //{
-        //    get { return (Cards)GetValue(card1Property); }
-        //    set { SetValue(card1Property, gameViewModel.ShowCard()); }
+        
+
+
         //}
-
-        //// Using a DependencyProperty as the backing store for card1.  This enables animation, styling, binding, etc...
-        //public static readonly DependencyProperty card1Property =
-        //    DependencyProperty.Register("card1", typeof(Cards), typeof(Cards), new PropertyMetadata(0));
-
 
         public string GetValue()
         {
