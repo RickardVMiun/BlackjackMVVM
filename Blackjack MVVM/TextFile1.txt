@@ -8,3 +8,55 @@
 
         public int[] Cards { get; set; } = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
 
+                public ObservableCollection<Cards> DeckOfCards { get; set; } = new ObservableCollection<Cards>();
+        public List<Cards> ListOfCards { get; set; }
+        public Cards card1;
+        public Cards card2;
+
+        public GameViewModel()
+        {
+           FillDeckOfCards();
+           GetRandomCard();
+
+           // card1 = new Cards();
+           // card2 = new Cards();
+        }
+
+        public int GetRandomCard()
+        {
+            int idRandomCard;
+            
+            Random randomCard = new Random();
+            idRandomCard = randomCard.Next(1, 52);
+
+            return idRandomCard;
+        }
+
+        //public Cards ShowCard()
+        //{
+        //    int x = GetRandomCard();
+        //   // int y = GetRandomCard();
+        //   // card1 = DeckOfCards[x];
+        //    // card2 = DeckOfCards[y];
+        //   // return card1;
+        //}
+
+        public void GenerateCards()
+        {
+            DeckOfCards.Add(new GenericCard());
+            
+           
+        }
+
+
+        public void FillDeckOfCards()
+        {
+            int count = 0;
+
+            while (count<52)
+            {
+                GenerateCards();
+                count++;
+            }
+            //ShowCard();
+        }

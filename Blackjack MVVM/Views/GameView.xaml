@@ -5,18 +5,23 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:Blackjack_MVVM.Views"
              mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="800">
-    <Grid Background="Green">
+             d:DesignHeight="600" d:DesignWidth="750">
+    <Grid Background="Green" Margin="0,0,0,-70">
         <Grid.RowDefinitions>
-            <RowDefinition Height="100"/>
-            <RowDefinition Height="250"/>
-            <RowDefinition Height="100"/>
+            <RowDefinition Height="200"/>
+            <RowDefinition Height="200"/>
+            <RowDefinition Height="200"/>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="200"/>
-            <ColumnDefinition Width="400"/>
-            <ColumnDefinition Width="200"/>
+            <ColumnDefinition Width="150"/>
+            <ColumnDefinition Width="150"/>
+            <ColumnDefinition Width="150"/>
+            <ColumnDefinition Width="150"/>
+            <ColumnDefinition Width="150"/>
         </Grid.ColumnDefinitions>
-        <local:Hearts Grid.Column="1" Grid.Row="1"/>
+        <local:GenericCard Grid.Column="1" Grid.Row="1"/>
+        <local:GenericCard Grid.Column="1" Grid.Row="2"/>
+        <!--<local:GenericCard CardValue="{Binding Card.CardValue}" Grid.Column="2" Grid.Row="2"/>-->
+        <Button Content="Hit" HorizontalAlignment="Center" Margin="0,100,0,0" Grid.Row="1" VerticalAlignment="Top" Height="35" Width="90"/>
     </Grid>
 </UserControl>

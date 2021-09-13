@@ -14,11 +14,11 @@ using System.Windows.Shapes;
 namespace Blackjack_MVVM.Views
 {
     /// <summary>
-    /// Interaction logic for Clubs.xaml
+    /// Interaction logic for GenericCard.xaml
     /// </summary>
-    public partial class Clubs : Cards
+    public partial class GenericCard : Cards
     {
-        public Clubs()
+        public GenericCard()
         {
             InitializeComponent();
         }
