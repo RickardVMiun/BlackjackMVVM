@@ -21,6 +21,16 @@ namespace Blackjack_MVVM.Views
             CardValue = GetValue();
         }
 
+        //public Cards card1
+        //{
+        //    get { return (Cards)GetValue(card1Property); }
+        //    set { SetValue(card1Property, gameViewModel.ShowCard()); }
+        //}
+
+        //// Using a DependencyProperty as the backing store for card1.  This enables animation, styling, binding, etc...
+        //public static readonly DependencyProperty card1Property =
+        //    DependencyProperty.Register("card1", typeof(Cards), typeof(Cards), new PropertyMetadata(0));
+
 
         public string GetValue()
         {

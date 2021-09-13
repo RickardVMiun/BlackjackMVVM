@@ -63,6 +63,7 @@ namespace Blackjack_MVVM.ViewModels
                 GenerateCards();
                 count++;
             }
+            //ShowCard();
         }
     }
 
