@@ -21,7 +21,7 @@ namespace Blackjack_MVVM.ViewModels
            FillDeckOfCards();
            GetRandomCard();
 
-            card1 = new Cards();
+           // card1 = new Cards();
            // card2 = new Cards();
         }
 
@@ -35,14 +35,14 @@ namespace Blackjack_MVVM.ViewModels
             return idRandomCard;
         }
 
-        public Cards ShowCard()
-        {
-            int x = GetRandomCard();
-           // int y = GetRandomCard();
-            card1 = DeckOfCards[x];
-            // card2 = DeckOfCards[y];
-            return card1;
-        }
+        //public Cards ShowCard()
+        //{
+        //    int x = GetRandomCard();
+        //   // int y = GetRandomCard();
+        //   // card1 = DeckOfCards[x];
+        //    // card2 = DeckOfCards[y];
+        //   // return card1;
+        //}
 
         public void GenerateCards()
         {
@@ -63,7 +63,6 @@ namespace Blackjack_MVVM.ViewModels
                 GenerateCards();
                 count++;
             }
-            ShowCard();
         }
     }
 

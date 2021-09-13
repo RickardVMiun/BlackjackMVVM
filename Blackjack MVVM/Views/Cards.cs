@@ -10,57 +10,21 @@ namespace Blackjack_MVVM.Views
 {
     public class Cards : UserControl
     {
-        //private static readonly Random random = new Random();
-        public int cardId { get; set; }
-
         public string CardSuit { get; set; }
 
         public string CardValue { get; set; }
 
-
-        GameViewModel gameViewModel = new GameViewModel();
-
-        public Cards card1
-        {
-            get { return (Cards)GetValue(card1Property); }
-            set { SetValue(card1Property, gameViewModel.ShowCard()); }
-        }
-
-        // Using a DependencyProperty as the backing store for card1.  This enables animation, styling, binding, etc...
-        public static readonly DependencyProperty card1Property =
-            DependencyProperty.Register("card1", typeof(Cards), typeof(Cards), new PropertyMetadata(0));
-
-
-
+        private static readonly Random random = new Random();
         public ObservableCollection<Cards> deckofcards { get; set; }
         public Cards()
         {
             CardValue = GetValue();
         }
 
-        public int Size
-        {
-            get { return (int)GetValue(SizeProperty); }
-            set { SetValue(SizeProperty, value); }
-        }
-
-        // Using a DependencyProperty as the backing store for Size.  This enables animation, styling, binding, etc...
-        public static readonly DependencyProperty SizeProperty =
-            DependencyProperty.Register("Size", typeof(int), typeof(Cards), new PropertyMetadata(1, new PropertyChangedCallback(OnSizeSet)));
-
-        private static void OnSizeSet(DependencyObject d, DependencyPropertyChangedEventArgs e)
-        {
-            var Card = d as Cards;
-            Card.CardValue = Convert.ToString(5);
-
-        }
-
-        private static readonly Random random2= new Random();
-
 
         public string GetValue()
         {
-            int x = random2.Next(1, 14);
+            int x = random.Next(1, 14);
             if (x == 1 || x == 14)
             {
                 CardValue = "A";

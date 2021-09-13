@@ -17,25 +17,6 @@
             <ColumnDefinition Width="400"/>
             <ColumnDefinition Width="200"/>
         </Grid.ColumnDefinitions>
-        <!--<Label Content="{Binding deckOfCards[0].cardId}"></Label>
-        <Label Content="{Binding deckOfCards[0].cardSuit}"></Label>
-        <WrapPanel 
-            Orientation="Horizontal"
-            {Binding }
-              >
-        </WrapPanel>-->
-        <!--<local:Hearts>
-            
-        </local:Hearts>-->
-        <ItemsControl ItemsSource="{Binding card1}" Visibility="Visible">
-            <ItemsControl.ItemsPanel>
-                <ItemsPanelTemplate>
-                    <StackPanel />
-                </ItemsPanelTemplate>
-            </ItemsControl.ItemsPanel>
-
-        </ItemsControl>
-
-
+        <local:Hearts Grid.Column="1" Grid.Row="1"/>
     </Grid>
 </UserControl>
