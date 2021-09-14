@@ -11,10 +11,12 @@ namespace Blackjack_MVVM.Commands
     {
         private GameViewModel gameViewModel;
         public GenericCard genericCard;
+       
 
         public HitCommand(GameViewModel gameViewModel)
         {
             this.gameViewModel = gameViewModel;
+           
         }
 
         public event EventHandler CanExecuteChanged;

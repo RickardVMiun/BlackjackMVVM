@@ -37,7 +37,6 @@ namespace Blackjack_MVVM.ViewModels
             {
                 Card.CardSuit = '♥'; // hearts " &#9829;" '♥'
                                      //Card.CardSuit = converter.ConvertEnum();
-
             }
             else if (i == 2)
             {
