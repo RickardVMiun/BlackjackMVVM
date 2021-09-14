@@ -88,10 +88,7 @@ namespace Blackjack_MVVM.ViewModels
                 CardValue = GetValue(),
                 CardSuit = GetSuit()
 
-            });  
-
+            });
         }
-
-
     }
 }
