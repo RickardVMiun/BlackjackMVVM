@@ -7,24 +7,26 @@ using System.Windows.Input;
 
 namespace Blackjack_MVVM.Commands
 {
-    //public class HitCommand : ICommand
-    //{
-    //    private GameViewModel gameviewmodel;
+    public class HitCommand : ICommand
+    {
+        private GameViewModel gameViewModel;
+        public GenericCard genericCard;
 
-    //    public HitCommand(GameViewModel gameViewModel)
-    //    {
-    //        this.gameviewmodel = gameviewmodel;
-    //    }
-    //    public event EventHandler CanExecuteChanged;
+        public HitCommand(GameViewModel gameViewModel)
+        {
+            this.gameViewModel = gameViewModel;
+        }
 
-    //    public bool CanExecute(object parameter)
-    //    {
-    //        return true;
-    //    }
+        public event EventHandler CanExecuteChanged;
 
-    //    public void Execute(object parameter)
-    //    {
-    //        var CardValue = cards.
-    //    }
-    //}
+        public bool CanExecute(object parameter)
+        {
+            return true;
+        }
+
+        public void Execute(object parameter)
+        {
+            gameViewModel.GenerateCards();
+        }
+    }
 }

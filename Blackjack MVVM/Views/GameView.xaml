@@ -19,9 +19,11 @@
             <ColumnDefinition Width="150"/>
             <ColumnDefinition Width="150"/>
         </Grid.ColumnDefinitions>
-        <local:GenericCard Grid.Column="1" Grid.Row="1"/>
-        <local:GenericCard Grid.Column="1" Grid.Row="2"/>
-        <!--<local:GenericCard CardValue="{Binding Card.CardValue}" Grid.Column="2" Grid.Row="2"/>-->
-        <Button Content="Hit" HorizontalAlignment="Center" Margin="0,100,0,0" Grid.Row="1" VerticalAlignment="Top" Height="35" Width="90"/>
+        <local:GenericCard CardValue="{Binding Card.CardValue}" CardSuit="{Binding Card.CardSuit}" Grid.Column="1" Grid.Row="0" Height="150" Width="100"/>
+        <local:GenericCard CardValue="{Binding Card.CardValue}" CardSuit="{Binding Card.CardSuit}" Grid.Column="2" Grid.Row="0" Height="150" Width="100"/>
+        <local:GenericCard CardValue="{Binding Card.CardValue}" CardSuit="{Binding Card.CardSuit}" Grid.Column="1" Grid.Row="2" Height="150" Width="100"/>
+        <local:GenericCard CardValue="{Binding Card.CardValue}" CardSuit="{Binding Card.CardSuit}" Grid.Column="2" Grid.Row="2" Height="150" Width="100"/>
+        <local:GenericCard CardValue="{Binding Card.CardValue}" CardSuit="{Binding Card.CardSuit}" Grid.Column="3" Grid.Row="2" Height="150" Width="100"/>
+        <Button Content="Hit" HorizontalAlignment="Center" Margin="0,100,0,0" Grid.Row="1" VerticalAlignment="Top" Height="35" Width="90"  Command="{Binding HitCommand}"/>
     </Grid>
 </UserControl>
