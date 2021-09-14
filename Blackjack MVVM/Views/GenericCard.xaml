@@ -9,7 +9,7 @@
              x:Name="generic">
     <Grid Background="White">
         <Border BorderBrush="Black" BorderThickness="3"/>
-        <TextBlock Text="{Binding CardSuit, ElementName=generic, FallbackValue=&#9824;}" Foreground="Black" FontSize="10" Height="64" Width="70" Margin="10,10,20,76"/>
-        <TextBlock HorizontalAlignment="Center" Margin="30,59,0,0" Text="{Binding CardValue, ElementName=generic, FallbackValue=10}" VerticalAlignment="Top" Height="64" Width="70" Foreground="Red"  FontSize="10" RenderTransformOrigin="-0.121,1.286" />
+        <TextBlock Text="{Binding CardSuit, ElementName=generic, FallbackValue=&#9824;}" Foreground="Black" FontSize="40" Height="64" Width="70" Margin="10,10,20,76"/>
+        <TextBlock HorizontalAlignment="Center" Margin="30,59,0,0" Text="{Binding CardValue, ElementName=generic, FallbackValue=10}" VerticalAlignment="Top" Height="64" Width="70" Foreground="Red"  FontSize="40" RenderTransformOrigin="-0.121,1.286" />
     </Grid>
 </UserControl>

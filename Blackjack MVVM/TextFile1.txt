@@ -60,3 +60,16 @@
             }
             //ShowCard();
         }
+
+
+
+
+             //public void GenerateCards()
+        //{
+        //    DeckOfCards.Add(new GenericCard
+        //    {
+        //        CardValue = GetValue(),
+        //        CardSuit = GetSuit()
+
+        //    });
+        //}

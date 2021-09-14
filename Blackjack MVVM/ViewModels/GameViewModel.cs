@@ -16,18 +16,31 @@ namespace Blackjack_MVVM.ViewModels
         // presentera allt här i vyn
         // presentera ett enda kort
 
-        public GenericCard Card { get; set; } = new GenericCard();
-
+        public GenericCard Card { get; set; }
         private static readonly Random random = new Random();
         public ObservableCollection<GenericCard> DeckOfCards { get; set; }
+        public ObservableCollection<GenericCard> CardsInGame { get; set; }
         public EnumToSymbolConverter converter = new EnumToSymbolConverter();
         public ICommand HitCommand { get; }
+
+        //public GenericCard Card1 { get; set; }
+        //public GenericCard Card2 { get; set; }
+        //public GenericCard Card3 { get; set; }
+
+        public GenericCard newCard { get; set; }
+
+        //public PlayerViewModel P1 { get; set; } = new Person();
+        //public PlayerViewModel P2 { get; set; } = new Cpu();
+
         public GameViewModel()
         {
-            //Card.CardValue = GetValue();
-            //Card.CardSuit = GetSuit();
             HitCommand = new HitCommand(this);
             DeckOfCards = new ObservableCollection<GenericCard>();
+            CardsInGame = new ObservableCollection<GenericCard>();
+            //Card1 = new GenericCard();
+            //Card2 = new GenericCard();
+            //Card3 = new GenericCard();
+            
         }
 
         public char GetSuit()
@@ -35,20 +48,19 @@ namespace Blackjack_MVVM.ViewModels
             int i = random.Next(1, 4);
             if (i == 1)
             {
-                Card.CardSuit = '♥'; // hearts " &#9829;" '♥'
-                                     //Card.CardSuit = converter.ConvertEnum();
+                Card.CardSuit = '♥'; 
             }
             else if (i == 2)
             {
-                Card.CardSuit = '♠'; // spades &#9824;
+                Card.CardSuit = '♠'; 
             }
             else if (i == 3)
             {
-                Card.CardSuit = '♣'; // clubs "&#9827;"
+                Card.CardSuit = '♣'; 
             }
             else
             {
-                Card.CardSuit = '♦'; // diamonds "&#9670;"
+                Card.CardSuit = '♦'; 
             }
 
             return Card.CardSuit;
@@ -80,14 +92,51 @@ namespace Blackjack_MVVM.ViewModels
             return Card.CardValue;
         }
 
-        public void GenerateCards()
+        public GenericCard GenerateCards()
         {
+            Card = new GenericCard();
             DeckOfCards.Add(new GenericCard
             {
                 CardValue = GetValue(),
                 CardSuit = GetSuit()
-
             });
+
+            return Card;
+        }
+
+
+        public void ShowCard()
+        {
+            FillDeckOfCards();
+            newCard = new GenericCard();
+            int x = GetRandomCard();
+            if (true)
+            {
+                newCard = DeckOfCards[x];
+            }
+
+            CardsInGame.Add(newCard);
+        }
+
+        public void FillDeckOfCards()
+        {
+            int count = 0;
+
+            while (count < 52)
+            {
+                GenerateCards();
+                count++;
+            }
+        }
+
+        public int GetRandomCard()
+        {
+            int idRandomCard;
+
+            Random randomCard = new Random();
+            idRandomCard = randomCard.Next(1, 52);
+
+            return idRandomCard;
         }
     }
 }

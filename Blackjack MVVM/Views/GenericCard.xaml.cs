@@ -35,15 +35,15 @@ namespace Blackjack_MVVM.Views
             DependencyProperty.Register("CardValue", typeof(string), typeof(GenericCard), new PropertyMetadata(null));
 
 
-        public string CardColor
-        {
-            get { return (string)GetValue(CardColorProperty); }
-            set { SetValue(CardColorProperty, value); }
-        }
+        //public string CardColor
+        //{
+        //    get { return (string)GetValue(CardColorProperty); }
+        //    set { SetValue(CardColorProperty, value); }
+        //}
 
-        // Using a DependencyProperty as the backing store for CardColor.  This enables animation, styling, binding, etc...
-        public static readonly DependencyProperty CardColorProperty =
-            DependencyProperty.Register("CardColor", typeof(string), typeof(GenericCard), new PropertyMetadata(null));
+        //// Using a DependencyProperty as the backing store for CardColor.  This enables animation, styling, binding, etc...
+        //public static readonly DependencyProperty CardColorProperty =
+        //    DependencyProperty.Register("CardColor", typeof(string), typeof(GenericCard), new PropertyMetadata(null));
 
         public char CardSuit
         {
