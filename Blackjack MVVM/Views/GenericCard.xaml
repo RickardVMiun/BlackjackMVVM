@@ -1,15 +1,15 @@
-﻿<local:Cards x:Class="Blackjack_MVVM.Views.GenericCard"
+﻿<UserControl x:Class="Blackjack_MVVM.Views.GenericCard"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:Blackjack_MVVM.Views"
              mc:Ignorable="d" 
-             d:DesignHeight="80" d:DesignWidth="50"
+             d:DesignHeight="150" d:DesignWidth="100"
              x:Name="generic">
     <Grid Background="White">
         <Border BorderBrush="Black" BorderThickness="3"/>
-        <TextBlock Text="{Binding CardSuit, ElementName=generic, FallbackValue=&#9824;}" Foreground="{Binding SuitColou}" FontSize="20"/>
-        <TextBlock HorizontalAlignment="Left" Margin="30,57,0,0" Text="{Binding CardValue, ElementName=generic, FallbackValue=10}" VerticalAlignment="Top" Height="100" Width="50" Foreground="Red"  FontSize="20" />
+        <TextBlock Text="{Binding CardSuit, ElementName=generic, FallbackValue=&#9824;}" Foreground="Black" FontSize="10" Height="64" Width="70" Margin="10,10,20,76"/>
+        <TextBlock HorizontalAlignment="Center" Margin="30,59,0,0" Text="{Binding CardValue, ElementName=generic, FallbackValue=10}" VerticalAlignment="Top" Height="64" Width="70" Foreground="Red"  FontSize="10" RenderTransformOrigin="-0.121,1.286" />
     </Grid>
-</local:Cards>
+</UserControl>

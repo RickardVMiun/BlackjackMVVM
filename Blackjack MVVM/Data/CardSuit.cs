@@ -6,7 +6,6 @@ namespace Blackjack_MVVM.Data
 {
     public enum CardSuit
     {
-        Spader, Köver, Hjärter, Ruter
-         
+        Hjärter, Klöver, Spader,  Ruter
     };
 }
