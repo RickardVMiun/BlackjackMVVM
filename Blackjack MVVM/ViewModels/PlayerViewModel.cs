@@ -8,22 +8,13 @@ namespace Blackjack_MVVM.ViewModels
 {
    public class PlayerViewModel : BaseViewModel
    {
-        //public ObservableCollection<GenericCard> DeckOfCards { get; set; }
-        //public GameViewModel gameViewModel;
+        public ObservableCollection<GenericCard> DeckOfCards { get; set; }
+        public static GameViewModel gameViewModel;
 
-        //public PlayerViewModel()
-        //{
-        //    gameViewModel = new GameViewModel();
-        //}
+        public PlayerViewModel()
+        {
+            gameViewModel = new GameViewModel();
 
-        //public void GenerateCards()
-        //{
-        //    DeckOfCards.Add(new GenericCard
-        //    {
-        //        CardValue = gameViewModel.GetValue(),
-        //        CardSuit = gameViewModel.GetSuit()
-
-        //    });
-        //}
+        }
     }
 }

@@ -22,5 +22,10 @@ namespace Blackjack_MVVM.Views
         {
             InitializeComponent();
         }
+
+        //private void GenericCard_IsVisibleChanged(object sender, DependencyPropertyChangedEventArgs e)
+        //{
+        //    Visibility = Visibility.Hidden;
+        //}
     }
 }
