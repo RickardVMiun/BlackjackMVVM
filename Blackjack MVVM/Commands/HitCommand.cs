@@ -26,10 +26,7 @@ namespace Blackjack_MVVM.Commands
 
         public void Execute(object parameter)
         {
-            //gameViewModel.Card1 = gameViewModel.GenerateCards();
-            //gameViewModel.Card2 = gameViewModel.GenerateCards();
-            //gameViewModel.Card3 = gameViewModel.GenerateCards();
-            gameViewModel.ShowCard();
+            gameViewModel.AddCard();
         }
     }
 }

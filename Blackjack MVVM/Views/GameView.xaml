@@ -19,9 +19,10 @@
             <ColumnDefinition Width="150"/>
             <ColumnDefinition Width="150"/>
         </Grid.ColumnDefinitions>
-        <local:GenericCard CardValue="{Binding CardsInGame[0].CardValue}" CardSuit="{Binding CardsInGame[0].CardSuit}" Grid.Column="1" Grid.Row="0" Height="150" Width="100"/>
-        <local:GenericCard CardValue="{Binding CardsInGame[1].CardValue}" CardSuit="{Binding CardsInGame[1].CardSuit}" Grid.Column="2" Grid.Row="0" Height="150" Width="100"/>
-        <local:GenericCard CardValue="{Binding CardsInGame[2].CardValue}" CardSuit="{Binding CardsInGame[2].CardSuit}" Grid.Column="1" Grid.Row="2" Height="150" Width="100"/>
+        <local:GenericCard CardValue="{Binding CpuCardsInGame[0].CardValue}" CardSuit="{Binding CpuCardsInGame[0].CardSuit}" Grid.Column="1" Grid.Row="0" Height="150" Width="100"/>
+        <local:GenericCard CardValue="{Binding CpuCardsInGame[1].CardValue}" CardSuit="{Binding CpuCardsInGame[1].CardSuit}" Grid.Column="2" Grid.Row="0" Height="150" Width="100"/>
+        <local:GenericCard CardValue="{Binding PersonCardsInGame[0].CardValue}" CardSuit="{Binding PersonCardsInGame[0].CardSuit}" Grid.Column="1" Grid.Row="2" Height="150" Width="100"/>
+        
 
         
         <Button Background="FloralWhite" Content="Hit" HorizontalAlignment="Center" Margin="0,100,0,0" Grid.Row="1" VerticalAlignment="Top" Height="35" Width="90"  Command="{Binding HitCommand}"/>

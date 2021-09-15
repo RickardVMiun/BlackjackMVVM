@@ -18,6 +18,20 @@ namespace Blackjack_MVVM.Views
     /// </summary>
     public partial class GameView : UserControl
     {
+
+
+        public int PlayerScore
+        {
+            get { return (int)GetValue(PlayerScoreProperty); }
+            set { SetValue(PlayerScoreProperty, value); }
+        }
+
+        // Using a DependencyProperty as the backing store for PlayerScore.  This enables animation, styling, binding, etc...
+        public static readonly DependencyProperty PlayerScoreProperty =
+            DependencyProperty.Register("PlayerScore", typeof(int), typeof(GameView), new PropertyMetadata(0));
+
+
+
         public GameView()
         {
             InitializeComponent();

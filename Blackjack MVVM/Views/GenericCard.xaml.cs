@@ -24,6 +24,7 @@ namespace Blackjack_MVVM.Views
             InitializeComponent();
         }
 
+
         public string CardValue
         {
             get { return (string)GetValue(CardValueProperty); }

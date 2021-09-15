@@ -1,10 +1,13 @@
-﻿using System;
+﻿using Blackjack_MVVM.Views;
+using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Text;
 
 namespace Blackjack_MVVM.ViewModels
 {
-    public class Person : PlayerViewModel
+    public class Person
     {
+        public int HandScore { get; set; }
     }
 }
