@@ -11,6 +11,6 @@
     <Grid Background="Red" Visibility="{Binding Visible, ElementName=losermessage, FallbackValue=Hidden}">
         <TextBlock HorizontalAlignment="Center" Text="Sorry, you lost! Would you like to play again?" VerticalAlignment="Top" Foreground="white" FontSize="15" Margin="0,72,0,0"/>
         <Button Content="Yes" Height="20" Width="50" Margin="255,161,95,19" Command="{Binding PlayAgainCommand}"/>
-        <Button Content="No" Height="20" Width="50" Margin="324,161,26,19"/>
+        <Button Content="No" Height="20" Width="50" Margin="324,161,26,19" Command="{Binding StopPlayingCommand}"/>
     </Grid>
 </UserControl>

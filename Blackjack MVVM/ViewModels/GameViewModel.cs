@@ -34,6 +34,7 @@ namespace Blackjack_MVVM.ViewModels
         public EnumToSymbolConverter converter = new EnumToSymbolConverter();
         public ICommand HitCommand { get; }
         public ICommand PlayAgainCommand { get; set; }
+        public ICommand StopPlayingCommand { get; set; }
         public GenericCard newCard { get; set; }
         public Person p1 = new Person();
         public Cpu p2 = new Cpu();
@@ -48,7 +49,8 @@ namespace Blackjack_MVVM.ViewModels
             AddStartingCardsCpu();
             HitCommand = new HitCommand(this);
             PlayAgainCommand = new PlayAgainCommand(this);
-            
+            StopPlayingCommand = new StopPlayingCommand(this);
+
         }
 
         #region CardFunctionality

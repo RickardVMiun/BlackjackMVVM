@@ -7,13 +7,13 @@ using System.Windows.Input;
 
 namespace Blackjack_MVVM.Commands
 {
-    class PlayAgainCommand : ICommand
+    class StopPlayingCommand : ICommand
     {
-        private MainViewModel mainViewModel;
-        private GameViewModel gameViewModel;
         public event EventHandler CanExecuteChanged;
 
-        public PlayAgainCommand(GameViewModel gameViewModel)
+        private GameViewModel gameViewModel;
+
+        public StopPlayingCommand(GameViewModel gameViewModel)
         {
             this.gameViewModel = gameViewModel;
         }
@@ -25,7 +25,8 @@ namespace Blackjack_MVVM.Commands
 
         public void Execute(object parameter)
         {
-           
+            System.Diagnostics.Process.Start(Application.ResourceAssembly.Location);
+            Application.Current.Shutdown();
         }
     }
 }
