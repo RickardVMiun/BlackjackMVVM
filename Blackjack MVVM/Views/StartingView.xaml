@@ -6,7 +6,34 @@
              xmlns:local="clr-namespace:Blackjack_MVVM.Views"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
-    <Grid>
-            
+    
+    <UserControl.Resources>
+        <Storyboard x:Key="Storyboard">
+            <DoubleAnimation 
+            Storyboard.TargetProperty="FontSize"
+            From = "12" To = "200" Duration = "0:0:4"
+            RepeatBehavior = "Forever" AutoReverse="True"/>
+            <DoubleAnimation
+            Storyboard.TargetProperty="(UIElement.RenderTransform).(RotateTransform.Angle)"
+            From="0" To="360" Duration="0:0:4"
+            RepeatBehavior="Forever"/>
+        </Storyboard>
+    </UserControl.Resources>
+
+    <Grid Background="Green">
+        <Border BorderBrush="DarkRed" BorderThickness="5" CornerRadius="1"/>
+
+        <StackPanel>
+            <Label x:Name="myLabel" Content = "Some text" Foreground="White" FontSize="40" VerticalAlignment="Center" HorizontalAlignment="Center">
+                <Label.Triggers>
+                    <EventTrigger RoutedEvent="Label.Loaded">
+                        <EventTrigger.Actions>
+                            <BeginStoryboard Storyboard="{StaticResource Storyboard}"/>
+                        </EventTrigger.Actions>
+                    </EventTrigger>
+                </Label.Triggers>
+            </Label>
+        </StackPanel>
     </Grid>
+
 </UserControl>
