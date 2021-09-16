@@ -54,7 +54,7 @@ namespace Blackjack_MVVM.ViewModels
         private void AddStartingCardsCpu()
         {
             AddCardCpu();
-            AddCardCpu();
+         
         }
 
         public char GetSuit()
