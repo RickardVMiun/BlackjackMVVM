@@ -40,6 +40,7 @@
             <ColumnDefinition Width="150"/>
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
+
         <local:GenericCard CardValue="{Binding CardsInGame[0].CardValue}" CardSuit="{Binding CardsInGame[0].CardSuit}" Grid.Column="5" Grid.Row="4" Height="100" Width="80" VerticalAlignment="Center" HorizontalAlignment="Left"/>
         <local:GenericCard CardValue="{Binding CardsInGame[1].CardValue}" CardSuit="{Binding CardsInGame[1].CardSuit}" Grid.Column="5" Grid.Row="1" Height="100" Width="80" VerticalAlignment="Bottom" HorizontalAlignment="Left"/>
         <local:GenericCard CardValue="{Binding CardsInGame[2].CardValue}" CardSuit="{Binding CardsInGame[2].CardSuit}" Grid.Column="5" Grid.Row="4" Height="100" Width="80" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="50,0,0,0"/>
@@ -85,6 +86,7 @@
                         </LinearGradientBrush>
                     </Button.Background>
                 </Button>
+
 
             </WrapPanel>
         </Border>
