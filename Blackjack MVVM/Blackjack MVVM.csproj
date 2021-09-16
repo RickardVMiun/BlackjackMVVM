@@ -21,12 +21,11 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Images\" />
     <Folder Include="Models\" />
   </ItemGroup>
 
   <ItemGroup>
-    <Resource Include="BlackJackBord2.png" />
+    <Resource Include="Images\BlackJackBord2.png" />
   </ItemGroup>
 
 </Project>
