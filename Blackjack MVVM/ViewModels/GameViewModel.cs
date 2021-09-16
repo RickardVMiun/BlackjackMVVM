@@ -22,6 +22,7 @@ namespace Blackjack_MVVM.ViewModels
         public GameView gameView { get; set; }
 
         public PlayerScore playerScore { get; set; }
+        public CpuScore cpuScore { get; set; }
         private static readonly Random random = new Random();
         public ObservableCollection<GenericCard> DeckOfCards { get; set; }
         //public ObservableCollection<GenericCard> CardsInGame { get; set; }
@@ -143,8 +144,8 @@ namespace Blackjack_MVVM.ViewModels
         }
         public void AddPlayerPoints(GenericCard card)
         {
-           playerScore = new PlayerScore();
             // gör om till en int så att vi kan räkna ut värdet.
+            playerScore = new PlayerScore();
             int value;
 
             if(card.CardValue == "A" || card.CardValue == "J" || card.CardValue == "Q" || card.CardValue == "K" )
@@ -162,6 +163,7 @@ namespace Blackjack_MVVM.ViewModels
         public void AddCpuPoints(GenericCard card)
         {
             // gör om till en int så att vi kan räkna ut värdet.
+            cpuScore = new CpuScore();
             int value;
 
             if (card.CardValue == "A" || card.CardValue == "J" || card.CardValue == "Q" || card.CardValue == "K")
@@ -173,6 +175,7 @@ namespace Blackjack_MVVM.ViewModels
                 value = int.Parse(card.CardValue);
             }
             p2.HandScore += value;
+            cpuScore.cpuScore = p2.HandScore;
         }
         public void FillDeckOfCards()
         {
