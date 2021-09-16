@@ -7,9 +7,9 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
-        <Grid.Background>
+        <!--<Grid.Background>
             <ImageBrush ImageSource="BlackJackBord.png"/>
-        </Grid.Background>
+        </Grid.Background>-->
         <ContentControl Content="{Binding CurrentViewModel}"
                         Grid.Row="1"
                         Grid.Column="1" VerticalAlignment="Stretch" 
