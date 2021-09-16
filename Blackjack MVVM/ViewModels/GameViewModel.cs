@@ -40,6 +40,8 @@ namespace Blackjack_MVVM.ViewModels
         public Cpu p2 = new Cpu();
         public string visibility { get; set; }
 
+        public string cardvisibility { get; set; }
+
 
         public GameViewModel()
         {
@@ -238,5 +240,12 @@ namespace Blackjack_MVVM.ViewModels
                 return false;
             }
         }
+
+        public void ShowNewCard()
+        {
+            cardvisibility = "Visible";
+        }
+
+        //test
     }
 }
