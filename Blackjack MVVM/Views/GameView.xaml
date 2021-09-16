@@ -38,6 +38,7 @@
         <local:GenericCard CardValue="{Binding PersonCardsInGame[1].CardValue}" CardSuit="{Binding PersonCardsInGame[1].CardSuit}" Grid.Column="5" Grid.Row="4" Height="100" Width="80" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="50,0,0,0"/>
         <local:CpuScore cpuScore="{Binding cpuScore.cpuScore}"  Grid.Column="6" Grid.Row="1" Height="50" Width="90" VerticalAlignment="Center"/>
         <local:PlayerScore playerScore="{Binding playerScore.playerScore}"  Grid.Column="6" Grid.Row="4" Height="50" Width="90"/>
+        <local:LoserMessage Grid.Column="4" Grid.Row="2" Visible="{Binding visibility}" Grid.ColumnSpan="3" Margin="30,50,30,55" Grid.RowSpan="2"/>
         <Border Background="#FF2B1D06" BorderThickness="0" BorderBrush="Black" Grid.Row="5" Grid.ColumnSpan="11" Margin="0,40,0,40" Grid.RowSpan="1" >
             <WrapPanel Orientation="Horizontal" HorizontalAlignment="Center">
                 <Button BorderThickness="4" Content="Hit" Height="57" Width="67"  Command="{Binding HitCommand}" UseLayoutRounding="False" FontFamily="Cooper Black" FontSize="18" Foreground="Black">
@@ -84,6 +85,6 @@
 
             </WrapPanel>
         </Border>
-      
+
     </Grid>
 </UserControl>

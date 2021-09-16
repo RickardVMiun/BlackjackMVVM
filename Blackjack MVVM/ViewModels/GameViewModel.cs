@@ -7,6 +7,7 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
+using System.Windows;
 using System.Windows.Input;
 
 namespace Blackjack_MVVM.ViewModels
@@ -32,9 +33,11 @@ namespace Blackjack_MVVM.ViewModels
         // cpucardsingame/playercardsingame
         public EnumToSymbolConverter converter = new EnumToSymbolConverter();
         public ICommand HitCommand { get; }
+        public ICommand PlayAgainCommand { get; set; }
         public GenericCard newCard { get; set; }
         public Person p1 = new Person();
         public Cpu p2 = new Cpu();
+        public string visibility { get; set; }
 
 
         public GameViewModel()
@@ -44,8 +47,11 @@ namespace Blackjack_MVVM.ViewModels
             AddStartingCardsHuman();
             AddStartingCardsCpu();
             HitCommand = new HitCommand(this);
+            PlayAgainCommand = new PlayAgainCommand(this);
+            
         }
 
+        #region CardFunctionality
         private void AddStartingCardsHuman()
         {
             AddCard();
@@ -55,7 +61,7 @@ namespace Blackjack_MVVM.ViewModels
         private void AddStartingCardsCpu()
         {
             AddCardCpu();
-         
+
         }
 
         public char GetSuit()
@@ -63,19 +69,19 @@ namespace Blackjack_MVVM.ViewModels
             int i = random.Next(1, 4);
             if (i == 1)
             {
-                Card.CardSuit = '♥'; 
+                Card.CardSuit = '♥';
             }
             else if (i == 2)
             {
-                Card.CardSuit = '♠'; 
+                Card.CardSuit = '♠';
             }
             else if (i == 3)
             {
-                Card.CardSuit = '♣'; 
+                Card.CardSuit = '♣';
             }
             else
             {
-                Card.CardSuit = '♦'; 
+                Card.CardSuit = '♦';
             }
 
             return Card.CardSuit;
@@ -142,41 +148,7 @@ namespace Blackjack_MVVM.ViewModels
             CpuCardsInGame.Add(newCard);
             AddCpuPoints(newCard);
         }
-        public void AddPlayerPoints(GenericCard card)
-        {
-            // gör om till en int så att vi kan räkna ut värdet.
-            playerScore = new PlayerScore();
-            int value;
 
-            if(card.CardValue == "A" || card.CardValue == "J" || card.CardValue == "Q" || card.CardValue == "K" )
-            {
-                value = 10;
-            }
-            else
-            {
-               value = int.Parse(card.CardValue);
-            }
-            p1.HandScore += value;
-            playerScore.playerScore = p1.HandScore;
-        }
-
-        public void AddCpuPoints(GenericCard card)
-        {
-            // gör om till en int så att vi kan räkna ut värdet.
-            cpuScore = new CpuScore();
-            int value;
-
-            if (card.CardValue == "A" || card.CardValue == "J" || card.CardValue == "Q" || card.CardValue == "K")
-            {
-                value = 10;
-            }
-            else
-            {
-                value = int.Parse(card.CardValue);
-            }
-            p2.HandScore += value;
-            cpuScore.cpuScore = p2.HandScore;
-        }
         public void FillDeckOfCards()
         {
             int count = 0;
@@ -196,6 +168,73 @@ namespace Blackjack_MVVM.ViewModels
             idRandomCard = randomCard.Next(1, 52);
 
             return idRandomCard;
+        } 
+        #endregion
+
+
+        public void AddPlayerPoints(GenericCard card)
+        {
+            // gör om till en int så att vi kan räkna ut värdet.
+            playerScore = new PlayerScore();
+            int value;
+
+            if (card.CardValue == "A" || card.CardValue == "J" || card.CardValue == "Q" || card.CardValue == "K")
+            {
+                value = 10;
+            }
+            else
+            {
+                value = int.Parse(card.CardValue);
+            }
+            p1.HandScore += value;
+
+            playerScore.playerScore = p1.HandScore;
+
+        }
+
+        public void AddCpuPoints(GenericCard card)
+        {
+            // gör om till en int så att vi kan räkna ut värdet.
+            cpuScore = new CpuScore();
+            int value;
+
+            if (card.CardValue == "A" || card.CardValue == "J" || card.CardValue == "Q" || card.CardValue == "K")
+            {
+                value = 10;
+            }
+            else
+            {
+                value = int.Parse(card.CardValue);
+            }
+            p2.HandScore += value;
+            cpuScore.cpuScore = p2.HandScore;
+        }
+
+        public bool PersonIsBust(Person p1)
+        {
+           
+            if (p1.HandScore >21)
+            {
+                visibility = "Visible";
+                return true;   
+            }
+            else
+            {
+                return false;
+            }
+        }
+
+        public bool CpuIsBust(Cpu p2)
+        {
+            if (p2.HandScore > 21)
+            {
+                return true;
+
+            }
+            else
+            {
+                return false;
+            }
         }
     }
 }
