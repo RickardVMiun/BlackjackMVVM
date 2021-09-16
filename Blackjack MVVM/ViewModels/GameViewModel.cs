@@ -249,6 +249,19 @@ namespace Blackjack_MVVM.ViewModels
             cardvisibility = "Visible";
         }
 
-        //test
+       public void CpuWon(Cpu p2, Person p1)
+        {
+            if (p2.HandScore > p1.HandScore && p2.HandScore < 22)
+            {
+                visibility = "Visible";
+               
+            }
+            else
+            {
+                visibility = "Hidden";
+            }
+        }
+
+        //test1
     }
 }

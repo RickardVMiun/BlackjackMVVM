@@ -3,6 +3,7 @@ using Blackjack_MVVM.Views;
 using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Threading;
 using System.Windows.Input;
 
 namespace Blackjack_MVVM.Commands
@@ -31,8 +32,11 @@ namespace Blackjack_MVVM.Commands
 
             while (gameViewModel.p2.HandScore < 17)
             {
+                //Thread.Sleep(1000);
+                
                 gameViewModel.AddCardCpu();
-             //   gameViewModel.ShowNewCard();
+                gameViewModel.CpuWon(gameViewModel.p2, gameViewModel.p1);
+                //   gameViewModel.ShowNewCard();
             }
         }
     }
