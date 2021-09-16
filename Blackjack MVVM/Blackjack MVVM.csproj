@@ -8,7 +8,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <None Remove="BlackJackBord.png" />
+    <None Remove="BlackJackBord2.png" />
     <None Remove="Images\image %281%29.png" />
   </ItemGroup>
 
@@ -26,7 +26,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Resource Include="BlackJackBord.png" />
+    <Resource Include="BlackJackBord2.png" />
   </ItemGroup>
 
 </Project>
