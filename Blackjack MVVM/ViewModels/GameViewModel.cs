@@ -250,7 +250,7 @@ namespace Blackjack_MVVM.ViewModels
 
        public void CpuWon(Cpu p2, Person p1)
         {
-            if (p2.HandScore > p1.HandScore && p2.HandScore < 22)
+            if (p2.HandScore > p1.HandScore && p2.HandScore < 22 || p2.HandScore == p1.HandScore)
             {
                 visibility = "Visible";
                
