@@ -8,14 +8,14 @@
 
     <Grid  Margin="0,0,0,-70" Height="718" Width="1400">
         <Grid.Background>
-            <ImageBrush AlignmentX="Center" AlignmentY="Top" ImageSource="\Images\BlackJackBord2.png" Stretch="Uniform" />
+            <ImageBrush AlignmentX="Center" AlignmentY="Top" ImageSource="\Images\BlackJackBord4.png" Stretch="Uniform" />
         </Grid.Background>
         <Grid.RowDefinitions>
             <RowDefinition Height="*"/>
             <RowDefinition Height="150"/>
             <RowDefinition Height="150"/>
             <RowDefinition Height="150"/>
-            <RowDefinition Height="150"/>
+            <RowDefinition Height="130"/>
             <RowDefinition Height="150"/>
             <RowDefinition Height="150"/>
             <RowDefinition Height="*"/>
@@ -43,9 +43,9 @@
         <local:GenericCard CardValue="{Binding PersonCardsInGame[1].CardValue}" CardSuit="{Binding PersonCardsInGame[1].CardSuit}" Grid.Column="5" Grid.Row="4" Height="100" Width="80" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="50,0,0,0"/>
         <local:GenericCard CardValue="{Binding PersonCardsInGame[2].CardValue}" CardSuit="{Binding PersonCardsInGame[2].CardSuit}" Grid.Column="5" Grid.Row="3" Height="100" Width="80" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="102,91,0,0" Visibility="Hidden" Grid.RowSpan="2" Grid.ColumnSpan="2"/>
         <local:GenericCard CardValue="{Binding PersonCardsInGame[3].CardValue}" CardSuit="{Binding PersonCardsInGame[3].CardSuit}" Grid.Column="6" Grid.Row="3" Height="100" Width="80" VerticalAlignment="Center" HorizontalAlignment="Left" Visibility="Hidden" />
-        <local:CpuScore cpuScore="{Binding cpuScore.cpuScore}"  Grid.Column="6" Grid.Row="1" Height="50" Width="90" VerticalAlignment="Center" HorizontalAlignment="Right" />
-        <local:PlayerScore playerScore="{Binding playerScore.playerScore}"  Grid.Column="6" Grid.Row="4" Height="60" Width="60" VerticalAlignment="Center" HorizontalAlignment="Right"/>
-        
+        <local:CpuScore cpuScore="{Binding cpuScore.cpuScore}"  Grid.Column="6" Grid.Row="1" Height="60" Width="60" VerticalAlignment="Top" HorizontalAlignment="Right" Margin="0,57,0,0" />
+        <local:PlayerScore playerScore="{Binding playerScore.playerScore}"  Grid.Column="6" Grid.Row="4" Height="60" Width="60" VerticalAlignment="Top" HorizontalAlignment="Right" Margin="0,40,0,0"/>
+
 
         <Border Background="#FF2B1D06" BorderThickness="0" BorderBrush="Black" Grid.Row="5" Grid.ColumnSpan="11" Margin="0,40,0,40" Grid.RowSpan="1" >
             <WrapPanel Orientation="Horizontal" HorizontalAlignment="Center">
@@ -93,6 +93,9 @@
 
             </WrapPanel>
         </Border>
+        <Label Content="Player Score:" Grid.Column="6" HorizontalAlignment="Left" Margin="45,11,0,0" Grid.Row="4" VerticalAlignment="Top" RenderTransformOrigin="0.5,0.5" FontSize="20" Foreground="Gold" Grid.ColumnSpan="2" Height="39" Width="180" FontFamily="Copperplate Gothic Bold"/>
 
+
+        <Label Content="Dealer Score:" Grid.Column="6" HorizontalAlignment="Left" Margin="45,29,0,0" Grid.RowSpan="2" VerticalAlignment="Top" Width="180" FontSize="20" Foreground="Gold" Grid.ColumnSpan="2" Height="46" FontFamily="Copperplate Gothic Bold"/>
     </Grid>
 </UserControl>

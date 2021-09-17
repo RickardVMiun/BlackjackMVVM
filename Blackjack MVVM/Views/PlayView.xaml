@@ -1,0 +1,33 @@
+﻿<UserControl x:Class="Blackjack_MVVM.Views.PlayView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Blackjack_MVVM.Views"
+             mc:Ignorable="d" d:DesignWidth="800" Height="454">
+    <Grid>
+        <Grid.Background>
+            <ImageBrush AlignmentX="Center" AlignmentY="Top" ImageSource="\Images\BlackJackBord5.png" Stretch="Uniform" />
+        </Grid.Background>
+        <Button BorderThickness="4" Content="PLAY" Height="90" Width="100"  Command="{Binding}" UseLayoutRounding="False" FontFamily="Cooper Black" FontSize="25" Foreground="Gold" Margin="350,174,350,186">
+            <Button.Resources>
+                <Style TargetType="{x:Type Border}">
+                    <Setter Property="CornerRadius" Value="30"/>
+                </Style>
+
+            </Button.Resources>
+            <Button.BorderBrush>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FFD8D910"/>
+                    <GradientStop Color="#FF595907" Offset="1"/>
+                </LinearGradientBrush>
+            </Button.BorderBrush>
+            <Button.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FF82F06E" Offset="0.024"/>
+                    <GradientStop Color="#FF1B8506" Offset="1"/>
+                </LinearGradientBrush>
+            </Button.Background>
+        </Button>
+    </Grid>
+</UserControl>

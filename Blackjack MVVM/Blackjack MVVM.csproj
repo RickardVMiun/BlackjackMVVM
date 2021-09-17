@@ -9,6 +9,8 @@
 
   <ItemGroup>
     <None Remove="BlackJackBord2.png" />
+    <None Remove="Images\BlackJackBord4.png" />
+    <None Remove="Images\BlackJackBord5.png" />
     <None Remove="Images\image %281%29.png" />
   </ItemGroup>
 
@@ -25,7 +27,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Resource Include="Images\BlackJackBord2.png" />
+    <Resource Include="Images\BlackJackBord4.png" />
+    <Resource Include="Images\BlackJackBord5.png" />
   </ItemGroup>
 
 </Project>
