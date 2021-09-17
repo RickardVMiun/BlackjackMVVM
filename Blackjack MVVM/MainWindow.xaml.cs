@@ -1,4 +1,5 @@
 ﻿using Blackjack_MVVM.Data;
+using Blackjack_MVVM.Stores;
 using Blackjack_MVVM.ViewModels;
 using System;
 using System.Collections.Generic;
@@ -22,10 +23,12 @@ namespace Blackjack_MVVM
     /// </summary>
     public partial class MainWindow : Window
     {
+        NavigationStore navStore = new NavigationStore();
         public MainWindow()
         {
             InitializeComponent();
-            DataContext = new MainViewModel();
+            DataContext = new MainViewModel(navStore);
+            navStore.CurrentViewModel = new GameViewModel(navStore);
         }
     }
 }

@@ -26,18 +26,13 @@ namespace Blackjack_MVVM.Commands
 
         public void Execute(object parameter)
         {
-           // gameViewModel.AddCardCpu();
-           // gameViewModel.ShowNewCard();
-         //   gameViewModel.PersonIsBust(gameViewModel.p1);
-
             while (gameViewModel.p2.HandScore < 17)
             {
-                //Thread.Sleep(1000);
-                
+                //Thread.Sleep(1000);    
                 gameViewModel.AddCardCpu();
-                gameViewModel.CpuWon(gameViewModel.p2, gameViewModel.p1);
-                //   gameViewModel.ShowNewCard();
+               
             }
+            gameViewModel.CpuWon(gameViewModel.p2, gameViewModel.p1);
         }
     }
 }
