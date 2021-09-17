@@ -64,7 +64,7 @@
                     </LinearGradientBrush>
                 </Button.Background>
             </Button>
-            <Button BorderThickness="4" Content="Nej" Height="57" Width="64" Command="{Binding}" UseLayoutRounding="False" FontFamily="Cooper Black" FontSize="18" Foreground="Black">
+            <Button BorderThickness="4" Content="Nej" Height="57" Width="64" Command="{Binding Under18Command}" UseLayoutRounding="False" FontFamily="Cooper Black" FontSize="18" Foreground="Black">
                 <Button.Resources>
                     <Style TargetType="{x:Type Border}">
                         <Setter Property="CornerRadius" Value="30"/>
