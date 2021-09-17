@@ -1,4 +1,7 @@
-﻿using System;
+﻿using Blackjack_MVVM.Commands;
+using Blackjack_MVVM.Stores;
+using Blackjack_MVVM.ViewModels;
+using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Windows;
@@ -18,9 +21,12 @@ namespace Blackjack_MVVM.Views
     /// </summary>
     public partial class StartingView : UserControl
     {
+
+        
         public StartingView()
         {
             InitializeComponent();
+      
         }
     }
 }

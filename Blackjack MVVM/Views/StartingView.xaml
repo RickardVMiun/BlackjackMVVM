@@ -44,7 +44,7 @@
 
         </Grid.RowDefinitions>
         <WrapPanel Orientation="Horizontal" VerticalAlignment="Bottom" HorizontalAlignment="Center" Grid.Row="2">
-            <Button BorderThickness="4" Content="Ja" Height="57" Width="67"  Command="{Binding}" UseLayoutRounding="False" FontFamily="Cooper Black" FontSize="18" Foreground="Black">
+            <Button BorderThickness="4" Content="Ja" Height="57" Width="67"  Command="{Binding Over18Command}" UseLayoutRounding="False" FontFamily="Cooper Black" FontSize="18" Foreground="Black">
                 <Button.Resources>
                     <Style TargetType="{x:Type Border}">
                         <Setter Property="CornerRadius" Value="30"/>

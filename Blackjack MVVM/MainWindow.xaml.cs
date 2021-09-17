@@ -28,7 +28,7 @@ namespace Blackjack_MVVM
         {
             InitializeComponent();
             DataContext = new MainViewModel(navStore);
-            navStore.CurrentViewModel = new GameViewModel(navStore);
+            navStore.CurrentViewModel = new StartingViewModel(navStore);
         }
     }
 }
