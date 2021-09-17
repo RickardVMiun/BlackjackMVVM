@@ -35,20 +35,22 @@
         </Grid.ColumnDefinitions>
 
         <local:StartingView VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Height="800" Width="1500"/>
-        <local:GenericCard CardValue="{Binding CpuCardsInGame[0].CardValue}" CardSuit="{Binding CpuCardsInGame[0].CardSuit}" Grid.Column="5" Grid.Row="1" Height="100" Width="80" VerticalAlignment="Center" HorizontalAlignment="Left"/>
-        <local:GenericCard CardValue="{Binding CpuCardsInGame[1].CardValue}" CardSuit="{Binding CpuCardsInGame[1].CardSuit}" Grid.Column="5" Grid.Row="1" Height="100" Width="80" VerticalAlignment="Bottom" HorizontalAlignment="Right"/>
-        <local:GenericCard CardValue="{Binding CpuCardsInGame[2].CardValue}" CardSuit="{Binding CpuCardsInGame[2].CardSuit}" Grid.Column="5" Grid.Row="1" Height="100" Width="80" VerticalAlignment="Bottom" HorizontalAlignment="Right" Grid.ColumnSpan="2" Margin="0,0,91,102" Grid.RowSpan="2" Visibility="Visible"/>
-        <local:GenericCard CardValue="{Binding CpuCardsInGame[3].CardValue}" CardSuit="{Binding CpuCardsInGame[3].CardSuit}" Grid.Column="6" Grid.Row="2" Height="100" Width="80" VerticalAlignment="Center" HorizontalAlignment="Center" Visibility="Visible"/>
-        <local:GenericCard CardValue="{Binding PersonCardsInGame[0].CardValue}" CardSuit="{Binding PersonCardsInGame[0].CardSuit}" Grid.Column="5" Grid.Row="4" Height="100" Width="80" VerticalAlignment="Bottom" HorizontalAlignment="Left"/>
-        <local:GenericCard CardValue="{Binding PersonCardsInGame[1].CardValue}" CardSuit="{Binding PersonCardsInGame[1].CardSuit}" Grid.Column="5" Grid.Row="4" Height="100" Width="80" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="50,0,0,0"/>
+        <local:GenericCard CardValue="{Binding CpuCardsInGame[0].CardValue}" CardSuit="{Binding CpuCardsInGame[0].CardSuit}" Grid.Column="5" Grid.Row="1" Height="100" Width="80" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="0,40,0,0"/>
+        <local:GenericCard CardValue="{Binding CpuCardsInGame[1].CardValue}" CardSuit="{Binding CpuCardsInGame[1].CardSuit}" Grid.Column="5" Grid.Row="1" Height="100" Width="80" VerticalAlignment="Bottom" HorizontalAlignment="Right" Margin="0,0,40,1"/>
+        <local:GenericCard CardValue="{Binding CpuCardsInGame[2].CardValue}" CardSuit="{Binding CpuCardsInGame[2].CardSuit}" Grid.Column="5" Grid.Row="1" Height="100" Width="80" VerticalAlignment="Bottom" HorizontalAlignment="Right" Margin="0,0,10,142" Visibility="Hidden" Grid.RowSpan="2"/>
+        <local:GenericCard CardValue="{Binding CpuCardsInGame[3].CardValue}" CardSuit="{Binding CpuCardsInGame[3].CardSuit}" Grid.Column="5" Grid.Row="1" Height="100" Width="80" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="90,68,0,0" Visibility="Hidden" Grid.RowSpan="2" Grid.ColumnSpan="2"/>
+        <local:GenericCard CardValue="{Binding CpuCardsInGame[4].CardValue}" CardSuit="{Binding CpuCardsInGame[4].CardSuit}" Grid.Column="5" Grid.Row="1" Height="100" Width="80" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="120,78,0,0" Visibility="Hidden" Grid.RowSpan="2" Grid.ColumnSpan="2"/>
+        <local:GenericCard CardValue="{Binding PersonCardsInGame[0].CardValue}" CardSuit="{Binding PersonCardsInGame[0].CardSuit}" Grid.Column="5" Grid.Row="4" Height="100" Width="80" VerticalAlignment="Bottom" HorizontalAlignment="Left" Margin="0,0,0,10"/>
+        <local:GenericCard CardValue="{Binding PersonCardsInGame[1].CardValue}" CardSuit="{Binding PersonCardsInGame[1].CardSuit}" Grid.Column="5" Grid.Row="4" Height="100" Width="80" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="30,-10,0,0"/>
 
-        <local:GenericCard CardValue="{Binding PersonCardsInGame[2].CardValue}" CardSuit="{Binding PersonCardsInGame[2].CardSuit}" Grid.Column="5" Grid.Row="3" Height="100" Width="80" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="102,91,0,0" Visibility="Hidden" Grid.RowSpan="2" Grid.ColumnSpan="2"/>
-        <local:GenericCard CardValue="{Binding PersonCardsInGame[3].CardValue}" CardSuit="{Binding PersonCardsInGame[3].CardSuit}" Grid.Column="6" Grid.Row="3" Height="100" Width="80" VerticalAlignment="Center" HorizontalAlignment="Left" Visibility="Hidden" />
-        <local:CpuScore cpuScore="{Binding cpuScore.cpuScore}"  Grid.Column="6" Grid.Row="1" Height="60" Width="60" VerticalAlignment="Top" HorizontalAlignment="Right" Margin="0,57,0,0" />
-        <local:PlayerScore playerScore="{Binding playerScore.playerScore}"  Grid.Column="6" Grid.Row="4" Height="60" Width="60" VerticalAlignment="Top" HorizontalAlignment="Right" Margin="0,40,0,0"/>
+        <local:GenericCard CardValue="{Binding PersonCardsInGame[2].CardValue}" CardSuit="{Binding PersonCardsInGame[2].CardSuit}" Grid.Column="5" Grid.Row="4" Height="100" Width="80" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="60,0,0,0" Visibility="Hidden"/>
+        <local:GenericCard CardValue="{Binding PersonCardsInGame[3].CardValue}" CardSuit="{Binding PersonCardsInGame[3].CardSuit}" Grid.Column="5" Grid.Row="4" Height="100" Width="80" VerticalAlignment="Top" HorizontalAlignment="Left" Visibility="Hidden" Grid.ColumnSpan="2" Margin="90,-10,0,0" />
+        <local:GenericCard CardValue="{Binding PersonCardsInGame[4].CardValue}" CardSuit="{Binding PersonCardsInGame[4].CardSuit}" Grid.Column="5" Grid.Row="4" Height="100" Width="80" VerticalAlignment="Top" HorizontalAlignment="Left" Visibility="Hidden" Grid.ColumnSpan="2" Margin="120,-20,0,0" />
+        <local:CpuScore cpuScore="{Binding cpuScore.cpuScore}"  Grid.Column="4" Grid.Row="1" Height="60" Width="60" VerticalAlignment="Bottom" HorizontalAlignment="Left" Margin="15,57,0,10" />
+        <local:PlayerScore playerScore="{Binding playerScore.playerScore}"  Grid.Column="4" Grid.Row="4" Height="60" Width="60" VerticalAlignment="Bottom" HorizontalAlignment="Left" Margin="15,0,0,44"/>
 
 
-       
+
 
         <Border Background="#FF2B1D06" BorderThickness="0" BorderBrush="Black" Grid.Row="5" Grid.ColumnSpan="11" Margin="0,40,0,40" Grid.RowSpan="1" >
             <WrapPanel Orientation="Horizontal" HorizontalAlignment="Center">
@@ -92,13 +94,147 @@
                         </LinearGradientBrush>
                     </Button.Background>
                 </Button>
-
-
             </WrapPanel>
         </Border>
-        <Label Content="Player Score:" Grid.Column="6" HorizontalAlignment="Left" Margin="45,11,0,0" Grid.Row="4" VerticalAlignment="Top" RenderTransformOrigin="0.5,0.5" FontSize="20" Foreground="Gold" Grid.ColumnSpan="2" Height="39" Width="180" FontFamily="Copperplate Gothic Bold"/>
+        <WrapPanel Orientation="Horizontal" HorizontalAlignment="Left" Grid.Column="0" Grid.Row="5" Grid.ColumnSpan="4">
+            <Label Content="Bet:" Margin="30,61,0,0" Grid.RowSpan="2" Width="180" FontSize="20" Foreground="#FFFFB101" Grid.ColumnSpan="2" Height="46" FontFamily="Copperplate Gothic Bold"/>
+            <Label Content="Total win:" Margin="200,-46,100,0" Grid.RowSpan="2" Width="180" FontSize="20" Foreground="#FFFFB101" Height="46" FontFamily="Copperplate Gothic Bold"/>
+        </WrapPanel>
+        <WrapPanel Orientation="Horizontal" HorizontalAlignment="Right" Grid.Column="6" Grid.Row="5" Grid.ColumnSpan="4">
+            <Button BorderThickness="7" Content="1" Height="57" Width="64"  Command="{Binding}" UseLayoutRounding="False" FontFamily="Cooper Black" FontSize="30" Foreground="Black">
+                <Button.Resources>
+                    <Style TargetType="{x:Type Border}">
+                        <Setter Property="CornerRadius" Value="30"/>
+                    </Style>
 
+                </Button.Resources>
+                <Button.BorderBrush>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="Black"/>
+                        <GradientStop Color="#FFF70889" Offset="1"/>
+                    </LinearGradientBrush>
+                </Button.BorderBrush>
+                <Button.Background>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="White" Offset="0.024"/>
+                        <GradientStop Color="White" Offset="1"/>
+                    </LinearGradientBrush>
+                </Button.Background>
+            </Button>
+            <Button BorderThickness="7" Content="5" Height="57" Width="64"  Command="{Binding}" UseLayoutRounding="False" FontFamily="Cooper Black" FontSize="30" Foreground="Black">
+                <Button.Resources>
+                    <Style TargetType="{x:Type Border}">
+                        <Setter Property="CornerRadius" Value="30"/>
+                    </Style>
 
-        <Label Content="Dealer Score:" Grid.Column="6" HorizontalAlignment="Left" Margin="45,29,0,0" Grid.RowSpan="2" VerticalAlignment="Top" Width="180" FontSize="20" Foreground="Gold" Grid.ColumnSpan="2" Height="46" FontFamily="Copperplate Gothic Bold"/>
+                </Button.Resources>
+                <Button.BorderBrush>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="Black"/>
+                        <GradientStop Color="#FFFFAD18" Offset="1"/>
+                    </LinearGradientBrush>
+                </Button.BorderBrush>
+                <Button.Background>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="White" Offset="0.024"/>
+                        <GradientStop Color="White" Offset="1"/>
+                    </LinearGradientBrush>
+                </Button.Background>
+            </Button>
+            <Button BorderThickness="7" Content="10" Height="57" Width="64"  Command="{Binding}" UseLayoutRounding="False" FontFamily="Cooper Black" FontSize="30" Foreground="Black">
+                <Button.Resources>
+                    <Style TargetType="{x:Type Border}">
+                        <Setter Property="CornerRadius" Value="30"/>
+                    </Style>
+
+                </Button.Resources>
+                <Button.BorderBrush>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="Black"/>
+                        <GradientStop Color="#FF1EC71A" Offset="1"/>
+                    </LinearGradientBrush>
+                </Button.BorderBrush>
+                <Button.Background>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="White" Offset="0.024"/>
+                        <GradientStop Color="White" Offset="1"/>
+                    </LinearGradientBrush>
+                </Button.Background>
+            </Button>
+            <Button BorderThickness="7" Content="25" Height="57" Width="64"  Command="{Binding}" UseLayoutRounding="False" FontFamily="Cooper Black" FontSize="30" Foreground="Black">
+                <Button.Resources>
+                    <Style TargetType="{x:Type Border}">
+                        <Setter Property="CornerRadius" Value="30"/>
+                    </Style>
+
+                </Button.Resources>
+                <Button.BorderBrush>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="Black"/>
+                        <GradientStop Color="#FF1527EA" Offset="1"/>
+                    </LinearGradientBrush>
+                </Button.BorderBrush>
+                <Button.Background>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="White" Offset="0.024"/>
+                        <GradientStop Color="White" Offset="1"/>
+                    </LinearGradientBrush>
+                </Button.Background>
+            </Button>
+            <Button BorderThickness="7" Content="100" Height="57" Width="64"  Command="{Binding}" UseLayoutRounding="False" FontFamily="Cooper Black" FontSize="25" Foreground="Black">
+                <Button.Resources>
+                    <Style TargetType="{x:Type Border}">
+                        <Setter Property="CornerRadius" Value="30"/>
+                    </Style>
+
+                </Button.Resources>
+                <Button.BorderBrush>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="Black"/>
+                        <GradientStop Color="#FFFFEF0A" Offset="1"/>
+                    </LinearGradientBrush>
+                </Button.BorderBrush>
+                <Button.Background>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="White" Offset="0.024"/>
+                        <GradientStop Color="White" Offset="1"/>
+                    </LinearGradientBrush>
+                </Button.Background>
+            </Button>
+            <Button BorderThickness="7" Content="X" Height="57" Width="64"  Command="{Binding}" UseLayoutRounding="False" FontFamily="Cooper Black" FontSize="35" Foreground="Black">
+                <Button.Resources>
+                    <Style TargetType="{x:Type Border}">
+                        <Setter Property="CornerRadius" Value="30"/>
+                    </Style>
+
+                </Button.Resources>
+                <Button.BorderBrush>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="Black"/>
+                        <GradientStop Color="#FFEA1515" Offset="1"/>
+                    </LinearGradientBrush>
+                </Button.BorderBrush>
+                <Button.Background>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="White" Offset="0.024"/>
+                        <GradientStop Color="White" Offset="1"/>
+                    </LinearGradientBrush>
+                </Button.Background>
+            </Button>
+        </WrapPanel>
+        <Label Content="Player Score:" Grid.Column="3" HorizontalAlignment="Left" Margin="105,137,0,0" Grid.Row="3" VerticalAlignment="Top" RenderTransformOrigin="0.5,0.5" FontSize="20" Foreground="#FFFFB101" Grid.ColumnSpan="2" Height="39" Width="180" FontFamily="Copperplate Gothic Bold" Grid.RowSpan="2"/>
+        <Label Content="Dealer Score:" Grid.Column="3" HorizontalAlignment="Left" Margin="100,41,0,0" Grid.RowSpan="2" VerticalAlignment="Top" Width="180" FontSize="20" Foreground="#FFFFB101" Grid.ColumnSpan="2" Height="46" FontFamily="Copperplate Gothic Bold"/>
+        <Border BorderThickness="5" Background="#FF2B1D06" BorderBrush="#FFFFB101" Grid.Row="4" Grid.ColumnSpan="3" Margin="0,70,75,115" Grid.RowSpan="2">
+            
+           <Border.Resources>
+                <Style TargetType="{x:Type Border}">
+                    <Setter Property="CornerRadius" Value="20"/>
+                </Style>
+
+            </Border.Resources>
+            <Label x:Name="Dollar" Content="$:" FontSize="40" Foreground="#FFFFB101" Margin="20,20,165,-5" FontFamily="Copperplate Gothic Bold" RenderTransformOrigin="0.636,1.057"/>
+            
+        </Border>
+
     </Grid>
 </UserControl>

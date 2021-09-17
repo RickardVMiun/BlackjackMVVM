@@ -8,7 +8,7 @@
              d:DesignHeight="60" d:DesignWidth="60"
              x:Name="cpuscore">
     <Grid Background="Transparent" >
-        <Border BorderBrush="Gold" BorderThickness="5" CornerRadius="10"/>
+        <Border BorderBrush="#FFFFB101" BorderThickness="5" CornerRadius="10"/>
         <TextBlock HorizontalAlignment="Center" Text="{Binding cpuScore, ElementName=cpuscore, FallbackValue=10}" VerticalAlignment="Top"  Foreground="White"  FontSize="40" RenderTransformOrigin="-0.121,1.286" />
     </Grid>
 </UserControl>
