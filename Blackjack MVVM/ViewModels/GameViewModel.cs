@@ -1,6 +1,7 @@
 ﻿using Blackjack_MVVM.Commands;
 using Blackjack_MVVM.Converters;
 using Blackjack_MVVM.Data;
+using Blackjack_MVVM.Stores;
 using Blackjack_MVVM.Views;
 using System;
 using System.Collections.Generic;
@@ -34,8 +35,8 @@ namespace Blackjack_MVVM.ViewModels
         public EnumToSymbolConverter converter = new EnumToSymbolConverter();
         public ICommand HitCommand { get; }
         public ICommand StandCommand { get; }
-        public ICommand PlayAgainCommand { get; set; }
-        public ICommand StopPlayingCommand { get; set; }
+        public ICommand PlayAgainCommand { get;}
+        public ICommand StopPlayingCommand { get;}
         public GenericCard newCard { get; set; }
         public Person p1 = new Person();
         public Cpu p2 = new Cpu();
@@ -45,14 +46,14 @@ namespace Blackjack_MVVM.ViewModels
         public string cardvisibility { get; set; }
 
 
-        public GameViewModel()
+        public GameViewModel(NavigationStore navStore)
         {
             DeckOfCards = new ObservableCollection<GenericCard>();
             FillDeckOfCards();
             AddStartingCardsHuman();
             AddStartingCardsCpu();
             HitCommand = new HitCommand(this);
-            PlayAgainCommand = new PlayAgainCommand(this);
+            PlayAgainCommand = new NavigationCommand<GameViewModel>(navStore, () => new GameViewModel(navStore));
             StopPlayingCommand = new StopPlayingCommand(this);
             StandCommand = new StandCommand(this);
         }
