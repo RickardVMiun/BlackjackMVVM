@@ -8,9 +8,91 @@
              d:DesignHeight="200" d:DesignWidth="400"
              x:Name="losermessage">
 
-    <Grid Background="Red" Visibility="{Binding Visible, ElementName=losermessage, FallbackValue=Hidden}">
-        <TextBlock HorizontalAlignment="Center" Text="Sorry, you lost! Would you like to play again?" VerticalAlignment="Top" Foreground="white" FontSize="15" Margin="0,72,0,0"/>
-        <Button Content="Yes" Height="20" Width="50" Margin="255,161,95,19" Command="{Binding PlayAgainCommand}"/>
-        <Button Content="No" Height="20" Width="50" Margin="324,161,26,19" Command="{Binding StopPlayingCommand}"/>
+    <UserControl.Resources>
+        <Storyboard x:Key="Storyboard">
+            <DoubleAnimation
+            Storyboard.TargetName="Rotation"
+            Storyboard.TargetProperty="Angle"
+            From="0" To="360" BeginTime="00:00:01" Duration="0:0:1"/>
+
+        </Storyboard>
+    </UserControl.Resources>
+
+    <Grid Visibility="{Binding Visible, ElementName=losermessage}">
+        <Grid.Background>
+            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                <GradientStop Color="#FF802900"/>
+                <GradientStop Color="#FFD14C28" Offset="1"/>
+            </LinearGradientBrush>
+        </Grid.Background>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="220"/>
+            <ColumnDefinition Width="*"/>
+
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+
+        </Grid.RowDefinitions>
+        <WrapPanel Orientation="Horizontal" VerticalAlignment="Bottom" HorizontalAlignment="Left" Grid.Row="2" Grid.Column="1" Margin="50, 20">
+            <Button BorderThickness="3" Content="Yes" Height="37" Width="44"  Command="{Binding PlayAgainCommand}" UseLayoutRounding="False" FontFamily="Cooper Black" FontSize="18" Foreground="Black">
+                <Button.Resources>
+                    <Style TargetType="{x:Type Border}">
+                        <Setter Property="CornerRadius" Value="30"/>
+                    </Style>
+
+                </Button.Resources>
+                <Button.BorderBrush>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="#FFD8D910"/>
+                        <GradientStop Color="#FF595907" Offset="1"/>
+                    </LinearGradientBrush>
+                </Button.BorderBrush>
+                <Button.Background>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="#FF82F06E" Offset="0.024"/>
+                        <GradientStop Color="#FF1B8506" Offset="1"/>
+                    </LinearGradientBrush>
+                </Button.Background>
+            </Button>
+        </WrapPanel>
+        <WrapPanel Orientation="Horizontal" VerticalAlignment="Bottom" HorizontalAlignment="Right" Grid.Column="1" Grid.Row="1" Margin="50, 20">
+            <Button BorderThickness="3" Content="No" Height="37" Width="44" Command="{Binding StopPlayingCommand}" UseLayoutRounding="False" FontFamily="Cooper Black" FontSize="18" Foreground="Black">
+                <Button.Resources>
+                    <Style TargetType="{x:Type Border}">
+                        <Setter Property="CornerRadius" Value="30"/>
+                    </Style>
+
+                </Button.Resources>
+                <Button.BorderBrush>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="#FFD8D910"/>
+                        <GradientStop Color="#FF595907" Offset="1"/>
+                    </LinearGradientBrush>
+                </Button.BorderBrush>
+                <Button.Background>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="#FFF0AF6E" Offset="0.024"/>
+                        <GradientStop Color="#FFDA1D06" Offset="1"/>
+                    </LinearGradientBrush>
+                </Button.Background>
+            </Button>
+        </WrapPanel>
+
+        <StackPanel VerticalAlignment="Bottom" HorizontalAlignment="Center" Grid.Row="0" Grid.Column="1" >
+            <Label x:Name="myLabel" Content = "Loser!!!" Foreground="Black" FontSize="40" FontFamily="Copperplate Gothic Bold">
+                <Label.RenderTransform>
+                    <RotateTransform x:Name="Rotation" Angle="0"></RotateTransform>
+                </Label.RenderTransform>
+                <Label.Triggers>
+                    <EventTrigger RoutedEvent="FrameworkElement.Loaded">
+                        <BeginStoryboard Storyboard="{StaticResource Storyboard}"/>
+                    </EventTrigger>
+                </Label.Triggers>
+            </Label>
+        </StackPanel>
+        <Label Content="Would you like to play again?" Foreground="Gold" FontSize="10" Grid.Column="1" HorizontalAlignment="Center" Grid.Row="1" VerticalAlignment="Top" FontFamily="Copperplate Gothic Bold"/>
     </Grid>
 </UserControl>

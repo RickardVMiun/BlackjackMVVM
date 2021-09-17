@@ -9,7 +9,7 @@
 
   <ItemGroup>
     <None Remove="BlackJackBord2.png" />
-    <None Remove="Images\BlackJackBord4.png" />
+    <None Remove="BlackJackBord4.png" />
     <None Remove="Images\BlackJackBord5.png" />
     <None Remove="Images\image %281%29.png" />
   </ItemGroup>
