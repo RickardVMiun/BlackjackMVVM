@@ -18,7 +18,7 @@
         </Storyboard>
     </UserControl.Resources>
 
-    <Grid Visibility="{Binding Visible, ElementName=losermessage}">
+    <Grid Visibility="{Binding Visible, ElementName=losermessage, FallbackValue=Hidden}">
         <Grid.Background>
             <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                 <GradientStop Color="#FF802900"/>
