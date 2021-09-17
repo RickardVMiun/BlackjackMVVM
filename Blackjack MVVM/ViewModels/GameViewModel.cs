@@ -253,6 +253,7 @@ namespace Blackjack_MVVM.ViewModels
             if (p2.HandScore > p1.HandScore && p2.HandScore < 22 || p2.HandScore == p1.HandScore)
             {
                 visibility = "Visible";
+                
                
             }
             else
