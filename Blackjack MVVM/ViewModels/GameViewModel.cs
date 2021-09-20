@@ -204,9 +204,7 @@ namespace Blackjack_MVVM.ViewModels
 
         public void AddMarkers()
         {
-
             markers = new Markers();
-            //markers.MarkerTotal = 500;
             p1.Markers = 500;
             markers.MarkerTotal = p1.Markers;
         }
@@ -282,13 +280,23 @@ namespace Blackjack_MVVM.ViewModels
         //    Card.CardVisibility = "Visible";
         //}
 
-       public void CpuWon(Cpu p2, Person p1)
-       {
+        public bool CpuWon()
+        {
             if (p2.HandScore > p1.HandScore && p2.HandScore < 22 || p2.HandScore == p1.HandScore)
             {
-                visibility = "Visible";
-                
-    
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
+       public void ShowMessage()
+       {
+            if (CpuWon() == true)
+            {
+                visibility = "Visible";    
             }
             else
             {
@@ -316,5 +324,19 @@ namespace Blackjack_MVVM.ViewModels
         //    BettingTotal(bet);
         //    return bet;
         //}
+
+        public void CalculateMarkers()
+        {
+            if (CpuWon() == true)
+            {
+                p1.Markers = p1.Markers - totalbet;
+            }
+            else
+            {
+                p1.Markers = p1.Markers + (totalbet * 2);
+                
+            }
+            markers.MarkerTotal = p1.Markers;
+        }
     }
 }
