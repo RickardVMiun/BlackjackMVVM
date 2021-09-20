@@ -41,7 +41,7 @@ namespace Blackjack_MVVM.ViewModels
         public Person p1 = new Person();
         public Cpu p2 = new Cpu();
         public string visibility { get; set; }
-        public string winnerMsgVisibility { get; set; }
+        public string winnervisibility { get; set; }
 
         public string cardvisibility { get; set; }
 
@@ -50,7 +50,7 @@ namespace Blackjack_MVVM.ViewModels
         {
             DeckOfCards = new ObservableCollection<GenericCard>();
             FillDeckOfCards();
-            AddStartingCardsPerson();
+            AddStartingCardsHuman();
             AddStartingCardsCpu();
             HitCommand = new HitCommand(this);
             PlayAgainCommand = new NavigationCommand<GameViewModel>(navStore, () => new GameViewModel(navStore));
@@ -59,7 +59,7 @@ namespace Blackjack_MVVM.ViewModels
         }
 
         #region CardFunctionality
-        private void AddStartingCardsPerson()
+        private void AddStartingCardsHuman()
         {
             AddCard();
             AddCard();
@@ -120,13 +120,24 @@ namespace Blackjack_MVVM.ViewModels
             return Card.CardValue;
         }
 
+        //public string GetVisibility(GenericCard card)
+        //{
+        //    string cardVisibility = "Visible";
+        //    while ()
+        //    {
+        //        Card.CardVisibility = cardVisibility;
+        //    }
+        //}
+
         public GenericCard GenerateCards()
         {
             Card = new GenericCard();
             DeckOfCards.Add(new GenericCard
             {
                 CardValue = GetValue(),
-                CardSuit = GetSuit()
+                CardSuit = GetSuit(),
+                CardVisibility = "Visible"
+                                
             });
 
             return Card;
@@ -134,13 +145,16 @@ namespace Blackjack_MVVM.ViewModels
 
         public void AddCard()
         {
+            cardvisibility = "Visible";
             newCard = new GenericCard();
             int x = GetRandomCard();
             if (true)
             {
                 newCard = DeckOfCards[x];
+                newCard.CardVisibility = cardvisibility;
             }
             PersonCardsInGame.Add(newCard);
+            PersonCardsInGame[0].CardVisibility = "Visible";
             AddPlayerPoints(newCard);
         }
 
@@ -244,10 +258,10 @@ namespace Blackjack_MVVM.ViewModels
             }
         }
 
-        public void ShowNewCard()
-        {
-            cardvisibility = "Visible";
-        }
+        //public void ShowNewCard()
+        //{
+        //    Card.CardVisibility = "Visible";
+        //}
 
        public void CpuWon(Cpu p2, Person p1)
         {
@@ -255,12 +269,12 @@ namespace Blackjack_MVVM.ViewModels
             {
                 visibility = "Visible";
                 
-               
+    
             }
             else
             {
                 visibility = "Hidden";
-                winnerMsgVisibility = "Visible";
+                winnervisibility = "Visible";
             }
         }
 

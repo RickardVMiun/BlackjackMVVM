@@ -57,6 +57,17 @@ namespace Blackjack_MVVM.Views
             DependencyProperty.Register("CardSuit", typeof(char), typeof(GenericCard), new PropertyMetadata(null));
 
 
+        public string CardVisibility
+        {
+            get { return (string)GetValue(CardVisibilityProperty); }
+            set { SetValue(CardVisibilityProperty, value); }
+        }
+
+        // Using a DependencyProperty as the backing store for CardVisibility.  This enables animation, styling, binding, etc...
+        public static readonly DependencyProperty CardVisibilityProperty =
+            DependencyProperty.Register("CardVisibility", typeof(string), typeof(GenericCard), new PropertyMetadata("Hidden"));
+
+
 
     }
 }
