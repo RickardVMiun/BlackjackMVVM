@@ -14,7 +14,6 @@
             Storyboard.TargetName="Rotation"
             Storyboard.TargetProperty="Angle"
             From="0" To="360" BeginTime="00:00:01" Duration="0:0:4" RepeatBehavior="Forever"/>
-
         </Storyboard>
     </UserControl.Resources>
 
@@ -73,7 +72,6 @@
                     <Style TargetType="{x:Type Border}">
                         <Setter Property="CornerRadius" Value="30"/>
                     </Style>
-
                 </Button.Resources>
                 <Button.Style>
                     <Style TargetType="Button">
@@ -98,9 +96,8 @@
                 </Button.Background>
             </Button>
         </WrapPanel>
-
         <StackPanel VerticalAlignment="Bottom" HorizontalAlignment="Center" Grid.Row="0" Grid.Column="1" >
-            <Label x:Name="myLabel" Content = "Loser!!!" Foreground="Black" FontSize="25" FontFamily="Copperplate Gothic Bold">
+            <Label x:Name="myLabel" Content = "Loser!!!" Foreground="Black" FontSize="30" FontFamily="Copperplate Gothic Bold" RenderTransformOrigin="0.5 0.5">
                 <Label.RenderTransform>
                     <RotateTransform x:Name="Rotation" Angle="0"></RotateTransform>
                 </Label.RenderTransform>

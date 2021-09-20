@@ -26,7 +26,8 @@ namespace Blackjack_MVVM.Views
         public StartingView()
         {
             InitializeComponent();
-      
+            
+
         }
     }
 }

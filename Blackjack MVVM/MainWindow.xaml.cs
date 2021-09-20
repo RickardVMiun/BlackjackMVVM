@@ -24,11 +24,21 @@ namespace Blackjack_MVVM
     public partial class MainWindow : Window
     {
         NavigationStore navStore = new NavigationStore();
+        MediaPlayer mediaPlayer;
         public MainWindow()
         {
             InitializeComponent();
             DataContext = new MainViewModel(navStore);
             navStore.CurrentViewModel = new StartingViewModel(navStore);
+            BackgroundMusic();
+        }
+
+        public void BackgroundMusic()
+        {
+
+            mediaPlayer = new MediaPlayer();
+            mediaPlayer.Open(new Uri(@"C:\Users\bol\Source\Repos\SUP21_Grupp4\Blackjack MVVM\Sound\test.wav"));
+            mediaPlayer.Play();
         }
     }
 }

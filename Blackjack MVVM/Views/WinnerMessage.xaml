@@ -101,7 +101,7 @@
         </WrapPanel>
 
         <StackPanel VerticalAlignment="Bottom" HorizontalAlignment="Center" Grid.Row="0" Grid.Column="1" >
-            <Label x:Name="myLabel" Content = "Winner!!!" Foreground="Gold" FontSize="25" FontFamily="Copperplate Gothic Bold">
+            <Label x:Name="myLabel" Content = "Winner!!!" Foreground="Gold" FontSize="30" FontFamily="Copperplate Gothic Bold" RenderTransformOrigin="0.5 0.5">
                 <Label.RenderTransform>
                     <RotateTransform x:Name="Rotation" Angle="0"></RotateTransform>
                 </Label.RenderTransform>
@@ -113,5 +113,6 @@
             </Label>
         </StackPanel>
         <Label Content="Would you like to play again?" Foreground="Gold" FontSize="10" Grid.Column="1" HorizontalAlignment="Center" Grid.Row="1" VerticalAlignment="Top" FontFamily="Copperplate Gothic Bold"/>
+        
     </Grid>
 </UserControl>
