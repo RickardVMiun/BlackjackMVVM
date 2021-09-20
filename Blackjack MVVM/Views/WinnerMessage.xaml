@@ -13,7 +13,7 @@
             <DoubleAnimation
             Storyboard.TargetName="Rotation"
             Storyboard.TargetProperty="Angle"
-            From="0" To="360" BeginTime="00:00:01" Duration="0:0:1"/>
+            From="0" To="360" BeginTime="00:00:01" Duration="0:0:4" RepeatBehavior="Forever"/>
 
         </Storyboard>
     </UserControl.Resources>
@@ -44,6 +44,15 @@
                     </Style>
 
                 </Button.Resources>
+                <Button.Style>
+                    <Style TargetType="Button">
+                        <Style.Triggers>
+                            <EventTrigger RoutedEvent="PreviewMouseDown">
+                                <SoundPlayerAction Source="\Sound\mixkit-select-click-1109.wav" />
+                            </EventTrigger>
+                        </Style.Triggers>
+                    </Style>
+                </Button.Style>
                 <Button.BorderBrush>
                     <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                         <GradientStop Color="#FFD8D910"/>
@@ -66,6 +75,16 @@
                     </Style>
 
                 </Button.Resources>
+                <Button.Style>
+                    <Style TargetType="Button">
+                        <Style.Triggers>
+                            <EventTrigger RoutedEvent="PreviewMouseDown">
+                                <SoundPlayerAction Source="\Sound\mixkit-click-error-1110.wav" />
+                            </EventTrigger>
+                        </Style.Triggers>
+                    </Style>
+                </Button.Style>
+
                 <Button.BorderBrush>
                     <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                         <GradientStop Color="#FFD8D910"/>
@@ -82,7 +101,7 @@
         </WrapPanel>
 
         <StackPanel VerticalAlignment="Bottom" HorizontalAlignment="Center" Grid.Row="0" Grid.Column="1" >
-            <Label x:Name="myLabel" Content = "Winner!!!" Foreground="Gold" FontSize="40" FontFamily="Copperplate Gothic Bold">
+            <Label x:Name="myLabel" Content = "Winner!!!" Foreground="Gold" FontSize="25" FontFamily="Copperplate Gothic Bold">
                 <Label.RenderTransform>
                     <RotateTransform x:Name="Rotation" Angle="0"></RotateTransform>
                 </Label.RenderTransform>

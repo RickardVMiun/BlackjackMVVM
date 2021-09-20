@@ -16,6 +16,15 @@
                 </Style>
 
             </Button.Resources>
+            <Button.Style>
+                <Style TargetType="Button">
+                    <Style.Triggers>
+                        <EventTrigger RoutedEvent="PreviewMouseDown">
+                            <SoundPlayerAction Source="\Sound\mixkit-select-click-1109.wav" />
+                        </EventTrigger>
+                    </Style.Triggers>
+                </Style>
+            </Button.Style>
             <Button.BorderBrush>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                     <GradientStop Color="#FFD8D910"/>

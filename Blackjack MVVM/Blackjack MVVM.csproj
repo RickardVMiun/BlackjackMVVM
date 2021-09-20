@@ -12,6 +12,18 @@
     <None Remove="BlackJackBord4.png" />
     <None Remove="Images\BlackJackBord5.png" />
     <None Remove="Images\image %281%29.png" />
+    <None Remove="Sound\mixkit-click-error-1110.wav" />
+    <None Remove="Sound\mixkit-coins-handling-1939.wav" />
+    <None Remove="Sound\mixkit-select-click-1109.wav" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="Sound\mixkit-click-error-1110.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sound\mixkit-coins-handling-1939.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
 
   <ItemGroup>
@@ -29,6 +41,9 @@
   <ItemGroup>
     <Resource Include="Images\BlackJackBord4.png" />
     <Resource Include="Images\BlackJackBord5.png" />
+    <Content Include="Sound\mixkit-select-click-1109.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
 
 </Project>
