@@ -56,5 +56,7 @@ namespace Blackjack_MVVM.Views
         public static readonly DependencyProperty CardSuitProperty =
             DependencyProperty.Register("CardSuit", typeof(char), typeof(GenericCard), new PropertyMetadata(null));
 
+
+
     }
 }

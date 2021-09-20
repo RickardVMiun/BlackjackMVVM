@@ -41,7 +41,7 @@ namespace Blackjack_MVVM.ViewModels
         public Person p1 = new Person();
         public Cpu p2 = new Cpu();
         public string visibility { get; set; }
-        public string winnervisibility { get; set; }
+        public string winnerMsgVisibility { get; set; }
 
         public string cardvisibility { get; set; }
 
@@ -50,7 +50,7 @@ namespace Blackjack_MVVM.ViewModels
         {
             DeckOfCards = new ObservableCollection<GenericCard>();
             FillDeckOfCards();
-            AddStartingCardsHuman();
+            AddStartingCardsPerson();
             AddStartingCardsCpu();
             HitCommand = new HitCommand(this);
             PlayAgainCommand = new NavigationCommand<GameViewModel>(navStore, () => new GameViewModel(navStore));
@@ -59,7 +59,7 @@ namespace Blackjack_MVVM.ViewModels
         }
 
         #region CardFunctionality
-        private void AddStartingCardsHuman()
+        private void AddStartingCardsPerson()
         {
             AddCard();
             AddCard();
@@ -260,7 +260,7 @@ namespace Blackjack_MVVM.ViewModels
             else
             {
                 visibility = "Hidden";
-                winnervisibility = "Visible";
+                winnerMsgVisibility = "Visible";
             }
         }
 
