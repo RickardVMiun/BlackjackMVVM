@@ -21,6 +21,7 @@ namespace Blackjack_MVVM.Views
         public WinnerMessage()
         {
             InitializeComponent();
+            
         }
 
         public string Visible

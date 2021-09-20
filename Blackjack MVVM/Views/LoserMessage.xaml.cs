@@ -21,6 +21,8 @@ namespace Blackjack_MVVM.Views
         public LoserMessage()
         {
             InitializeComponent();
+           
+
         }
 
 

@@ -15,6 +15,7 @@
     <None Remove="Sound\mixkit-click-error-1110.wav" />
     <None Remove="Sound\mixkit-coins-handling-1939.wav" />
     <None Remove="Sound\mixkit-select-click-1109.wav" />
+    <None Remove="Sound\test.wav" />
   </ItemGroup>
 
   <ItemGroup>
@@ -24,6 +25,9 @@
     <Content Include="Sound\mixkit-coins-handling-1939.wav">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Resource Include="Sound\test.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
   </ItemGroup>
 
   <ItemGroup>
