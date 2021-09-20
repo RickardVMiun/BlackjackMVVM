@@ -30,13 +30,22 @@ namespace Blackjack_MVVM.ViewModels
         //public ObservableCollection<GenericCard> CardsInGame { get; set; }
         public ObservableCollection<GenericCard> PersonCardsInGame { get; set; } = new ObservableCollection<GenericCard>();
         public ObservableCollection<GenericCard> CpuCardsInGame { get; set; } = new ObservableCollection<GenericCard>();
+        public Markers markers { get; set; }
+        public CurrentBet currentbet { get; set; }
 
         // cpucardsingame/playercardsingame
         public EnumToSymbolConverter converter = new EnumToSymbolConverter();
         public ICommand HitCommand { get; }
         public ICommand StandCommand { get; }
-        public ICommand PlayAgainCommand { get;}
-        public ICommand StopPlayingCommand { get;}
+        public ICommand PlayAgainCommand { get; }
+        public ICommand StopPlayingCommand { get; }
+        public ICommand Bet1Command { get; }
+        public ICommand Bet5Command { get; }
+        public ICommand Bet10Command { get; }
+        public ICommand Bet25Command { get; }
+        public ICommand Bet100Command { get; }
+        public ICommand ClearBetCommand { get; }
+
         public GenericCard newCard { get; set; }
         public Person p1 = new Person();
         public Cpu p2 = new Cpu();
@@ -44,7 +53,8 @@ namespace Blackjack_MVVM.ViewModels
         public string winnervisibility { get; set; }
 
         public string cardvisibility { get; set; }
-
+        int totalbet = 0;
+        int bet = 0;
 
         public GameViewModel(NavigationStore navStore)
         {
@@ -56,6 +66,14 @@ namespace Blackjack_MVVM.ViewModels
             PlayAgainCommand = new NavigationCommand<GameViewModel>(navStore, () => new GameViewModel(navStore));
             StopPlayingCommand = new StopPlayingCommand(this);
             StandCommand = new StandCommand(this);
+            Bet1Command = new Bet1Command(this);
+            Bet5Command = new Bet5Command(this);
+            Bet10Command = new Bet10Command(this);
+            Bet25Command = new Bet25Command(this);
+            Bet100Command = new Bet100Command(this);
+            currentbet = new CurrentBet();
+            ClearBetCommand = new ClearBetCommand(this);
+            AddMarkers();
         }
 
         #region CardFunctionality
@@ -120,14 +138,6 @@ namespace Blackjack_MVVM.ViewModels
             return Card.CardValue;
         }
 
-        //public string GetVisibility(GenericCard card)
-        //{
-        //    string cardVisibility = "Visible";
-        //    while ()
-        //    {
-        //        Card.CardVisibility = cardVisibility;
-        //    }
-        //}
 
         public GenericCard GenerateCards()
         {
@@ -137,7 +147,7 @@ namespace Blackjack_MVVM.ViewModels
                 CardValue = GetValue(),
                 CardSuit = GetSuit(),
                 CardVisibility = "Visible"
-                                
+
             });
 
             return Card;
@@ -189,8 +199,17 @@ namespace Blackjack_MVVM.ViewModels
             idRandomCard = randomCard.Next(1, 52);
 
             return idRandomCard;
-        } 
+        }
         #endregion
+
+        public void AddMarkers()
+        {
+
+            markers = new Markers();
+            //markers.MarkerTotal = 500;
+            p1.Markers = 500;
+            markers.MarkerTotal = p1.Markers;
+        }
 
 
         public void AddPlayerPoints(GenericCard card)
@@ -264,7 +283,7 @@ namespace Blackjack_MVVM.ViewModels
         //}
 
        public void CpuWon(Cpu p2, Person p1)
-        {
+       {
             if (p2.HandScore > p1.HandScore && p2.HandScore < 22 || p2.HandScore == p1.HandScore)
             {
                 visibility = "Visible";
@@ -276,8 +295,26 @@ namespace Blackjack_MVVM.ViewModels
                 visibility = "Hidden";
                 winnervisibility = "Visible";
             }
+       }
+
+       public void BettingTotal(int bet)
+       {   
+            totalbet = totalbet += bet;
+            p1.Bet = totalbet;
+            currentbet.BetTotal = p1.Bet;
+       }
+
+        public void ClearBet()
+        {
+            currentbet.BetTotal = 0;
+            totalbet = 0;
         }
 
-        //test1
+        //public int AddBet()
+        //{
+        //    bet++;
+        //    BettingTotal(bet);
+        //    return bet;
+        //}
     }
 }
