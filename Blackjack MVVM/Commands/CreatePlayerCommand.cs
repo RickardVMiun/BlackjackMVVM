@@ -1,23 +1,26 @@
 ﻿using Blackjack_MVVM.Stores;
 using Blackjack_MVVM.ViewModels;
+using Blackjack_MVVM.Views;
 using System;
 using System.Collections.Generic;
 using System.Text;
 
 namespace Blackjack_MVVM.Commands
 {
-    class Over18Command : BaseCommand
+    class CreatePlayerCommand : BaseCommand
     {
         private MainViewModel mainViewModel;
-      //  private GameViewModel gameViewModel;
+        //  private GameViewModel gameViewModel;
         private PlayViewModel playViewModel;
+        Person person;
+        PlayView playView = new PlayView();
 
         public event EventHandler CanExecuteChanged;
         private readonly NavigationStore navigationStore;
 
-        public Over18Command(PlayViewModel playViewModel, NavigationStore navigationStore)
+        public CreatePlayerCommand()
         {
-            this.playViewModel = playViewModel;
+         //   playViewModel = new PlayViewModel(NavigationStore navStore);
             navigationStore = navigationStore;
         }
 
@@ -28,8 +31,15 @@ namespace Blackjack_MVVM.Commands
 
         public override void Execute(object parameter)
         {
-
-            navigationStore.CurrentViewModel = new PlayViewModel(navigationStore);
+            person = new Person
+            {
+                Name = playView.txtPlayerName.Text,
+                StartMarkers = 500
+            };
+            playViewModel.Players.Add(person);
+            playView.lstPlayers.ItemsSource = null;
+            playView.lstPlayers.ItemsSource = playViewModel.Players;
         }
     }
-}
+    }
+
