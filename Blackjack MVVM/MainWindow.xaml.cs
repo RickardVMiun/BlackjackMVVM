@@ -25,6 +25,7 @@ namespace Blackjack_MVVM
     {
         NavigationStore navStore = new NavigationStore();
         MediaPlayer mediaPlayer;
+       
         public MainWindow()
         {
             InitializeComponent();

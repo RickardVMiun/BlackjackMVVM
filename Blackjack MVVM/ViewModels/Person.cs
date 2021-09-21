@@ -9,7 +9,7 @@ namespace Blackjack_MVVM.ViewModels
     public class Person
     {
         public int HandScore { get; set; }
-        public int Markers { get; set; }
+        //public int Markers { get; set; }
         public int Bet { get; set; }
 
     }

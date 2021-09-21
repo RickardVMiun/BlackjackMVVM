@@ -24,9 +24,7 @@ namespace Blackjack_MVVM.Commands
 
         public void Execute(object parameter)
         {
-          
             gameViewModel.BettingTotal(bet100);
-
         }
     }
 }
