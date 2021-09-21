@@ -1,4 +1,5 @@
-﻿using Blackjack_MVVM.Views;
+﻿using Blackjack_MVVM.Data;
+using Blackjack_MVVM.Views;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -8,9 +9,10 @@ namespace Blackjack_MVVM.ViewModels
 {
     public class Person
     {
+        public string Name { get; set; }
         public int HandScore { get; set; }
-        //public int Markers { get; set; }
+        public SavedMarkers Markers { get; set; }
+        public int StartMarkers { get; set; }
         public int Bet { get; set; }
-
     }
 }

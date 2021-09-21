@@ -22,12 +22,9 @@ namespace Blackjack_MVVM.Views
     public partial class StartingView : UserControl
     {
 
-        
         public StartingView()
         {
             InitializeComponent();
-            
-
         }
     }
 }

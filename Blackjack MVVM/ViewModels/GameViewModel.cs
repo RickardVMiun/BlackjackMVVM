@@ -20,6 +20,8 @@ namespace Blackjack_MVVM.ViewModels
         public GenericCard Card { get; set; }
         public GameView gameView { get; set; }
 
+       
+
         public PlayerScore playerScore { get; set; }
         public CpuScore cpuScore { get; set; }
         private static readonly Random random = new Random();
