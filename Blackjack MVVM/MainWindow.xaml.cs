@@ -31,8 +31,9 @@ namespace Blackjack_MVVM
             InitializeComponent();
             DataContext = new MainViewModel(navStore);
             navStore.CurrentViewModel = new StartingViewModel(navStore);
-            BackgroundMusic();
+            //BackgroundMusic();
         }
+
 
         public void BackgroundMusic()
         {
@@ -44,5 +45,6 @@ namespace Blackjack_MVVM
             mediaPlayer.Clock.Controller.Begin();
            
         }
+
     }
 }

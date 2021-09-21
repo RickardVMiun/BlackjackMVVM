@@ -32,7 +32,8 @@ namespace Blackjack_MVVM.Commands
                 gameViewModel.AddCardCpu();
                
             }
-            gameViewModel.CpuWon(gameViewModel.p2, gameViewModel.p1);
+            gameViewModel.ShowMessage();
+            gameViewModel.CalculateMarkers();
         }
     }
 }
