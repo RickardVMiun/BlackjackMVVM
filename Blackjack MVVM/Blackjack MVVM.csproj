@@ -25,9 +25,9 @@
     <Content Include="Sound\mixkit-coins-handling-1939.wav">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Resource Include="Sound\test.wav">
+    <Content Include="Sound\test.wav">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Resource>
+    </Content>
   </ItemGroup>
 
   <ItemGroup>
