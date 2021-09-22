@@ -9,13 +9,14 @@
              x:Name="playrules">
 
 
-    <Border BorderBrush="Gold" BorderThickness="5" CornerRadius="5" Visibility="{Binding RulesVisible, ElementName=playrules, FallbackValue=hidden}">
+    <Border BorderBrush="Gold" BorderThickness="5" CornerRadius="5" Visibility="{Binding RulesVisible, ElementName=playrules, FallbackValue=visible}">
         <Border.Background>
             <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                 <GradientStop Color="Black"/>
                 <GradientStop Color="#FF6B6C6B" Offset="1"/>
             </LinearGradientBrush>
         </Border.Background>
+        <StackPanel>
         <Grid Background="Transparent">
             <RichTextBox VerticalAlignment="Center" BorderBrush="Transparent" Background="Transparent" Foreground="Black" FontSize="11" FontFamily="Copperplate Gothic Bold" >
                 <FlowDocument TextAlignment="Center" Foreground="#FFFFB101" LineHeight="18">
@@ -101,5 +102,6 @@
                 </Button.Background>
             </Button>
         </Grid>
+        </StackPanel>
     </Border>
 </UserControl>
