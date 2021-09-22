@@ -29,6 +29,7 @@ namespace Blackjack_MVVM.ViewModels
         public Markers markers { get; set; }
         public SavedMarkers savedMarkers { get; set; }
         public CurrentBet currentbet { get; set; }
+        public PlayRules playRules { get; set; }
         public EnumToSymbolConverter converter = new EnumToSymbolConverter();
         public ICommand HitCommand { get; }
         public ICommand StandCommand { get; }
@@ -40,12 +41,15 @@ namespace Blackjack_MVVM.ViewModels
         public ICommand Bet25Command { get; }
         public ICommand Bet100Command { get; }
         public ICommand ClearBetCommand { get; }
+        public ICommand ReadRulesCommand { get; }
 
         public GenericCard newCard { get; set; }
         public Person p1 = new Person();
         public Cpu p2 = new Cpu();
         public string visibility { get; set; }
         public string winnervisibility { get; set; }
+
+        public string rulesvisibility { get; set; } 
 
         public string cardvisibility { get; set; }
         int totalbet = 0;
@@ -68,9 +72,11 @@ namespace Blackjack_MVVM.ViewModels
             Bet10Command = new Bet10Command(this);
             Bet25Command = new Bet25Command(this);
             Bet100Command = new Bet100Command(this);
-            currentbet = new CurrentBet();
             ClearBetCommand = new ClearBetCommand(this);
+            ReadRulesCommand = new ReadRulesCommand(this);
+            currentbet = new CurrentBet();
             savedMarkers = new SavedMarkers();
+            playRules = new PlayRules();
             AddMarkers();
             if (File.Exists(filename))
                 GetSavedMarkers(filename);

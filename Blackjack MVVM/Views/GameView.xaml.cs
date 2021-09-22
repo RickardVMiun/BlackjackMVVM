@@ -18,15 +18,9 @@ namespace Blackjack_MVVM.Views
     /// </summary>
     public partial class GameView : UserControl
     {
-
         public GameView()
         {
             InitializeComponent();
-        }
-
-        private void Button_Click()
-        {
-
         }
     }
 }

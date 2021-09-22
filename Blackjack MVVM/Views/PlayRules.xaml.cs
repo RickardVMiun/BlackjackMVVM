@@ -23,5 +23,19 @@ namespace Blackjack_MVVM.Views
             InitializeComponent();
         }
 
+
+        public string RulesVisible
+        {
+            get { return (string)GetValue(RulesVisibleProperty); }
+            set { SetValue(RulesVisibleProperty, value); }
+        }
+
+        // Using a DependencyProperty as the backing store for RulesVisible.  This enables animation, styling, binding, etc...
+        public static readonly DependencyProperty RulesVisibleProperty =
+            DependencyProperty.Register("RulesVisible", typeof(string), typeof(PlayRules), new PropertyMetadata("Hidden"));
+
+
+
+
     }
 }
