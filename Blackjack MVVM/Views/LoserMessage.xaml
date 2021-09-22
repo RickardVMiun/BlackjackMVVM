@@ -17,7 +17,8 @@
         </Storyboard>
     </UserControl.Resources>
 
-    <Grid Visibility="{Binding Visible, ElementName=losermessage, FallbackValue=Hidden}">
+    <Border BorderBrush="Black" BorderThickness="5" CornerRadius="3" Visibility="{Binding Visible, ElementName=losermessage, FallbackValue=Hidden}">
+        <Grid>
         <Grid.Background>
             <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                 <GradientStop Color="#FF802900"/>
@@ -110,4 +111,5 @@
         </StackPanel>
         <Label Content="Would you like to play again?" Foreground="Gold" FontSize="10" Grid.Column="1" HorizontalAlignment="Center" Grid.Row="1" VerticalAlignment="Top" FontFamily="Copperplate Gothic Bold"/>
     </Grid>
+    </Border>
 </UserControl>

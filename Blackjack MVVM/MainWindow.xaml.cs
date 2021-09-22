@@ -31,20 +31,21 @@ namespace Blackjack_MVVM
             InitializeComponent();
             DataContext = new MainViewModel(navStore);
             navStore.CurrentViewModel = new StartingViewModel(navStore);
-            //BackgroundMusic();
+            BackgroundMusic();
         }
 
-
+        #region
         public void BackgroundMusic()
         {
-            var timeline = new MediaTimeline(new Uri(@"C:\Users\bol\Source\Repos\SUP21_Grupp4\Blackjack MVVM\Sound\test.wav"));
+            var timeline = new MediaTimeline(new Uri("Sound/test.wav", UriKind.Relative));
             timeline.RepeatBehavior = RepeatBehavior.Forever;
             mediaPlayer = new MediaPlayer();
             mediaPlayer.Volume = 0.3f;
             mediaPlayer.Clock = timeline.CreateClock();
             mediaPlayer.Clock.Controller.Begin();
-           
+
         }
+        #endregion
 
     }
 }

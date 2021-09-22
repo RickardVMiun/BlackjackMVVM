@@ -7,8 +7,9 @@
              mc:Ignorable="d" 
              d:DesignHeight="100" d:DesignWidth="80"
              x:Name="generic">
-    <Grid Background="White" Visibility="{Binding CardVisibility, ElementName=generic}">
-        <Border BorderBrush="Black" BorderThickness="3"/>
+    <Grid Background="Transparent" Visibility="{Binding CardVisibility, ElementName=generic}">
+        
+        <Border BorderBrush="Black" BorderThickness="3" CornerRadius="10" Background="White"/>
         <TextBlock Text="{Binding CardSuit, ElementName=generic, FallbackValue=&#9824;}" Foreground="Black" FontSize="25" Height="64" Width="70" Margin="5,-1,5,37"/>
         <TextBlock HorizontalAlignment="Center" Text="{Binding CardValue, ElementName=generic, FallbackValue=10}" VerticalAlignment="Top" Height="64" Width="70" Foreground="Black"  FontSize="20" RenderTransformOrigin="-0.121,1.286" Margin="0,26,0,0" />
     </Grid>
