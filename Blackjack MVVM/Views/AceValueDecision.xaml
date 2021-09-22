@@ -9,9 +9,9 @@
              x:Name="acedecision">
 
     <Grid Background="AntiqueWhite" Visibility="{Binding AceVisible, ElementName=acedecision, FallbackValue=hidden}">
-        <Button x:Name="btn1" Content="Choose 1" HorizontalAlignment="Left" Margin="105,141,0,0" VerticalAlignment="Top"/>
+        <Button x:Name="btn1" Command="{Binding Choose1Command}" Content="Choose 1" HorizontalAlignment="Left" Margin="105,141,0,0" VerticalAlignment="Top"/>
         <TextBox HorizontalAlignment="Left" Margin="105,10,0,0" Text="You got an Ace! Would you like it to be worth 1 or 11?" FontSize="20" TextWrapping="Wrap" VerticalAlignment="Top" Width="196" Height="126"/>
-        <Button x:Name="btn11" Content="Choose 11" HorizontalAlignment="Left" Margin="241,141,0,0" VerticalAlignment="Top"/>
+        <Button x:Name="btn11" Command="{Binding Choose11Command}" Content="Choose 11" HorizontalAlignment="Left" Margin="241,141,0,0" VerticalAlignment="Top"/>
 
     </Grid>
 </UserControl>

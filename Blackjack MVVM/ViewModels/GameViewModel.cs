@@ -82,7 +82,7 @@ namespace Blackjack_MVVM.ViewModels
             ReadRulesCommand = new ReadRulesCommand(this);
             CloseRulesCommand = new CloseRulesCommand(this);
             Choose1Command = new Choose1Command(this);
-            Choose1Command = new Choose11Command(this);
+            Choose11Command = new Choose11Command(this);
             currentbet = new CurrentBet();
             savedMarkers = new SavedMarkers();
             playRules = new PlayRules();
@@ -222,6 +222,7 @@ namespace Blackjack_MVVM.ViewModels
             // gör om till en int så att vi kan räkna ut värdet.
             playerScore = new PlayerScore();
             int value;
+           
 
             if (card.CardValue == "J" || card.CardValue == "Q" || card.CardValue == "K")
             {
@@ -230,15 +231,7 @@ namespace Blackjack_MVVM.ViewModels
             else if (card.CardValue == "A")
             {
                 acedecisionvisibility = "Visible";
-
-                if (true)
-                {
-                    value = 1;
-                }
-                else
-                {
-                    value = 11;
-                }
+                value = ReturnAceValue();
             }
             else
             {
@@ -247,7 +240,21 @@ namespace Blackjack_MVVM.ViewModels
             p1.HandScore += value;
 
             playerScore.playerScore = p1.HandScore;
+        }
+        public int SetAceValue(int aceValue)
+        {
+            int chosenAceValue;
+            chosenAceValue = aceValue;
+            return chosenAceValue;
+        }
 
+        public int ReturnAceValue()
+        {
+            int ace = 0;
+            int returnAce;
+            returnAce = SetAceValue(ace);
+
+            return returnAce;
         }
 
         public void AddCpuPoints(GenericCard card)
