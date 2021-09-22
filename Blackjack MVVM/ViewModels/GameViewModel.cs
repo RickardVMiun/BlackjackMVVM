@@ -6,6 +6,7 @@ using Blackjack_MVVM.Views;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Windows;
@@ -19,9 +20,6 @@ namespace Blackjack_MVVM.ViewModels
         public int CpuScore { get; set; }
         public GenericCard Card { get; set; }
         public GameView gameView { get; set; }
-
-       
-
         public PlayerScore playerScore { get; set; }
         public CpuScore cpuScore { get; set; }
         private static readonly Random random = new Random();
@@ -31,6 +29,7 @@ namespace Blackjack_MVVM.ViewModels
         public Markers markers { get; set; }
         public SavedMarkers savedMarkers { get; set; }
         public CurrentBet currentbet { get; set; }
+        public PlayRules playRules { get; set; }
         public EnumToSymbolConverter converter = new EnumToSymbolConverter();
         public ICommand HitCommand { get; }
         public ICommand StandCommand { get; }
@@ -42,12 +41,15 @@ namespace Blackjack_MVVM.ViewModels
         public ICommand Bet25Command { get; }
         public ICommand Bet100Command { get; }
         public ICommand ClearBetCommand { get; }
+        public ICommand ReadRulesCommand { get; }
 
         public GenericCard newCard { get; set; }
         public Person p1 = new Person();
         public Cpu p2 = new Cpu();
         public string visibility { get; set; }
         public string winnervisibility { get; set; }
+
+        public string rulesvisibility { get; set; } 
 
         public string cardvisibility { get; set; }
         int totalbet = 0;
@@ -70,11 +72,14 @@ namespace Blackjack_MVVM.ViewModels
             Bet10Command = new Bet10Command(this);
             Bet25Command = new Bet25Command(this);
             Bet100Command = new Bet100Command(this);
-            currentbet = new CurrentBet();
             ClearBetCommand = new ClearBetCommand(this);
+            ReadRulesCommand = new ReadRulesCommand(this);
+            currentbet = new CurrentBet();
             savedMarkers = new SavedMarkers();
+            playRules = new PlayRules();
             AddMarkers();
-            GetSavedMarkers();
+            if (File.Exists(filename))
+                GetSavedMarkers(filename);
         }
 
         #region CardFunctionality
@@ -244,7 +249,7 @@ namespace Blackjack_MVVM.ViewModels
         public bool PersonIsBust(Person p1)
         {
 
-            if (p1.HandScore > 21)
+            if (p1.HandScore > 21 || HitAutoLoose() == true)
             {
                 visibility = "Visible";
                 return true;
@@ -272,6 +277,19 @@ namespace Blackjack_MVVM.ViewModels
         {
             if (p2.HandScore > p1.HandScore && p2.HandScore < 22 || p2.HandScore == p1.HandScore)
             {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
+        public bool HitAutoLoose()
+        {
+            if (p1.HandScore > 21)
+            {
+               
                 return true;
             }
             else
@@ -317,7 +335,7 @@ namespace Blackjack_MVVM.ViewModels
 
         public void CalculateMarkers()
         {
-            if (CpuWon() == true)
+            if (CpuWon() == true || HitAutoLoose() == true)
             {
                 savedMarkers.MarkersSaved = savedMarkers.MarkersSaved - totalbet;
             }
@@ -334,7 +352,7 @@ namespace Blackjack_MVVM.ViewModels
             FileHandler.Save(savedMarkers, filename);
         }
 
-        public void GetSavedMarkers()
+        public void GetSavedMarkers(string filename)
         {
             savedMarkers = FileHandler.Open<SavedMarkers>(filename);
             savedMarkers.MarkersSaved = savedMarkers.MarkersSaved;
