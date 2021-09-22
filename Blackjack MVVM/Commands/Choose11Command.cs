@@ -10,7 +10,7 @@ namespace Blackjack_MVVM.Commands
     {
         private GameViewModel gameViewModel;
         public event EventHandler CanExecuteChanged;
-
+        public int chose11 = 11;
         public Choose11Command(GameViewModel gameViewModel)
         {
             this.gameViewModel = gameViewModel;
@@ -23,7 +23,11 @@ namespace Blackjack_MVVM.Commands
 
         public void Execute(object parameter)
         {
-            throw new NotImplementedException();
+            //gameViewModel.SetAceValue(chose11);
+
+            gameViewModel.playerScore.playerScore += 11;
+
+            gameViewModel.acedecisionvisibility = "Hidden";
         }
     }
 }
