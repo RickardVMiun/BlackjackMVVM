@@ -39,7 +39,7 @@
                     </LinearGradientBrush>
                 </Button.Background>
             </Button>
-            <Button BorderThickness="8" Content="Game Rules" Height="150" Width="175"  Command="{Binding playrules}" UseLayoutRounding="False" FontFamily="Cooper Black" FontSize="25" Foreground="Black">
+            <Button BorderThickness="8" Content="Game Rules" Height="150" Width="175"  Command="{Binding ReadRulesCommand}" UseLayoutRounding="False" FontFamily="Cooper Black" FontSize="25" Foreground="Black">
                 <Button.Resources>
                     <Style TargetType="{x:Type Border}">
                         <Setter Property="CornerRadius" Value="30"/>
