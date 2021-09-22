@@ -15,25 +15,22 @@ namespace Blackjack_MVVM.ViewModels
 {
     public class GameViewModel : BaseViewModel
     {
-        // presentera allt här i vyn
-        // presentera ett enda kort
-
         public int PlayerScore { get; set; }
         public int CpuScore { get; set; }
         public GenericCard Card { get; set; }
         public GameView gameView { get; set; }
 
+       
+
         public PlayerScore playerScore { get; set; }
         public CpuScore cpuScore { get; set; }
         private static readonly Random random = new Random();
         public ObservableCollection<GenericCard> DeckOfCards { get; set; }
-        //public ObservableCollection<GenericCard> CardsInGame { get; set; }
         public ObservableCollection<GenericCard> PersonCardsInGame { get; set; } = new ObservableCollection<GenericCard>();
         public ObservableCollection<GenericCard> CpuCardsInGame { get; set; } = new ObservableCollection<GenericCard>();
         public Markers markers { get; set; }
+        public SavedMarkers savedMarkers { get; set; }
         public CurrentBet currentbet { get; set; }
-
-        // cpucardsingame/playercardsingame
         public EnumToSymbolConverter converter = new EnumToSymbolConverter();
         public ICommand HitCommand { get; }
         public ICommand StandCommand { get; }
@@ -56,6 +53,8 @@ namespace Blackjack_MVVM.ViewModels
         int totalbet = 0;
         int bet = 0;
 
+        public string filename = "Blackjack_MVVM.json";
+
         public GameViewModel(NavigationStore navStore)
         {
             DeckOfCards = new ObservableCollection<GenericCard>();
@@ -73,7 +72,9 @@ namespace Blackjack_MVVM.ViewModels
             Bet100Command = new Bet100Command(this);
             currentbet = new CurrentBet();
             ClearBetCommand = new ClearBetCommand(this);
+            savedMarkers = new SavedMarkers();
             AddMarkers();
+            GetSavedMarkers();
         }
 
         #region CardFunctionality
@@ -138,7 +139,6 @@ namespace Blackjack_MVVM.ViewModels
             return Card.CardValue;
         }
 
-
         public GenericCard GenerateCards()
         {
             Card = new GenericCard();
@@ -202,14 +202,7 @@ namespace Blackjack_MVVM.ViewModels
         }
         #endregion
 
-        public void AddMarkers()
-        {
-            markers = new Markers();
-            p1.Markers = 500;
-            markers.MarkerTotal = p1.Markers;
-        }
-
-
+        #region GameMechanics
         public void AddPlayerPoints(GenericCard card)
         {
             // gör om till en int så att vi kan räkna ut värdet.
@@ -250,11 +243,11 @@ namespace Blackjack_MVVM.ViewModels
 
         public bool PersonIsBust(Person p1)
         {
-           
-            if (p1.HandScore >21)
+
+            if (p1.HandScore > 21)
             {
                 visibility = "Visible";
-                return true;   
+                return true;
             }
             else
             {
@@ -275,11 +268,6 @@ namespace Blackjack_MVVM.ViewModels
             }
         }
 
-        //public void ShowNewCard()
-        //{
-        //    Card.CardVisibility = "Visible";
-        //}
-
         public bool CpuWon()
         {
             if (p2.HandScore > p1.HandScore && p2.HandScore < 22 || p2.HandScore == p1.HandScore)
@@ -292,25 +280,27 @@ namespace Blackjack_MVVM.ViewModels
             }
         }
 
-       public void ShowMessage()
-       {
+        public void ShowMessage()
+        {
             if (CpuWon() == true)
             {
-                visibility = "Visible";    
+                visibility = "Visible";
             }
             else
             {
                 visibility = "Hidden";
                 winnervisibility = "Visible";
             }
-       }
+        }
 
-       public void BettingTotal(int bet)
-       {   
+        #endregion
+        #region BettingFunctionality
+        public void BettingTotal(int bet)
+        {
             totalbet = totalbet += bet;
             p1.Bet = totalbet;
             currentbet.BetTotal = p1.Bet;
-       }
+        }
 
         public void ClearBet()
         {
@@ -318,25 +308,38 @@ namespace Blackjack_MVVM.ViewModels
             totalbet = 0;
         }
 
-        //public int AddBet()
-        //{
-        //    bet++;
-        //    BettingTotal(bet);
-        //    return bet;
-        //}
+        public void AddMarkers()
+        {
+            markers = new Markers();
+            savedMarkers.MarkersSaved = 500;
+            markers.MarkerTotal = savedMarkers.MarkersSaved;
+        }
 
         public void CalculateMarkers()
         {
             if (CpuWon() == true)
             {
-                p1.Markers = p1.Markers - totalbet;
+                savedMarkers.MarkersSaved = savedMarkers.MarkersSaved - totalbet;
             }
             else
             {
-                p1.Markers = p1.Markers + (totalbet * 2);
-                
+                savedMarkers.MarkersSaved = savedMarkers.MarkersSaved + (totalbet * 2);
+
             }
-            markers.MarkerTotal = p1.Markers;
+            markers.MarkerTotal = savedMarkers.MarkersSaved;
+            savedMarkers.MarkersSaved = savedMarkers.MarkersSaved;
         }
+        public void SaveMarkers()
+        {
+            FileHandler.Save(savedMarkers, filename);
+        }
+
+        public void GetSavedMarkers()
+        {
+            savedMarkers = FileHandler.Open<SavedMarkers>(filename);
+            savedMarkers.MarkersSaved = savedMarkers.MarkersSaved;
+            markers.MarkerTotal = savedMarkers.MarkersSaved;
+        } 
+        #endregion
     }
 }

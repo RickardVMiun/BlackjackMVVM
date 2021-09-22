@@ -21,11 +21,7 @@ namespace Blackjack_MVVM.Views
         public LoserMessage()
         {
             InitializeComponent();
-           
-
         }
-
-
 
         public string Visible
         {
@@ -36,7 +32,5 @@ namespace Blackjack_MVVM.Views
         // Using a DependencyProperty as the backing store for Visible.  This enables animation, styling, binding, etc...
         public static readonly DependencyProperty VisibleProperty =
             DependencyProperty.Register("Visible", typeof(string), typeof(LoserMessage), new PropertyMetadata("Hidden"));
-
-
     }
 }

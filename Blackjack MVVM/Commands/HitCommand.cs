@@ -28,7 +28,9 @@ namespace Blackjack_MVVM.Commands
         {
             gameViewModel.AddCard();
             gameViewModel.PersonIsBust(gameViewModel.p1);
+            
             //gameViewModel.ShowNewCard();
+            gameViewModel.SaveMarkers();
         }
     }
 }

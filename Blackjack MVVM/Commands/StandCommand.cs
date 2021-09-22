@@ -34,6 +34,7 @@ namespace Blackjack_MVVM.Commands
             }
             gameViewModel.ShowMessage();
             gameViewModel.CalculateMarkers();
+            gameViewModel.SaveMarkers();
         }
     }
 }

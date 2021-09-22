@@ -11,8 +11,13 @@
             <views:StartingView/>
         </DataTemplate>
         <DataTemplate
+            DataType="{x:Type viewModels:PlayViewModel}">
+            <views:PlayView/>
+        </DataTemplate>
+        <DataTemplate
             DataType="{x:Type viewModels:GameViewModel}">
             <views:GameView/>
         </DataTemplate>
+        
     </Application.Resources>
 </Application>

@@ -9,7 +9,7 @@
         <Grid.Background>
             <ImageBrush AlignmentX="Center" AlignmentY="Top" ImageSource="\Images\BlackJackBord5.png" Stretch="Uniform" />
         </Grid.Background>
-        <Button BorderThickness="4" Content="PLAY" Height="90" Width="100"  Command="{Binding}" UseLayoutRounding="False" FontFamily="Cooper Black" FontSize="25" Foreground="Gold" Margin="350,174,350,186">
+        <Button BorderThickness="4" Content="PLAY" Height="90" Width="100"  Command="{Binding StartPlayCommand}" UseLayoutRounding="False" FontFamily="Cooper Black" FontSize="25" Foreground="Gold" Margin="350,174,350,186">
             <Button.Resources>
                 <Style TargetType="{x:Type Border}">
                     <Setter Property="CornerRadius" Value="30"/>
@@ -38,5 +38,6 @@
                 </LinearGradientBrush>
             </Button.Background>
         </Button>
+
     </Grid>
 </UserControl>

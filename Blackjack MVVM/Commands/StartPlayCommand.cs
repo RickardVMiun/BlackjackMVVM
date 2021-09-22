@@ -6,18 +6,16 @@ using System.Text;
 
 namespace Blackjack_MVVM.Commands
 {
-    class Over18Command : BaseCommand
+    class StartPlayCommand : BaseCommand
     {
         private MainViewModel mainViewModel;
-      //  private GameViewModel gameViewModel;
-        private PlayViewModel playViewModel;
-
+        private GameViewModel gameViewModel;
         public event EventHandler CanExecuteChanged;
         private readonly NavigationStore navigationStore;
 
-        public Over18Command(PlayViewModel playViewModel, NavigationStore navigationStore)
+        public StartPlayCommand(GameViewModel gameViewModel, NavigationStore navigationStore)
         {
-            this.playViewModel = playViewModel;
+            this.gameViewModel = gameViewModel;
             navigationStore = navigationStore;
         }
 
@@ -29,7 +27,7 @@ namespace Blackjack_MVVM.Commands
         public override void Execute(object parameter)
         {
 
-            navigationStore.CurrentViewModel = new PlayViewModel(navigationStore);
+            navigationStore.CurrentViewModel = new GameViewModel(navigationStore);
         }
     }
 }

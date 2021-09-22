@@ -1,5 +1,7 @@
-﻿using Blackjack_MVVM.Stores;
+﻿using Blackjack_MVVM.Data;
+using Blackjack_MVVM.Stores;
 using Blackjack_MVVM.ViewModels;
+using Blackjack_MVVM.Views;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -18,7 +20,7 @@ namespace Blackjack_MVVM.Commands
         public PlayAgainCommand(GameViewModel gameViewModel, NavigationStore navigationStore)
         {
             this.gameViewModel = gameViewModel;
-            navigationStore = navigationStore;
+            this.navigationStore = navigationStore;
         }
 
         //public bool CanExecute(object parameter)
@@ -27,9 +29,15 @@ namespace Blackjack_MVVM.Commands
         //}
 
         public override void Execute(object parameter)
-        {
-
+        {     
             navigationStore.CurrentViewModel = new GameViewModel(navigationStore);
+
+            //gameViewModel.GetSavedMarkers();
+            //gameViewModel.markers.MarkerTotal = gameViewModel.savedMarkers.MarkersSaved;
+
+            //gameViewModel.savedMarkers = FileHandler.Open<SavedMarkers>(gameViewModel.filename);
+            //gameViewModel.markers.MarkerTotal = gameViewModel.savedMarkers.MarkersSaved;
+
         }
     }
 }
