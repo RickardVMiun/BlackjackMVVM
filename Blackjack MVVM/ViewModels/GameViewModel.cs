@@ -20,8 +20,6 @@ namespace Blackjack_MVVM.ViewModels
         public GenericCard Card { get; set; }
         public GameView gameView { get; set; }
 
-       
-
         public PlayerScore playerScore { get; set; }
         public CpuScore cpuScore { get; set; }
         private static readonly Random random = new Random();
@@ -244,7 +242,7 @@ namespace Blackjack_MVVM.ViewModels
         public bool PersonIsBust(Person p1)
         {
 
-            if (p1.HandScore > 21)
+            if (p1.HandScore > 21 || HitAutoLoose() == true)
             {
                 visibility = "Visible";
                 return true;
@@ -272,6 +270,19 @@ namespace Blackjack_MVVM.ViewModels
         {
             if (p2.HandScore > p1.HandScore && p2.HandScore < 22 || p2.HandScore == p1.HandScore)
             {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
+        public bool HitAutoLoose()
+        {
+            if (p1.HandScore > 21)
+            {
+               
                 return true;
             }
             else
@@ -317,7 +328,7 @@ namespace Blackjack_MVVM.ViewModels
 
         public void CalculateMarkers()
         {
-            if (CpuWon() == true)
+            if (CpuWon() == true || HitAutoLoose() == true)
             {
                 savedMarkers.MarkersSaved = savedMarkers.MarkersSaved - totalbet;
             }

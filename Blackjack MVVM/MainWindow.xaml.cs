@@ -12,7 +12,6 @@ using System.Windows.Data;
 using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
-using System.Windows.Media.Animation;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
@@ -26,7 +25,6 @@ namespace Blackjack_MVVM
     {
         NavigationStore navStore = new NavigationStore();
         MediaPlayer mediaPlayer;
-       
         public MainWindow()
         {
             InitializeComponent();
@@ -34,19 +32,11 @@ namespace Blackjack_MVVM
             navStore.CurrentViewModel = new StartingViewModel(navStore);
             BackgroundMusic();
         }
-
-        #region
         public void BackgroundMusic()
         {
-            var timeline = new MediaTimeline(new Uri("Sound/test.wav", UriKind.Relative));
-            timeline.RepeatBehavior = RepeatBehavior.Forever;
             mediaPlayer = new MediaPlayer();
-            mediaPlayer.Volume = 0.3f;
-            mediaPlayer.Clock = timeline.CreateClock();
-            mediaPlayer.Clock.Controller.Begin();
-
+            mediaPlayer.Open(new Uri(@"C:\Users\junof\Source\Repos\SUP21_Grupp4\Blackjack MVVM\Sound\test.wav"));
+            mediaPlayer.Play();
         }
-        #endregion
-
     }
 }
