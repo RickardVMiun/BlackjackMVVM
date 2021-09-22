@@ -5,7 +5,7 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:Blackjack_MVVM.Views"
              mc:Ignorable="d" 
-             d:DesignHeight="200" d:DesignWidth="400"
+             d:DesignHeight="300" d:DesignWidth="400"
              x:Name="winnermessage">
 
     <UserControl.Resources>
@@ -17,12 +17,12 @@
 
         </Storyboard>
     </UserControl.Resources>
-    <Border BorderBrush="Gold" BorderThickness="5" CornerRadius="3" Visibility="{Binding Visible, ElementName=winnermessage, FallbackValue=hidden}">
+    <Border BorderBrush="#FFFFB101" BorderThickness="5" CornerRadius="3" Visibility="{Binding Visible, ElementName=winnermessage, FallbackValue=hidden}">
         <Grid>
         <Grid.Background>
             <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                <GradientStop Color="Green"/>
-                <GradientStop Color="#FF28D128" Offset="1"/>
+                <GradientStop Color="#FF254D25"/>
+                <GradientStop Color="#FF30C130" Offset="1"/>
             </LinearGradientBrush>
         </Grid.Background>
         <Grid.ColumnDefinitions>
@@ -37,7 +37,7 @@
 
         </Grid.RowDefinitions>
         <WrapPanel Orientation="Horizontal" VerticalAlignment="Bottom" HorizontalAlignment="Left" Grid.Row="2" Grid.Column="1" Margin="50, 20">
-            <Button BorderThickness="3" Content="Yes" Height="37" Width="44"  Command="{Binding PlayAgainCommand}" UseLayoutRounding="False" FontFamily="Cooper Black" FontSize="18" Foreground="Black">
+            <Button BorderThickness="3" Content="Yes" Height="45" Width="50"  Command="{Binding PlayAgainCommand}" UseLayoutRounding="False" FontFamily="Cooper Black" FontSize="18" Foreground="Black">
                 <Button.Resources>
                     <Style TargetType="{x:Type Border}">
                         <Setter Property="CornerRadius" Value="30"/>
@@ -55,8 +55,8 @@
                 </Button.Style>
                 <Button.BorderBrush>
                     <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                        <GradientStop Color="#FFD8D910"/>
-                        <GradientStop Color="#FF595907" Offset="1"/>
+                            <GradientStop Color="#FFFEFF00"/>
+                        <GradientStop Color="#FF46460A" Offset="1"/>
                     </LinearGradientBrush>
                 </Button.BorderBrush>
                 <Button.Background>
@@ -68,7 +68,7 @@
             </Button>
         </WrapPanel>
         <WrapPanel Orientation="Horizontal" VerticalAlignment="Bottom" HorizontalAlignment="Right" Grid.Column="1" Grid.Row="1" Margin="50, 20">
-            <Button BorderThickness="3" Content="No" Height="37" Width="44" Command="{Binding StopPlayingCommand}" UseLayoutRounding="False" FontFamily="Cooper Black" FontSize="18" Foreground="Black">
+            <Button BorderThickness="3" Content="No" Height="45" Width="50" Command="{Binding StopPlayingCommand}" UseLayoutRounding="False" FontFamily="Cooper Black" FontSize="18" Foreground="Black">
                 <Button.Resources>
                     <Style TargetType="{x:Type Border}">
                         <Setter Property="CornerRadius" Value="30"/>
@@ -87,8 +87,8 @@
 
                 <Button.BorderBrush>
                     <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                        <GradientStop Color="#FFD8D910"/>
-                        <GradientStop Color="#FF595907" Offset="1"/>
+                            <GradientStop Color="#FFFEFF00"/>
+                        <GradientStop Color="#FF46460A" Offset="1"/>
                     </LinearGradientBrush>
                 </Button.BorderBrush>
                 <Button.Background>
@@ -101,7 +101,7 @@
         </WrapPanel>
 
         <StackPanel VerticalAlignment="Bottom" HorizontalAlignment="Center" Grid.Row="0" Grid.Column="1" >
-            <Label x:Name="myLabel" Content = "Winner!!!" Foreground="Gold" FontSize="30" FontFamily="Copperplate Gothic Bold" RenderTransformOrigin="0.5 0.5">
+            <Label x:Name="myLabel" Content = "Winner!" Foreground="#FFFFB101" FontSize="31" FontFamily="Copperplate Gothic Bold" RenderTransformOrigin="0.5 0.5">
                 <Label.RenderTransform>
                     <RotateTransform x:Name="Rotation" Angle="0"></RotateTransform>
                 </Label.RenderTransform>
@@ -112,7 +112,7 @@
                 </Label.Triggers>
             </Label>
         </StackPanel>
-        <Label Content="Would you like to play again?" Foreground="Gold" FontSize="10" Grid.Column="1" HorizontalAlignment="Center" Grid.Row="1" VerticalAlignment="Top" FontFamily="Copperplate Gothic Bold"/>
+        <Label Content="Would you like to play again?" Foreground="#FFFFB101" FontSize="12" Grid.Column="1" HorizontalAlignment="Center" Grid.Row="1" VerticalAlignment="Top" FontFamily="Copperplate Gothic Bold"/>
         
     </Grid>
     </Border>

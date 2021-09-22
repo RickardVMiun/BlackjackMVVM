@@ -5,7 +5,7 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:Blackjack_MVVM.Views"
              mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="800">
+             d:DesignHeight="850" d:DesignWidth="800">
 
     <UserControl.Resources>
         <Storyboard x:Key="Storyboard">
@@ -15,7 +15,7 @@
             RepeatBehavior="2"/>
             <DoubleAnimation 
             Storyboard.TargetProperty="FontSize"
-            From = "30" To = "80" Duration = "0:0:2"
+            From = "45" To = "90" Duration = "0:0:2"
             RepeatBehavior = "4" AutoReverse="True"/>
 
         </Storyboard>
@@ -25,8 +25,8 @@
     <Grid>
         <Grid.Background>
             <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                <GradientStop Color="Green"/>
-                <GradientStop Color="#FF28D128" Offset="1"/>
+                <GradientStop Color="#FF1B8506"/>
+                <GradientStop Color="Black" Offset="1"/>
             </LinearGradientBrush>
         </Grid.Background>
 
@@ -37,14 +37,14 @@
 
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
-            <RowDefinition Height="120"/>
-            <RowDefinition Height="150"/>
-            <RowDefinition Height="120"/>
-            <RowDefinition Height="120"/>
+            <RowDefinition Height="200"/>
+            <RowDefinition Height="200"/>
+            <RowDefinition Height="200"/>
+            <RowDefinition Height="200"/>
 
         </Grid.RowDefinitions>
-        <WrapPanel Orientation="Horizontal" VerticalAlignment="Bottom" HorizontalAlignment="Center" Grid.Row="2">
-            <Button BorderThickness="4" Content="Yes" Height="57" Width="67"  Command="{Binding Over18Command}" UseLayoutRounding="False" FontFamily="Cooper Black" FontSize="18" Foreground="Black" Margin="0,0,20,0">
+        <WrapPanel Orientation="Horizontal" VerticalAlignment="Top" HorizontalAlignment="Center" Grid.Row="4">
+            <Button BorderThickness="6" Content="Yes" Height="97" Width="107"  Command="{Binding Over18Command}" UseLayoutRounding="False" FontFamily="Cooper Black" FontSize="35" Foreground="Black" Margin="0,0,20,0">
                 <Button.Resources>
                     <Style TargetType="{x:Type Border}">
                         <Setter Property="CornerRadius" Value="30"/>
@@ -62,8 +62,8 @@
                 </Button.Style>
                 <Button.BorderBrush>
                     <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                        <GradientStop Color="#FFD8D910"/>
-                        <GradientStop Color="#FF595907" Offset="1"/>
+                        <GradientStop Color="#FFFEFF00"/>
+                        <GradientStop Color="#FF46460A" Offset="1"/>
                     </LinearGradientBrush>
                 </Button.BorderBrush>
                 <Button.Background>
@@ -73,7 +73,7 @@
                     </LinearGradientBrush>
                 </Button.Background>
             </Button>
-            <Button BorderThickness="4" Content="No" Height="57" Width="64" Command="{Binding Under18Command}" UseLayoutRounding="False" FontFamily="Cooper Black" FontSize="18" Foreground="Black">
+            <Button BorderThickness="6" Content="No" Height="97" Width="107" Command="{Binding Under18Command}" UseLayoutRounding="False" FontFamily="Cooper Black" FontSize="35" Foreground="Black">
                 <Button.Resources>
                     <Style TargetType="{x:Type Border}">
                         <Setter Property="CornerRadius" Value="30"/>
@@ -81,9 +81,9 @@
 
                 </Button.Resources>
                 <Button.Style>
-                    <Style TargetType="Button">
+                    <Style TargetType="{x:Type Button}">
                         <Style.Triggers>
-                            <EventTrigger RoutedEvent="PreviewMouseDown">
+                            <EventTrigger RoutedEvent="UIElement.PreviewMouseDown">
                                 <SoundPlayerAction Source="\Sound\mixkit-click-error-1110.wav" />
                             </EventTrigger>
                         </Style.Triggers>
@@ -91,8 +91,8 @@
                 </Button.Style>
                 <Button.BorderBrush>
                     <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                        <GradientStop Color="#FFD8D910"/>
-                        <GradientStop Color="#FF595907" Offset="1"/>
+                        <GradientStop Color="#FFFEFF00"/>
+                        <GradientStop Color="#FF46460A" Offset="1"/>
                     </LinearGradientBrush>
                 </Button.BorderBrush>
                 <Button.Background>
@@ -108,7 +108,7 @@
         <!--//<Border BorderBrush="DarkRed" BorderThickness="5" CornerRadius="1"/>-->
         <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Row="1">
 
-            <Label x:Name="myLabel" Content = "♠ BlackJack ♣" Foreground="Gold" FontSize="40" FontFamily="Copperplate Gothic Bold" >
+            <Label x:Name="myLabel" Content = "♠ BlackJack ♣" Foreground="#FFFFB101" FontSize="70" FontFamily="Copperplate Gothic Bold" >
                 <Label.Triggers>
                     <EventTrigger RoutedEvent="FrameworkElement.Loaded">
                         <BeginStoryboard Storyboard="{StaticResource Storyboard}"/>
@@ -116,7 +116,7 @@
                 </Label.Triggers>
             </Label>
         </StackPanel>
-        <TextBlock HorizontalAlignment="Center" Margin="0,22,0,0" Grid.Row="2" Text="Are you 18 years old or older?" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="20" FontFamily="Britannic Bold" Foreground="Gold"/>
+        <TextBlock HorizontalAlignment="Center" Margin="0,0,0,0" Grid.Row="2" Text="Are you 18 years old or older?" TextWrapping="Wrap" VerticalAlignment="Center" FontSize="40" FontFamily="Britannic Bold" Foreground="#FFFFB101"/>
     </Grid>
 
 </UserControl>

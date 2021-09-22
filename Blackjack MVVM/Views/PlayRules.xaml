@@ -5,7 +5,7 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:Blackjack_MVVM.Views"
              mc:Ignorable="d" 
-             d:DesignHeight="700" d:DesignWidth="400"
+             d:DesignHeight="800" d:DesignWidth="400"
              x:Name="playrules">
 
 
@@ -17,13 +17,13 @@
             </LinearGradientBrush>
         </Border.Background>
         <Grid Background="Transparent">
-            <RichTextBox VerticalAlignment="Center" BorderBrush="Transparent" Background="Transparent" Foreground="Black" FontSize="11" FontFamily="Copperplate Gothic Bold">
-                <FlowDocument TextAlignment="Center" Foreground="#FFFFB101">
+            <RichTextBox VerticalAlignment="Center" BorderBrush="Transparent" Background="Transparent" Foreground="Black" FontSize="11" FontFamily="Copperplate Gothic Bold" >
+                <FlowDocument TextAlignment="Center" Foreground="#FFFFB101" LineHeight="18">
                     <Paragraph Foreground="#FFFFB101" FontSize="15">
                         <Bold>Object Of The Game:</Bold>
                     </Paragraph>
                     <Paragraph FontFamily="Georgia Pro">
-                        The goal is to get the score as close to 21 as possible. Without going over 21. fkrgjmrgjrg
+                        The goal is to get the score as close to 21 as possible. Without going over 21.
 
                     </Paragraph>
                     <Paragraph>
@@ -71,7 +71,7 @@
                 </FlowDocument>
             </RichTextBox>
             
-            <Button BorderThickness="4" Content="Close" Height="47" Width="57"  Command="{Binding }" UseLayoutRounding="False" FontFamily="Cooper Black" FontSize="15" Foreground="Black" Margin="308,25,25,618">
+            <Button BorderThickness="4" Content="Close" Height="47" Width="57"  Command="{Binding }" UseLayoutRounding="False" FontFamily="Cooper Black" FontSize="15" Foreground="Black" Margin="308,10,25,700">
                 <Button.Resources>
                     <Style TargetType="{x:Type Border}">
                         <Setter Property="CornerRadius" Value="20"/>
@@ -89,8 +89,8 @@
 
                 <Button.BorderBrush>
                     <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                        <GradientStop Color="#FFD8D910"/>
-                        <GradientStop Color="#FF595907" Offset="1"/>
+                        <GradientStop Color="#FFF0EC6E"/> 
+                        <GradientStop Color="#FFD8D910" Offset="1"/>
                     </LinearGradientBrush>
                 </Button.BorderBrush>
                 <Button.Background>
