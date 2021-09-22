@@ -26,10 +26,13 @@ namespace Blackjack_MVVM.Commands
 
         public void Execute(object parameter)
         {
+
             gameViewModel.AddCard();
             gameViewModel.PersonIsBust(gameViewModel.p1);
-            
-            //gameViewModel.ShowNewCard();
+            if (gameViewModel.p1.HandScore > 21)
+            {
+                gameViewModel.CalculateMarkers();
+            }
             gameViewModel.SaveMarkers();
         }
     }
