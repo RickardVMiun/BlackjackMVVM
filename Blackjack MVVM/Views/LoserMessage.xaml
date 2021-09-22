@@ -5,7 +5,7 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:Blackjack_MVVM.Views"
              mc:Ignorable="d" 
-             d:DesignHeight="200" d:DesignWidth="400"
+             d:DesignHeight="300" d:DesignWidth="400"
              x:Name="losermessage">
 
     <UserControl.Resources>
@@ -17,99 +17,109 @@
         </Storyboard>
     </UserControl.Resources>
 
-    <Border BorderBrush="Black" BorderThickness="5" CornerRadius="3" Visibility="{Binding Visible, ElementName=losermessage, FallbackValue=Hidden}">
+    <Border BorderBrush="Black" BorderThickness="8" CornerRadius="3" Visibility="{Binding Visible, ElementName=losermessage, FallbackValue=hidden}">
         <Grid>
-        <Grid.Background>
-            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                <GradientStop Color="#FF802900"/>
-                <GradientStop Color="#FFD14C28" Offset="1"/>
-            </LinearGradientBrush>
-        </Grid.Background>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="*"/>
-            <ColumnDefinition Width="220"/>
-            <ColumnDefinition Width="*"/>
+            <Grid.Background >
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="Black"/>
+                    <GradientStop Color="#FF3E3C3C" Offset="1"/>
+                </LinearGradientBrush>
 
-        </Grid.ColumnDefinitions>
-        <Grid.RowDefinitions>
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="*"/>
+            </Grid.Background>
 
-        </Grid.RowDefinitions>
-        <WrapPanel Orientation="Horizontal" VerticalAlignment="Bottom" HorizontalAlignment="Left" Grid.Row="2" Grid.Column="1" Margin="50, 20">
-            <Button BorderThickness="3" Content="Yes" Height="37" Width="44"  Command="{Binding PlayAgainCommand}" UseLayoutRounding="False" FontFamily="Cooper Black" FontSize="18" Foreground="Black">
-                <Button.Resources>
-                    <Style TargetType="{x:Type Border}">
-                        <Setter Property="CornerRadius" Value="30"/>
-                    </Style>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="220"/>
+                <ColumnDefinition Width="*"/>
 
-                </Button.Resources>
-                <Button.Style>
-                    <Style TargetType="Button">
-                        <Style.Triggers>
-                            <EventTrigger RoutedEvent="PreviewMouseDown">
-                                <SoundPlayerAction Source="\Sound\mixkit-select-click-1109.wav" />
-                            </EventTrigger>
-                        </Style.Triggers>
-                    </Style>
-                </Button.Style>
-                <Button.BorderBrush>
-                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                        <GradientStop Color="#FFD8D910"/>
-                        <GradientStop Color="#FF595907" Offset="1"/>
-                    </LinearGradientBrush>
-                </Button.BorderBrush>
-                <Button.Background>
-                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                        <GradientStop Color="#FF82F06E" Offset="0.024"/>
-                        <GradientStop Color="#FF1B8506" Offset="1"/>
-                    </LinearGradientBrush>
-                </Button.Background>
-            </Button>
-        </WrapPanel>
-        <WrapPanel Orientation="Horizontal" VerticalAlignment="Bottom" HorizontalAlignment="Right" Grid.Column="1" Grid.Row="1" Margin="50, 20">
-            <Button BorderThickness="3" Content="No" Height="37" Width="44" Command="{Binding StopPlayingCommand}" UseLayoutRounding="False" FontFamily="Cooper Black" FontSize="18" Foreground="Black">
-                <Button.Resources>
-                    <Style TargetType="{x:Type Border}">
-                        <Setter Property="CornerRadius" Value="30"/>
-                    </Style>
-                </Button.Resources>
-                <Button.Style>
-                    <Style TargetType="Button">
-                        <Style.Triggers>
-                            <EventTrigger RoutedEvent="PreviewMouseDown">
-                                <SoundPlayerAction Source="\Sound\mixkit-click-error-1110.wav" />
-                            </EventTrigger>
-                        </Style.Triggers>
-                    </Style>
-                </Button.Style>
-                <Button.BorderBrush>
-                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                        <GradientStop Color="#FFD8D910"/>
-                        <GradientStop Color="#FF595907" Offset="1"/>
-                    </LinearGradientBrush>
-                </Button.BorderBrush>
-                <Button.Background>
-                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                        <GradientStop Color="#FFF0AF6E" Offset="0.024"/>
-                        <GradientStop Color="#FFDA1D06" Offset="1"/>
-                    </LinearGradientBrush>
-                </Button.Background>
-            </Button>
-        </WrapPanel>
-        <StackPanel VerticalAlignment="Bottom" HorizontalAlignment="Center" Grid.Row="0" Grid.Column="1" >
-            <Label x:Name="myLabel" Content = "Loser!!!" Foreground="Black" FontSize="30" FontFamily="Copperplate Gothic Bold" RenderTransformOrigin="0.5 0.5">
-                <Label.RenderTransform>
-                    <RotateTransform x:Name="Rotation" Angle="0"></RotateTransform>
-                </Label.RenderTransform>
-                <Label.Triggers>
-                    <EventTrigger RoutedEvent="FrameworkElement.Loaded">
-                        <BeginStoryboard Storyboard="{StaticResource Storyboard}"/>
-                    </EventTrigger>
-                </Label.Triggers>
-            </Label>
-        </StackPanel>
-        <Label Content="Would you like to play again?" Foreground="Gold" FontSize="10" Grid.Column="1" HorizontalAlignment="Center" Grid.Row="1" VerticalAlignment="Top" FontFamily="Copperplate Gothic Bold"/>
-    </Grid>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+
+            </Grid.RowDefinitions>
+
+
+            <WrapPanel Orientation="Horizontal" VerticalAlignment="Bottom" HorizontalAlignment="Left" Grid.Row="2" Grid.Column="1" Margin="50, 20">
+                <Button BorderThickness="3" Content="Yes" Height="45" Width="50"  Command="{Binding PlayAgainCommand}" UseLayoutRounding="False" FontFamily="Cooper Black" FontSize="18" Foreground="Black">
+                    <Button.Resources>
+                        <Style TargetType="{x:Type Border}">
+                            <Setter Property="CornerRadius" Value="30"/>
+                        </Style>
+
+                    </Button.Resources>
+                    <Button.Style>
+                        <Style TargetType="Button">
+                            <Style.Triggers>
+                                <EventTrigger RoutedEvent="PreviewMouseDown">
+                                    <SoundPlayerAction Source="\Sound\mixkit-select-click-1109.wav" />
+                                </EventTrigger>
+                            </Style.Triggers>
+                        </Style>
+                    </Button.Style>
+                    <Button.BorderBrush>
+                        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                            <GradientStop Color="#FFFEFF00"/>
+                            <GradientStop Color="#FF46460A" Offset="1"/>
+                        </LinearGradientBrush>
+                    </Button.BorderBrush>
+                    <Button.Background>
+                        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                            <GradientStop Color="#FF82F06E" Offset="0.024"/>
+                            <GradientStop Color="#FF1B8506" Offset="1"/>
+                        </LinearGradientBrush>
+                    </Button.Background>
+                </Button>
+            </WrapPanel>
+            <WrapPanel Orientation="Horizontal" VerticalAlignment="Bottom" HorizontalAlignment="Right" Grid.Column="1" Grid.Row="1" Margin="50, 20">
+                <Button BorderThickness="3" Content="No" Height="45" Width="50" Command="{Binding StopPlayingCommand}" UseLayoutRounding="False" FontFamily="Cooper Black" FontSize="18" Foreground="Black">
+                    <Button.Resources>
+                        <Style TargetType="{x:Type Border}">
+                            <Setter Property="CornerRadius" Value="30"/>
+                        </Style>
+                    </Button.Resources>
+                    <Button.Style>
+                        <Style TargetType="Button">
+                            <Style.Triggers>
+                                <EventTrigger RoutedEvent="PreviewMouseDown">
+                                    <SoundPlayerAction Source="\Sound\mixkit-click-error-1110.wav" />
+                                </EventTrigger>
+                            </Style.Triggers>
+                        </Style>
+                    </Button.Style>
+                    <Button.BorderBrush>
+                        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                            <GradientStop Color="#FFFEFF00"/>
+                            <GradientStop Color="#FF46460A" Offset="1"/>
+                        </LinearGradientBrush>
+                    </Button.BorderBrush>
+                    <Button.Background>
+                        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                            <GradientStop Color="#FFF0AF6E" Offset="0.024"/>
+                            <GradientStop Color="#FFDA1D06" Offset="1"/>
+                        </LinearGradientBrush>
+                    </Button.Background>
+                </Button>
+            </WrapPanel>
+            <StackPanel VerticalAlignment="Bottom" HorizontalAlignment="Center" Grid.Row="0" Grid.Column="1" >
+                <Label x:Name="myLabel" Content = "Loser!" FontSize="31" FontFamily="Copperplate Gothic Bold" RenderTransformOrigin="0.5 0.5">
+                    <Label.Foreground>
+                        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                            <GradientStop Color="#FFFFB101"/>
+                            <GradientStop Color="#FFBD2727" Offset="1"/>
+                        </LinearGradientBrush>
+                    </Label.Foreground>
+                    <Label.RenderTransform>
+                        <RotateTransform x:Name="Rotation" Angle="0"></RotateTransform>
+                    </Label.RenderTransform>
+                    <Label.Triggers>
+                        <EventTrigger RoutedEvent="FrameworkElement.Loaded">
+                            <BeginStoryboard Storyboard="{StaticResource Storyboard}"/>
+                        </EventTrigger>
+                    </Label.Triggers>
+                </Label>
+            </StackPanel>
+            <Label Content="Would you like to play again?" Foreground="#FFFFB101" FontSize="12" Grid.Column="1" HorizontalAlignment="Center" Grid.Row="1" VerticalAlignment="Top" FontFamily="Copperplate Gothic Bold"/>
+        </Grid>
     </Border>
 </UserControl>
