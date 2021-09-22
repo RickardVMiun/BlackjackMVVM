@@ -4,7 +4,7 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:Blackjack_MVVM.Views"
-             mc:Ignorable="d" d:DesignWidth="800" Height="454">
+             mc:Ignorable="d" d:DesignWidth="1500" Height="800">
     <Grid>
         <Grid.Background>
             <ImageBrush AlignmentX="Center" AlignmentY="Top" ImageSource="\Images\BlackJackBord5.png" Stretch="Uniform" />

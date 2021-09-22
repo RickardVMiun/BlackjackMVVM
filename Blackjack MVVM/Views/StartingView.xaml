@@ -44,7 +44,7 @@
 
         </Grid.RowDefinitions>
         <WrapPanel Orientation="Horizontal" VerticalAlignment="Bottom" HorizontalAlignment="Center" Grid.Row="2">
-            <Button BorderThickness="4" Content="Ja" Height="57" Width="67"  Command="{Binding Over18Command}" UseLayoutRounding="False" FontFamily="Cooper Black" FontSize="18" Foreground="Black">
+            <Button BorderThickness="4" Content="Yes" Height="57" Width="67"  Command="{Binding Over18Command}" UseLayoutRounding="False" FontFamily="Cooper Black" FontSize="18" Foreground="Black" Margin="0,0,20,0">
                 <Button.Resources>
                     <Style TargetType="{x:Type Border}">
                         <Setter Property="CornerRadius" Value="30"/>
@@ -73,7 +73,7 @@
                     </LinearGradientBrush>
                 </Button.Background>
             </Button>
-            <Button BorderThickness="4" Content="Nej" Height="57" Width="64" Command="{Binding Under18Command}" UseLayoutRounding="False" FontFamily="Cooper Black" FontSize="18" Foreground="Black">
+            <Button BorderThickness="4" Content="No" Height="57" Width="64" Command="{Binding Under18Command}" UseLayoutRounding="False" FontFamily="Cooper Black" FontSize="18" Foreground="Black">
                 <Button.Resources>
                     <Style TargetType="{x:Type Border}">
                         <Setter Property="CornerRadius" Value="30"/>
@@ -108,7 +108,7 @@
         <!--//<Border BorderBrush="DarkRed" BorderThickness="5" CornerRadius="1"/>-->
         <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Row="1">
 
-            <Label x:Name="myLabel" Content = "♠ Black Jack ♣" Foreground="Gold" FontSize="40" FontFamily="Copperplate Gothic Bold" >
+            <Label x:Name="myLabel" Content = "♠ BlackJack ♣" Foreground="Gold" FontSize="40" FontFamily="Copperplate Gothic Bold" >
                 <Label.Triggers>
                     <EventTrigger RoutedEvent="FrameworkElement.Loaded">
                         <BeginStoryboard Storyboard="{StaticResource Storyboard}"/>
@@ -116,7 +116,7 @@
                 </Label.Triggers>
             </Label>
         </StackPanel>
-        <TextBlock HorizontalAlignment="Center" Margin="0,22,0,0" Grid.Row="2" Text="Är du över 18 år?" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="20" FontFamily="Britannic Bold" Foreground="Gold"/>
+        <TextBlock HorizontalAlignment="Center" Margin="0,22,0,0" Grid.Row="2" Text="Are you 18 years old or older?" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="20" FontFamily="Britannic Bold" Foreground="Gold"/>
     </Grid>
 
 </UserControl>

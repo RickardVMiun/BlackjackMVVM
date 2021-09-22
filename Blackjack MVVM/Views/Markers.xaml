@@ -10,5 +10,6 @@
     
     <Grid>
         <TextBlock HorizontalAlignment="Center" Text="{Binding MarkerTotal, ElementName=markers, FallbackValue=10}" VerticalAlignment="Top"  Foreground="White"  FontSize="40" RenderTransformOrigin="-0.121,1.286" />
+    
     </Grid>
 </UserControl>
