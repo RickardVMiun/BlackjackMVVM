@@ -42,6 +42,7 @@ namespace Blackjack_MVVM.ViewModels
         public ICommand Bet100Command { get; }
         public ICommand ClearBetCommand { get; }
         public ICommand ReadRulesCommand { get; }
+        public ICommand CloseRulesCommand { get; }
 
         public GenericCard newCard { get; set; }
         public Person p1 = new Person();
@@ -74,6 +75,7 @@ namespace Blackjack_MVVM.ViewModels
             Bet100Command = new Bet100Command(this);
             ClearBetCommand = new ClearBetCommand(this);
             ReadRulesCommand = new ReadRulesCommand(this);
+            CloseRulesCommand = new CloseRulesCommand(this);
             currentbet = new CurrentBet();
             savedMarkers = new SavedMarkers();
             playRules = new PlayRules();
