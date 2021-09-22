@@ -58,6 +58,8 @@ namespace Blackjack_MVVM.ViewModels
 
         public string filename = "Blackjack_MVVM.json";
 
+        public PlayViewModel playViewModel;
+
         public GameViewModel(NavigationStore navStore)
         {
             DeckOfCards = new ObservableCollection<GenericCard>();
@@ -82,6 +84,8 @@ namespace Blackjack_MVVM.ViewModels
             AddMarkers();
             if (File.Exists(filename))
                 GetSavedMarkers(filename);
+
+           
         }
 
         #region CardFunctionality
