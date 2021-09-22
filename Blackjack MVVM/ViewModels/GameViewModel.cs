@@ -6,6 +6,7 @@ using Blackjack_MVVM.Views;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Windows;
@@ -19,7 +20,6 @@ namespace Blackjack_MVVM.ViewModels
         public int CpuScore { get; set; }
         public GenericCard Card { get; set; }
         public GameView gameView { get; set; }
-
         public PlayerScore playerScore { get; set; }
         public CpuScore cpuScore { get; set; }
         private static readonly Random random = new Random();
@@ -72,7 +72,8 @@ namespace Blackjack_MVVM.ViewModels
             ClearBetCommand = new ClearBetCommand(this);
             savedMarkers = new SavedMarkers();
             AddMarkers();
-            GetSavedMarkers();
+            if (File.Exists(filename))
+                GetSavedMarkers(filename);
         }
 
         #region CardFunctionality
@@ -345,7 +346,7 @@ namespace Blackjack_MVVM.ViewModels
             FileHandler.Save(savedMarkers, filename);
         }
 
-        public void GetSavedMarkers()
+        public void GetSavedMarkers(string filename)
         {
             savedMarkers = FileHandler.Open<SavedMarkers>(filename);
             savedMarkers.MarkersSaved = savedMarkers.MarkersSaved;

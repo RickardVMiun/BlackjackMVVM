@@ -30,13 +30,13 @@ namespace Blackjack_MVVM
             InitializeComponent();
             DataContext = new MainViewModel(navStore);
             navStore.CurrentViewModel = new StartingViewModel(navStore);
-            BackgroundMusic();
+            //BackgroundMusic();
         }
-        public void BackgroundMusic()
-        {
-            mediaPlayer = new MediaPlayer();
-            mediaPlayer.Open(new Uri(@"C:\Users\junof\Source\Repos\SUP21_Grupp4\Blackjack MVVM\Sound\test.wav"));
-            mediaPlayer.Play();
-        }
+        //public void BackgroundMusic()
+        //{
+        //    mediaPlayer = new MediaPlayer();
+        //    mediaPlayer.Open(new Uri(@"C:\Users\junof\Source\Repos\SUP21_Grupp4\Blackjack MVVM\Sound\test.wav"));
+        //    mediaPlayer.Play();
+        //}
     }
 }
