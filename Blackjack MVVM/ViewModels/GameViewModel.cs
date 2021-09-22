@@ -43,6 +43,8 @@ namespace Blackjack_MVVM.ViewModels
         public ICommand ClearBetCommand { get; }
         public ICommand ReadRulesCommand { get; }
         public ICommand CloseRulesCommand { get; }
+        public ICommand Choose1Command { get; }
+        public ICommand Choose11Command { get; }
 
         public GenericCard newCard { get; set; }
         public Person p1 = new Person();
@@ -50,7 +52,8 @@ namespace Blackjack_MVVM.ViewModels
         public string visibility { get; set; }
         public string winnervisibility { get; set; }
 
-        public string rulesvisibility { get; set; } 
+        public string rulesvisibility { get; set; }
+        public string acedecisionvisibility{ get; set; }
 
         public string cardvisibility { get; set; }
         int totalbet = 0;
@@ -78,14 +81,14 @@ namespace Blackjack_MVVM.ViewModels
             ClearBetCommand = new ClearBetCommand(this);
             ReadRulesCommand = new ReadRulesCommand(this);
             CloseRulesCommand = new CloseRulesCommand(this);
+            Choose1Command = new Choose1Command(this);
+            Choose1Command = new Choose11Command(this);
             currentbet = new CurrentBet();
             savedMarkers = new SavedMarkers();
             playRules = new PlayRules();
             AddMarkers();
             if (File.Exists(filename))
-                GetSavedMarkers(filename);
-
-           
+                GetSavedMarkers(filename); 
         }
 
         #region CardFunctionality
@@ -220,9 +223,22 @@ namespace Blackjack_MVVM.ViewModels
             playerScore = new PlayerScore();
             int value;
 
-            if (card.CardValue == "A" || card.CardValue == "J" || card.CardValue == "Q" || card.CardValue == "K")
+            if (card.CardValue == "J" || card.CardValue == "Q" || card.CardValue == "K")
             {
                 value = 10;
+            }
+            else if (card.CardValue == "A")
+            {
+                acedecisionvisibility = "Visible";
+
+                if (true)
+                {
+                    value = 1;
+                }
+                else
+                {
+                    value = 11;
+                }
             }
             else
             {
