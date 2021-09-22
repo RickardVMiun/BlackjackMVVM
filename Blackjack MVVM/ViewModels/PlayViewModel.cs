@@ -9,9 +9,11 @@ namespace Blackjack_MVVM.ViewModels
 {
     public class PlayViewModel : BaseViewModel
     {
-
         public ICommand StartPlayCommand { get; }
-        StartPlayCommand = new NavigationCommand<GameViewModel>(navStore, () => new GameViewModel(navStore));
+
+        public PlayViewModel(NavigationStore navStore)
+        {
+            StartPlayCommand = new NavigationCommand<GameViewModel>(navStore, () => new GameViewModel(navStore));
         }
     }
 }
