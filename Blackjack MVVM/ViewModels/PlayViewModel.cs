@@ -11,10 +11,7 @@ namespace Blackjack_MVVM.ViewModels
     {
 
         public ICommand StartPlayCommand { get; }
-
-        public PlayViewModel(NavigationStore navStore)
-        {
-            StartPlayCommand = new NavigationCommand<GameViewModel>(navStore, () => new GameViewModel(navStore));
+        StartPlayCommand = new NavigationCommand<GameViewModel>(navStore, () => new GameViewModel(navStore));
         }
     }
 }
