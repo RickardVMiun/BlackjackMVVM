@@ -12,6 +12,8 @@ namespace Blackjack_MVVM.ViewModels
         public int savedMarkers;
         public event PropertyChangedEventHandler PropertyChanged;
 
+
+
         protected void OnPropertyChanged(string propertyName = null)
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));

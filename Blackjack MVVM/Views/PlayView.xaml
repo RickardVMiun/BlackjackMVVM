@@ -6,6 +6,7 @@
              xmlns:local="clr-namespace:Blackjack_MVVM.Views"
              mc:Ignorable="d" d:DesignWidth="1500" Height="800">
     <Grid Margin="0,0,0,-70" Height="718" Width="1400">
+        
         <Grid.Background>
             <ImageBrush AlignmentX="Center" AlignmentY="Top" ImageSource="\Images\BlackJackBord6.png" Stretch="Uniform" />
         </Grid.Background>
@@ -39,7 +40,7 @@
                     </LinearGradientBrush>
                 </Button.Background>
             </Button>
-            <Button BorderThickness="8" Content="Game Rules" Height="150" Width="175"  Command="{Binding ReadRulesCommand}" UseLayoutRounding="False" FontFamily="Cooper Black" FontSize="25" Foreground="Black">
+            <Button BorderThickness="8" Content="Game Rules" Height="150" Width="175"  Command="{Binding ReadRulesInPlayViewCommand}" UseLayoutRounding="False" FontFamily="Cooper Black" FontSize="25" Foreground="Black">
                 <Button.Resources>
                     <Style TargetType="{x:Type Border}">
                         <Setter Property="CornerRadius" Value="30"/>
@@ -69,5 +70,7 @@
                 </Button.Background>
             </Button>
         </StackPanel>
+        <local:PlayRules Grid.Column="4" Grid.Row="2" RulesVisible="{Binding rulesvisibilitypm}" Grid.ColumnSpan="3" Margin="30,50,30,55" Grid.RowSpan="2"/>
+
     </Grid>
 </UserControl>
