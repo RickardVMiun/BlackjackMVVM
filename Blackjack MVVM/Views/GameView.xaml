@@ -59,67 +59,14 @@
         <local:AceValueDecision Grid.Column="4" Grid.Row="2" AceVisible="{Binding acedecisionvisibility}" Grid.ColumnSpan="3" Margin="30,50,30,55" Grid.RowSpan="2"/>
         <local:BettingButtons Grid.Column="6" Grid.Row="5" Grid.ColumnSpan="4" ButtonDisabling="{Binding buttonDisabling}"/>
         <local:PlaceBetButton Grid.Column="6" Grid.Row="4" Grid.ColumnSpan="4" ButtonDisabling2="{Binding buttonDisabling2}"/>
+        <local:HitButton Grid.Column="6" Grid.Row="4" Grid.ColumnSpan="3"/>
+        <local:StandButton Grid.Column="5" Grid.Row="4" Grid.ColumnSpan="3"/>
+
 
         <Border Background="#FF2B1D06" BorderThickness="0" BorderBrush="Black" Grid.Row="5" Grid.ColumnSpan="11" Margin="0,40,0,40" Grid.RowSpan="1" >
             <WrapPanel Orientation="Horizontal" HorizontalAlignment="Center">
-                <Button BorderThickness="4" Content="Hit" Height="57" Width="67"  Command="{Binding HitCommand}" UseLayoutRounding="False" FontFamily="Cooper Black" FontSize="18" Foreground="Black" Margin="0,0,20,0">
-                    <Button.Resources>
-                        <Style TargetType="{x:Type Border}">
-                            <Setter Property="CornerRadius" Value="30"/>
-                        </Style>
-                    </Button.Resources>
-                    <Button.Style>
-                        <Style TargetType="Button">
-                            <Style.Triggers>
-                                <EventTrigger RoutedEvent="PreviewMouseDown">
-                                    <SoundPlayerAction Source="\Sound\mixkit-select-click-1109.wav" />
-                                </EventTrigger>
-                            </Style.Triggers>
-                        </Style>
-                    </Button.Style>
-
-                    <Button.BorderBrush>
-                        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                            <GradientStop Color="#FFF0EC6E"/>
-                            <GradientStop Color="#FFD8D910" Offset="1"/>
-                        </LinearGradientBrush>
-                    </Button.BorderBrush>
-                    <Button.Background>
-                        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                            <GradientStop Color="#FF82F06E" Offset="0.024"/>
-                            <GradientStop Color="#FF1B8506" Offset="1"/>
-                        </LinearGradientBrush>
-                    </Button.Background>
-                </Button>
-                <Button BorderThickness="4" Content="Stand" Height="57" Width="64"  Command="{Binding StandCommand}" UseLayoutRounding="False" FontFamily="Cooper Black" FontSize="18" Foreground="Black">
-                    <Button.Resources>
-                        <Style TargetType="{x:Type Border}">
-                            <Setter Property="CornerRadius" Value="30"/>
-                        </Style>
-
-                    </Button.Resources>
-                    <Button.Style>
-                        <Style TargetType="Button">
-                            <Style.Triggers>
-                                <EventTrigger RoutedEvent="PreviewMouseDown">
-                                    <SoundPlayerAction Source="\Sound\mixkit-click-error-1110.wav" />
-                                </EventTrigger>
-                            </Style.Triggers>
-                        </Style>
-                    </Button.Style>
-                    <Button.BorderBrush>
-                        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                            <GradientStop Color="#FFF0EC6E"/>
-                            <GradientStop Color="#FFD8D910" Offset="1"/>
-                        </LinearGradientBrush>
-                    </Button.BorderBrush>
-                    <Button.Background>
-                        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                            <GradientStop Color="#FFF0AF6E" Offset="0.024"/>
-                            <GradientStop Color="#FFDA1D06" Offset="1"/>
-                        </LinearGradientBrush>
-                    </Button.Background>
-                </Button>
+                
+                
 
                 
 
