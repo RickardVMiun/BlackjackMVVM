@@ -18,6 +18,7 @@ namespace Blackjack_MVVM.ViewModels
     {
         public int PlayerScore { get; set; }
         public int CpuScore { get; set; }
+        public int SessionScore { get; set; } // Variabel som ska hålla värdet får vunna/förlorade pengar under den aktuella sessionen
         public GenericCard Card { get; set; }
         public GameView gameView { get; set; }
         public PlayerScore playerScore { get; set; }
@@ -34,6 +35,7 @@ namespace Blackjack_MVVM.ViewModels
         public Markers markers { get; set; }
         public SavedMarkers savedMarkers { get; set; }
         public CurrentBet currentbet { get; set; }
+        public SessionTotal sessionTotal { get; set; }
         public PlayRules playRules { get; set; }
         public EnumToSymbolConverter converter = new EnumToSymbolConverter();
         public ICommand HitCommand { get; }
@@ -99,6 +101,7 @@ namespace Blackjack_MVVM.ViewModels
             Choose11Command = new Choose11Command(this);
             PlaceBetCommand = new PlaceBetCommand(this);
             currentbet = new CurrentBet();
+            sessionTotal = new SessionTotal();
             savedMarkers = new SavedMarkers();
             playRules = new PlayRules();
             bettingButtons = new BettingButtons();
@@ -106,6 +109,7 @@ namespace Blackjack_MVVM.ViewModels
             hitButton = new HitButton();
             hitToggle = "False";
             standToggle = "False";
+            sessionTotal.TotalSessionScore = 1;
 
 
             AddMarkers();

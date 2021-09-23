@@ -71,8 +71,8 @@
             <Label Content="Bet:" Margin="30,61,0,0" Grid.RowSpan="2" Width="180" FontSize="20" Foreground="#FFFFB101" Grid.ColumnSpan="2" Height="46" FontFamily="Copperplate Gothic Bold"/>
             <Label Content="{Binding currentbet.BetTotal}" Margin="-145,40,0,0" Grid.RowSpan="2" Width="100" FontSize="35" Foreground="#FFFFB101" Grid.ColumnSpan="2" Height="46" FontFamily="Copperplate Gothic Bold"/>
             <Label Content="Total win:" Margin="60,61,0,0" Grid.RowSpan="2" Width="125" FontSize="20" Foreground="#FFFFB101" Height="46" FontFamily="Copperplate Gothic Bold"/>
-            <Label Content="0" Margin="2,42,0,0" Grid.RowSpan="2" Width="100" FontSize="35" Foreground="#FFFFB101" Grid.ColumnSpan="2" Height="46" FontFamily="Copperplate Gothic Bold"/>
-            
+            <Label Content="{Binding sessionTotal.TotalSessionScore}" Foreground="#FFFFB101" Margin="60,61,0,0"  Width="100" FontSize="35"/>
+
         </WrapPanel>
 
         
