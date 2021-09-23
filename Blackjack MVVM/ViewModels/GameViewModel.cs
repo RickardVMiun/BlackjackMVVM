@@ -21,6 +21,8 @@ namespace Blackjack_MVVM.ViewModels
         public GenericCard Card { get; set; }
         public GameView gameView { get; set; }
         public PlayerScore playerScore { get; set; }
+
+        public BettingButtons bettingButtons { get; set; }
         public CpuScore cpuScore { get; set; }
         private static readonly Random random = new Random();
         public ObservableCollection<GenericCard> DeckOfCards { get; set; }
@@ -42,6 +44,10 @@ namespace Blackjack_MVVM.ViewModels
         public ICommand Bet100Command { get; }
         public ICommand ClearBetCommand { get; }
         public ICommand ReadRulesCommand { get; }
+        public ICommand CloseRulesCommand { get; }
+        public ICommand Choose1Command { get; }
+        public ICommand Choose11Command { get; }
+        public ICommand PlaceBetCommand { get; }
 
         public GenericCard newCard { get; set; }
         public Person p1 = new Person();
@@ -49,20 +55,26 @@ namespace Blackjack_MVVM.ViewModels
         public string visibility { get; set; }
         public string winnervisibility { get; set; }
 
-        public string rulesvisibility { get; set; } 
+        public string rulesvisibility { get; set; }
+        public string acedecisionvisibility{ get; set; }
 
         public string cardvisibility { get; set; }
+
+        public string buttonDisabling { get; set; }
         int totalbet = 0;
         int bet = 0;
 
         public string filename = "Blackjack_MVVM.json";
 
+        public PlayViewModel playViewModel;
+
         public GameViewModel(NavigationStore navStore)
         {
+            gameView = new GameView();
             DeckOfCards = new ObservableCollection<GenericCard>();
             FillDeckOfCards();
-            AddStartingCardsHuman();
-            AddStartingCardsCpu();
+            //AddStartingCardsHuman();
+            //AddStartingCardsCpu();
             HitCommand = new HitCommand(this);
             PlayAgainCommand = new NavigationCommand<GameViewModel>(navStore, () => new GameViewModel(navStore));
             StopPlayingCommand = new StopPlayingCommand(this);
@@ -74,22 +86,33 @@ namespace Blackjack_MVVM.ViewModels
             Bet100Command = new Bet100Command(this);
             ClearBetCommand = new ClearBetCommand(this);
             ReadRulesCommand = new ReadRulesCommand(this);
+            CloseRulesCommand = new CloseRulesCommand(this);
+            Choose1Command = new Choose1Command(this);
+            Choose11Command = new Choose11Command(this);
+            PlaceBetCommand = new PlaceBetCommand(this);
             currentbet = new CurrentBet();
             savedMarkers = new SavedMarkers();
             playRules = new PlayRules();
+            bettingButtons = new BettingButtons();
             AddMarkers();
             if (File.Exists(filename))
-                GetSavedMarkers(filename);
+                GetSavedMarkers(filename); 
+        }
+
+        public void DisableBettingButtons()
+        {
+            buttonDisabling = "False";
+            bettingButtons.ButtonDisabling = buttonDisabling;
         }
 
         #region CardFunctionality
-        private void AddStartingCardsHuman()
+        public void AddStartingCardsHuman()
         {
             AddCard();
             AddCard();
         }
 
-        private void AddStartingCardsCpu()
+        public void AddStartingCardsCpu()
         {
             AddCardCpu();
 
@@ -210,13 +233,17 @@ namespace Blackjack_MVVM.ViewModels
         #region GameMechanics
         public void AddPlayerPoints(GenericCard card)
         {
-            // gör om till en int så att vi kan räkna ut värdet.
             playerScore = new PlayerScore();
             int value;
-
-            if (card.CardValue == "A" || card.CardValue == "J" || card.CardValue == "Q" || card.CardValue == "K")
+           
+            if (card.CardValue == "J" || card.CardValue == "Q" || card.CardValue == "K")
             {
                 value = 10;
+            }
+            else if (card.CardValue == "A")
+            {
+                acedecisionvisibility = "Visible";
+                value = 0;
             }
             else
             {
@@ -225,7 +252,34 @@ namespace Blackjack_MVVM.ViewModels
             p1.HandScore += value;
 
             playerScore.playerScore = p1.HandScore;
+        }
 
+        public int SetAceValue(int aceValue)
+        {
+            int chosenAceValue;
+            chosenAceValue = aceValue;
+            return chosenAceValue;
+        }
+
+        public void SetAceValueTo11()
+        {
+            p1.HandScore += 11;
+            playerScore.playerScore = p1.HandScore;
+        }
+
+        public void SetAceValueTo1()
+        {
+            p1.HandScore += 1;
+            playerScore.playerScore = p1.HandScore;
+        }
+
+        public int ReturnAceValue()
+        {
+            int ace = 0;
+            int returnAce;
+            returnAce = SetAceValue(ace);
+
+            return returnAce;
         }
 
         public void AddCpuPoints(GenericCard card)

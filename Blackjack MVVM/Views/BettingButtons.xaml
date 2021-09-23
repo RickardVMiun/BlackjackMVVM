@@ -1,0 +1,188 @@
+﻿<UserControl x:Class="Blackjack_MVVM.Views.BettingButtons"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Blackjack_MVVM.Views"
+             mc:Ignorable="d" 
+             x:Name="bettingbuttons"
+             d:DesignHeight="60" d:DesignWidth="390">
+    <Grid>
+        <WrapPanel Orientation="Horizontal" HorizontalAlignment="Right" Grid.Column="6" Grid.Row="5" Grid.ColumnSpan="4">
+            <Button x:Name="btnBet1" BorderThickness="7" Content="1" Height="57" Width="64"  Command="{Binding Bet1Command}" UseLayoutRounding="False" FontFamily="Cooper Black" FontSize="30" Foreground="Black" IsEnabled="{Binding ButtonDisabling, ElementName=bettingbuttons, FallbackValue=True}">
+                <Button.Resources>
+                    <Style TargetType="{x:Type Border}">
+                        <Setter Property="CornerRadius" Value="30"/>
+                    </Style>
+
+                </Button.Resources>
+                <Button.Style>
+                    <Style TargetType="Button">
+                        <Style.Triggers>
+                            <EventTrigger RoutedEvent="PreviewMouseDown">
+                                <SoundPlayerAction Source="\Sound\mixkit-coins-handling-1939.wav" />
+                            </EventTrigger>
+                        </Style.Triggers>
+                    </Style>
+                </Button.Style>
+                <Button.BorderBrush>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="Black"/>
+                        <GradientStop Color="#FFF70889" Offset="1"/>
+                    </LinearGradientBrush>
+                </Button.BorderBrush>
+                <Button.Background>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="White" Offset="0.024"/>
+                        <GradientStop Color="White" Offset="1"/>
+                    </LinearGradientBrush>
+                </Button.Background>
+            </Button>
+            <Button BorderThickness="7" Content="5" Height="57" Width="64"  Command="{Binding Bet5Command}" UseLayoutRounding="False" FontFamily="Cooper Black" FontSize="30" Foreground="Black" IsEnabled="{Binding ButtonDisabling, ElementName=bettingbuttons, FallbackValue=True}">
+                <Button.Resources>
+                    <Style TargetType="{x:Type Border}">
+                        <Setter Property="CornerRadius" Value="30"/>
+                    </Style>
+
+                </Button.Resources>
+                <Button.Style>
+                    <Style TargetType="Button">
+                        <Style.Triggers>
+                            <EventTrigger RoutedEvent="PreviewMouseDown">
+                                <SoundPlayerAction Source="\Sound\mixkit-coins-handling-1939.wav" />
+                            </EventTrigger>
+                        </Style.Triggers>
+                    </Style>
+                </Button.Style>
+                <Button.BorderBrush>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="Black"/>
+                        <GradientStop Color="#FFFFAD18" Offset="1"/>
+                    </LinearGradientBrush>
+                </Button.BorderBrush>
+                <Button.Background>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="White" Offset="0.024"/>
+                        <GradientStop Color="White" Offset="1"/>
+                    </LinearGradientBrush>
+                </Button.Background>
+            </Button>
+            <Button BorderThickness="7" Content="10" Height="57" Width="64"  Command="{Binding Bet10Command}" UseLayoutRounding="False" FontFamily="Cooper Black" FontSize="30" Foreground="Black" IsEnabled="{Binding ButtonDisabling, ElementName=bettingbuttons, FallbackValue=True}">
+                <Button.Resources>
+                    <Style TargetType="{x:Type Border}">
+                        <Setter Property="CornerRadius" Value="30"/>
+                    </Style>
+
+                </Button.Resources>
+                <Button.Style>
+                    <Style TargetType="Button">
+                        <Style.Triggers>
+                            <EventTrigger RoutedEvent="PreviewMouseDown">
+                                <SoundPlayerAction Source="\Sound\mixkit-coins-handling-1939.wav" />
+                            </EventTrigger>
+                        </Style.Triggers>
+                    </Style>
+                </Button.Style>
+                <Button.BorderBrush>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="Black"/>
+                        <GradientStop Color="#FF1EC71A" Offset="1"/>
+                    </LinearGradientBrush>
+                </Button.BorderBrush>
+                <Button.Background>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="White" Offset="0.024"/>
+                        <GradientStop Color="White" Offset="1"/>
+                    </LinearGradientBrush>
+                </Button.Background>
+            </Button>
+            <Button BorderThickness="7" Content="25" Height="57" Width="64"  Command="{Binding Bet25Command}" UseLayoutRounding="False" FontFamily="Cooper Black" FontSize="30" Foreground="Black" IsEnabled="{Binding ButtonDisabling, ElementName=bettingbuttons, FallbackValue=True}">
+                <Button.Resources>
+                    <Style TargetType="{x:Type Border}">
+                        <Setter Property="CornerRadius" Value="30"/>
+                    </Style>
+
+                </Button.Resources>
+                <Button.Style>
+                    <Style TargetType="Button">
+                        <Style.Triggers>
+                            <EventTrigger RoutedEvent="PreviewMouseDown">
+                                <SoundPlayerAction Source="\Sound\mixkit-coins-handling-1939.wav" />
+                            </EventTrigger>
+                        </Style.Triggers>
+                    </Style>
+                </Button.Style>
+                <Button.BorderBrush>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="Black"/>
+                        <GradientStop Color="#FF1527EA" Offset="1"/>
+                    </LinearGradientBrush>
+                </Button.BorderBrush>
+                <Button.Background>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="White" Offset="0.024"/>
+                        <GradientStop Color="White" Offset="1"/>
+                    </LinearGradientBrush>
+                </Button.Background>
+            </Button>
+            <Button BorderThickness="7" Content="100" Height="57" Width="64"  Command="{Binding Bet100Command}" UseLayoutRounding="False" FontFamily="Cooper Black" FontSize="25" Foreground="Black" IsEnabled="{Binding ButtonDisabling, ElementName=bettingbuttons, FallbackValue=True}">
+                <Button.Resources>
+                    <Style TargetType="{x:Type Border}">
+                        <Setter Property="CornerRadius" Value="30"/>
+                    </Style>
+
+                </Button.Resources>
+                <Button.Style>
+                    <Style TargetType="Button">
+                        <Style.Triggers>
+                            <EventTrigger RoutedEvent="PreviewMouseDown">
+                                <SoundPlayerAction Source="\Sound\mixkit-coins-handling-1939.wav" />
+                            </EventTrigger>
+                        </Style.Triggers>
+                    </Style>
+                </Button.Style>
+                <Button.BorderBrush>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="Black"/>
+                        <GradientStop Color="#FFFFEF0A" Offset="1"/>
+                    </LinearGradientBrush>
+                </Button.BorderBrush>
+                <Button.Background>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="White" Offset="0.024"/>
+                        <GradientStop Color="White" Offset="1"/>
+                    </LinearGradientBrush>
+                </Button.Background>
+            </Button>
+            <Button BorderThickness="7" Content="X" Height="57" Width="64"  Command="{Binding ClearBetCommand}" UseLayoutRounding="False" FontFamily="Cooper Black" FontSize="35" Foreground="Black" IsEnabled="{Binding ButtonDisabling, ElementName=bettingbuttons, FallbackValue=True}">
+                <Button.Resources>
+                    <Style TargetType="{x:Type Border}">
+                        <Setter Property="CornerRadius" Value="30"/>
+                    </Style>
+
+                </Button.Resources>
+                <Button.Style>
+                    <Style TargetType="Button">
+                        <Style.Triggers>
+                            <EventTrigger RoutedEvent="PreviewMouseDown">
+                                <SoundPlayerAction Source="\Sound\mixkit-select-click-1109.wav" />
+                            </EventTrigger>
+                        </Style.Triggers>
+                    </Style>
+                </Button.Style>
+                <Button.BorderBrush>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="Black"/>
+                        <GradientStop Color="#FFEA1515" Offset="1"/>
+                    </LinearGradientBrush>
+                </Button.BorderBrush>
+                <Button.Background>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="White" Offset="0.024"/>
+                        <GradientStop Color="White" Offset="1"/>
+                    </LinearGradientBrush>
+                </Button.Background>
+            </Button>
+        </WrapPanel>
+    </Grid>
+</UserControl>

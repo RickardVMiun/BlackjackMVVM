@@ -74,22 +74,24 @@
                     </Paragraph>
                 </FlowDocument>
             </RichTextBox>
-            <StackPanel>
-                <Button BorderThickness="4" Content="Close" Height="37" Width="47"  Command="{Binding }" UseLayoutRounding="False" FontFamily="Cooper Black" FontSize="12" Foreground="Black" Margin="308,10,25,700">
-                    <Button.Resources>
-                        <Style TargetType="{x:Type Border}">
-                            <Setter Property="CornerRadius" Value="20"/>
-                        </Style>
-                    </Button.Resources>
-                    <Button.Style>
-                        <Style TargetType="Button">
-                            <Style.Triggers>
-                                <EventTrigger RoutedEvent="PreviewMouseDown">
-                                    <SoundPlayerAction Source="\Sound\mixkit-select-click-1109.wav" />
-                                </EventTrigger>
-                            </Style.Triggers>
-                        </Style>
-                    </Button.Style>
+
+            
+            <Button BorderThickness="4" Content="Close" Height="47" Width="57"  Command="{Binding CloseRulesCommand }" UseLayoutRounding="False" FontFamily="Cooper Black" FontSize="15" Foreground="Black" Margin="308,10,25,700">
+                <Button.Resources>
+                    <Style TargetType="{x:Type Border}">
+                        <Setter Property="CornerRadius" Value="20"/>
+                    </Style>
+                </Button.Resources>
+                <Button.Style>
+                    <Style TargetType="Button">
+                        <Style.Triggers>
+                            <EventTrigger RoutedEvent="PreviewMouseDown">
+                                <SoundPlayerAction Source="\Sound\mixkit-select-click-1109.wav" />
+                            </EventTrigger>
+                        </Style.Triggers>
+                    </Style>
+                </Button.Style>
+
 
                     <Button.BorderBrush>
                         <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
