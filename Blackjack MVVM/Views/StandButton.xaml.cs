@@ -22,5 +22,19 @@ namespace Blackjack_MVVM.Views
         {
             InitializeComponent();
         }
+
+
+
+        public string StandToggle
+        {
+            get { return (string)GetValue(StandToggleProperty); }
+            set { SetValue(StandToggleProperty, value); }
+        }
+
+        // Using a DependencyProperty as the backing store for StandToggle.  This enables animation, styling, binding, etc...
+        public static readonly DependencyProperty StandToggleProperty =
+            DependencyProperty.Register("StandToggle", typeof(string), typeof(StandButton), new PropertyMetadata("True"));
+
+
     }
 }
