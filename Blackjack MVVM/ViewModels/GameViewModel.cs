@@ -223,7 +223,6 @@ namespace Blackjack_MVVM.ViewModels
             playerScore = new PlayerScore();
             int value;
            
-
             if (card.CardValue == "J" || card.CardValue == "Q" || card.CardValue == "K")
             {
                 value = 10;
@@ -231,7 +230,8 @@ namespace Blackjack_MVVM.ViewModels
             else if (card.CardValue == "A")
             {
                 acedecisionvisibility = "Visible";
-                value = ReturnAceValue();
+                value = 0;
+                //value = SetAceValue();
             }
             else
             {
@@ -241,6 +241,7 @@ namespace Blackjack_MVVM.ViewModels
 
             playerScore.playerScore = p1.HandScore;
         }
+
         public int SetAceValue(int aceValue)
         {
             int chosenAceValue;
@@ -248,14 +249,35 @@ namespace Blackjack_MVVM.ViewModels
             return chosenAceValue;
         }
 
-        public int ReturnAceValue()
-        {
-            int ace = 0;
-            int returnAce;
-            returnAce = SetAceValue(ace);
+        //public int SetAceValueTo11(int aceValue)
+        //{
+        //    int chosenAceValue;
+        //    chosenAceValue = aceValue;
+        //    return chosenAceValue;
+        //}
 
-            return returnAce;
-        }
+        //public void SetAceValueTo1(int aceValue)
+        //{
+        //    int aceIndex;
+        //    int aceOne = 1;
+        //    aceIndex = PersonCardsInGame.Count() - 1;
+        //    PersonCardsInGame[aceIndex]
+
+        //    p1.HandScore = aceOne;
+        //    playerScore.playerScore = p1.HandScore;
+            //int chosenAceValue;
+            //chosenAceValue = aceValue;
+            //return chosenAceValue;
+        //}
+
+        //public int ReturnAceValue()
+        //{
+        //    int ace = 0;
+        //    int returnAce;
+        //    returnAce = SetAceValue(ace);
+
+        //    return returnAce;
+        //}
 
         public void AddCpuPoints(GenericCard card)
         {
