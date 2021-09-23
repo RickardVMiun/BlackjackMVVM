@@ -34,6 +34,15 @@ namespace Blackjack_MVVM.Views
         // Using a DependencyProperty as the backing store for MarkerTotal.  This enables animation, styling, binding, etc...
         public static readonly DependencyProperty MarkerTotalProperty =
             DependencyProperty.Register("MarkerTotal", typeof(int), typeof(Markers), new PropertyMetadata(0));
+        public int MarkerSessionScore
+        {
+            get { return (int)GetValue(MarkerSessionScoreProperty); }
+            set { SetValue(MarkerSessionScoreProperty, value); }
+        }
+
+        // Using a DependencyProperty as the backing store for MarkerSessionScore.  This enables animation, styling, binding, etc...
+        public static readonly DependencyProperty MarkerSessionScoreProperty =
+            DependencyProperty.Register("MarkerSessionScore", typeof(int), typeof(Markers), new PropertyMetadata(0));
 
 
     }
