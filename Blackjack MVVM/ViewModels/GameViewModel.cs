@@ -45,6 +45,7 @@ namespace Blackjack_MVVM.ViewModels
         public ICommand CloseRulesCommand { get; }
         public ICommand Choose1Command { get; }
         public ICommand Choose11Command { get; }
+        public ICommand PlaceBetCommand { get; }
 
         public GenericCard newCard { get; set; }
         public Person p1 = new Person();
@@ -67,8 +68,8 @@ namespace Blackjack_MVVM.ViewModels
         {
             DeckOfCards = new ObservableCollection<GenericCard>();
             FillDeckOfCards();
-            AddStartingCardsHuman();
-            AddStartingCardsCpu();
+            //AddStartingCardsHuman();
+            //AddStartingCardsCpu();
             HitCommand = new HitCommand(this);
             PlayAgainCommand = new NavigationCommand<GameViewModel>(navStore, () => new GameViewModel(navStore));
             StopPlayingCommand = new StopPlayingCommand(this);
@@ -83,6 +84,7 @@ namespace Blackjack_MVVM.ViewModels
             CloseRulesCommand = new CloseRulesCommand(this);
             Choose1Command = new Choose1Command(this);
             Choose11Command = new Choose11Command(this);
+            PlaceBetCommand = new PlaceBetCommand(this);
             currentbet = new CurrentBet();
             savedMarkers = new SavedMarkers();
             playRules = new PlayRules();
@@ -92,13 +94,13 @@ namespace Blackjack_MVVM.ViewModels
         }
 
         #region CardFunctionality
-        private void AddStartingCardsHuman()
+        public void AddStartingCardsHuman()
         {
             AddCard();
             AddCard();
         }
 
-        private void AddStartingCardsCpu()
+        public void AddStartingCardsCpu()
         {
             AddCardCpu();
 

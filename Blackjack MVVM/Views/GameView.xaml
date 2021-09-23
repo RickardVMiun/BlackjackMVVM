@@ -117,6 +117,36 @@
                     </Button.Background>
                 </Button>
 
+                <Button BorderThickness="4" Content="Place bet" Height="57" Width="90"  Command="{Binding PlaceBetCommand}" UseLayoutRounding="False" FontFamily="Cooper Black" FontSize="18" Foreground="Black">
+                    <Button.Resources>
+                        <Style TargetType="{x:Type Border}">
+                            <Setter Property="CornerRadius" Value="30"/>
+                        </Style>
+
+                    </Button.Resources>
+                    <Button.Style>
+                        <Style TargetType="Button">
+                            <Style.Triggers>
+                                <EventTrigger RoutedEvent="PreviewMouseDown">
+                                    <SoundPlayerAction Source="\Sound\mixkit-click-error-1110.wav" />
+                                </EventTrigger>
+                            </Style.Triggers>
+                        </Style>
+                    </Button.Style>
+                    <Button.BorderBrush>
+                        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                            <GradientStop Color="#FFF0EC6E"/>
+                            <GradientStop Color="#FFD8D910" Offset="1"/>
+                        </LinearGradientBrush>
+                    </Button.BorderBrush>
+                    <Button.Background>
+                        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                            <GradientStop Color="#FFF0AF6E" Offset="0.024"/>
+                            <GradientStop Color="#FFDA1D06" Offset="1"/>
+                        </LinearGradientBrush>
+                    </Button.Background>
+                </Button>
+
             </WrapPanel>
         </Border>
         <WrapPanel Orientation="Horizontal" HorizontalAlignment="Left" Grid.Column="0" Grid.Row="5" Grid.ColumnSpan="10">

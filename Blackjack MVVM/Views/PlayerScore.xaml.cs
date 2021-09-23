@@ -31,7 +31,7 @@ namespace Blackjack_MVVM.Views
 
         // Using a DependencyProperty as the backing store for playerScore.  This enables animation, styling, binding, etc...
         public static readonly DependencyProperty playerScoreProperty =
-            DependencyProperty.Register("playerScore", typeof(int), typeof(PlayerScore), new PropertyMetadata(5));
+            DependencyProperty.Register("playerScore", typeof(int), typeof(PlayerScore), new PropertyMetadata(0));
 
     }
 }
