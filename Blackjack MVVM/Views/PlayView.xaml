@@ -10,7 +10,7 @@
         <Grid.Background>
             <ImageBrush AlignmentX="Center" AlignmentY="Top" ImageSource="\Images\BlackJackBord6.png" Stretch="Uniform" />
         </Grid.Background>
-        <StackPanel HorizontalAlignment="Left" VerticalAlignment="Top" Margin="553,88,0,0">
+        <StackPanel HorizontalAlignment="Left" VerticalAlignment="Top" Margin="553,200,0,0">
             <Button BorderThickness="8" Content="PLAY" Height="150" Width="175"  Command="{Binding StartPlayCommand}" UseLayoutRounding="False" FontFamily="Cooper Black" FontSize="35" Foreground="#FFFFB101" Margin="50,50,50,50">
                 <Button.Resources>
                     <Style TargetType="{x:Type Border}">
@@ -40,37 +40,6 @@
                     </LinearGradientBrush>
                 </Button.Background>
             </Button>
-            <Button BorderThickness="8" Content="Game Rules" Height="150" Width="175"  Command="{Binding ReadRulesInPlayViewCommand}" UseLayoutRounding="False" FontFamily="Cooper Black" FontSize="25" Foreground="Black">
-                <Button.Resources>
-                    <Style TargetType="{x:Type Border}">
-                        <Setter Property="CornerRadius" Value="30"/>
-                    </Style>
-                </Button.Resources>
-                <Button.Style>
-                    <Style TargetType="{x:Type Button}">
-                        <Style.Triggers>
-                            <EventTrigger RoutedEvent="UIElement.PreviewMouseDown">
-                                <SoundPlayerAction Source="\Sound\mixkit-select-click-1109.wav" />
-                            </EventTrigger>
-                        </Style.Triggers>
-                    </Style>
-                </Button.Style>
-
-                <Button.BorderBrush>
-                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                        <GradientStop Color="#FFFFB101"/>
-                        <GradientStop Color="#FF595907" Offset="1"/>
-                    </LinearGradientBrush>
-                </Button.BorderBrush>
-                <Button.Background>
-                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                        <GradientStop Color="#FFF0EC6E" Offset="0.024"/>
-                        <GradientStop Color="#FFBDD317" Offset="1"/>
-                    </LinearGradientBrush>
-                </Button.Background>
-            </Button>
         </StackPanel>
-        <local:PlayRules Grid.Column="4" Grid.Row="2" RulesVisible="{Binding rulesvisibilitypm}" Grid.ColumnSpan="3" Margin="30,50,30,55" Grid.RowSpan="2"/>
-
     </Grid>
 </UserControl>
