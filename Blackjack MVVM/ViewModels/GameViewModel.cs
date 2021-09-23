@@ -83,8 +83,6 @@ namespace Blackjack_MVVM.ViewModels
             gameView = new GameView();
             DeckOfCards = new ObservableCollection<GenericCard>();
             FillDeckOfCards();
-            //AddStartingCardsHuman();
-            //AddStartingCardsCpu();
             HitCommand = new HitCommand(this);
             PlayAgainCommand = new NavigationCommand<GameViewModel>(navStore, () => new GameViewModel(navStore));
             StopPlayingCommand = new StopPlayingCommand(this);
@@ -109,7 +107,7 @@ namespace Blackjack_MVVM.ViewModels
             hitButton = new HitButton();
             hitToggle = "False";
             standToggle = "False";
-            sessionTotal.TotalSessionScore = 1;
+            //sessionTotal.TotalSessionScore = 1;
 
 
             AddMarkers();
@@ -415,11 +413,12 @@ namespace Blackjack_MVVM.ViewModels
             if (CpuWon() == true || HitAutoLoose() == true)
             {
                 savedMarkers.MarkersSaved = savedMarkers.MarkersSaved - totalbet;
+                sessionTotal.TotalSessionScore = sessionTotal.TotalSessionScore - totalbet; // värde för sessionscore, funkar tills vyn resettas
             }
             else
             {
                 savedMarkers.MarkersSaved = savedMarkers.MarkersSaved + (totalbet * 2);
-
+                sessionTotal.TotalSessionScore = sessionTotal.TotalSessionScore + (totalbet * 2); // värde för sessionscore
             }
             markers.MarkerTotal = savedMarkers.MarkersSaved;
             savedMarkers.MarkersSaved = savedMarkers.MarkersSaved;
