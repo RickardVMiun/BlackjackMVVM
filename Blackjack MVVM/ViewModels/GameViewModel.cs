@@ -21,6 +21,8 @@ namespace Blackjack_MVVM.ViewModels
         public GenericCard Card { get; set; }
         public GameView gameView { get; set; }
         public PlayerScore playerScore { get; set; }
+
+        public BettingButtons bettingButtons { get; set; }
         public CpuScore cpuScore { get; set; }
         private static readonly Random random = new Random();
         public ObservableCollection<GenericCard> DeckOfCards { get; set; }
@@ -57,6 +59,8 @@ namespace Blackjack_MVVM.ViewModels
         public string acedecisionvisibility{ get; set; }
 
         public string cardvisibility { get; set; }
+
+        public string buttonDisabling { get; set; }
         int totalbet = 0;
         int bet = 0;
 
@@ -66,6 +70,7 @@ namespace Blackjack_MVVM.ViewModels
 
         public GameViewModel(NavigationStore navStore)
         {
+            gameView = new GameView();
             DeckOfCards = new ObservableCollection<GenericCard>();
             FillDeckOfCards();
             //AddStartingCardsHuman();
@@ -88,9 +93,16 @@ namespace Blackjack_MVVM.ViewModels
             currentbet = new CurrentBet();
             savedMarkers = new SavedMarkers();
             playRules = new PlayRules();
+            bettingButtons = new BettingButtons();
             AddMarkers();
             if (File.Exists(filename))
                 GetSavedMarkers(filename); 
+        }
+
+        public void DisableBettingButtons()
+        {
+            buttonDisabling = "False";
+            bettingButtons.ButtonDisabling = buttonDisabling;
         }
 
         #region CardFunctionality

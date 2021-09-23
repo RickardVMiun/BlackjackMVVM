@@ -25,6 +25,7 @@ namespace Blackjack_MVVM.Commands
         {
             gameViewModel.AddStartingCardsHuman();
             gameViewModel.AddStartingCardsCpu();
+            gameViewModel.DisableBettingButtons();
         }
     }
 }
