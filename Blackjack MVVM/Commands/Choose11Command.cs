@@ -23,10 +23,7 @@ namespace Blackjack_MVVM.Commands
 
         public void Execute(object parameter)
         {
-            gameViewModel.SetAceValue(chose11);
-
-            //gameViewModel.playerScore.playerScore += 11;
-
+            gameViewModel.SetAceValueTo11();
             gameViewModel.acedecisionvisibility = "Hidden";
         }
     }
