@@ -76,7 +76,7 @@
             </RichTextBox>
 
             <StackPanel>
-                <Button BorderThickness="4" Content="Close" Height="47" Width="57"  Command="{Binding CloseRulesCommand }" UseLayoutRounding="False" FontFamily="Cooper Black" FontSize="15" Foreground="Black" Margin="308,10,25,700">
+                <Button BorderThickness="4" Content="Close" Height="37" Width="47"  Command="{Binding CloseRulesCommand }" UseLayoutRounding="False" FontFamily="Cooper Black" FontSize="12" Foreground="Black" Margin="308,10,25,700">
                 <Button.Resources>
                     <Style TargetType="{x:Type Border}">
                         <Setter Property="CornerRadius" Value="20"/>
