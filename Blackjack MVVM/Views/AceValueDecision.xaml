@@ -5,13 +5,81 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:Blackjack_MVVM.Views"
              mc:Ignorable="d" 
-             d:DesignHeight="500" d:DesignWidth="400"
+             d:DesignHeight="300" d:DesignWidth="500"
              x:Name="acedecision">
 
-    <Grid Background="AntiqueWhite" Visibility="{Binding AceVisible, ElementName=acedecision, FallbackValue=hidden}">
-        <Button x:Name="btn1" Command="{Binding Choose1Command}" Content="Choose 1" HorizontalAlignment="Left" Margin="105,141,0,0" VerticalAlignment="Top"/>
-        <TextBox HorizontalAlignment="Left" Margin="105,10,0,0" Text="You got an Ace! Would you like it to be worth 1 or 11?" FontSize="20" TextWrapping="Wrap" VerticalAlignment="Top" Width="196" Height="126"/>
-        <Button x:Name="btn11" Command="{Binding Choose11Command}" Content="Choose 11" HorizontalAlignment="Left" Margin="241,141,0,0" VerticalAlignment="Top"/>
+    <Grid Background="Transparent" Visibility="{Binding AceVisible, ElementName=acedecision, FallbackValue=Hidden}">
+        <Border BorderBrush="#FFFFB101" BorderThickness="5" Width="500" Height="150" VerticalAlignment="Top" CornerRadius="10">
+            <Border.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="Black"/>
+                    <GradientStop Color="#FF4C4C39" Offset="1"/>
+                </LinearGradientBrush>
+            </Border.Background>
+            <StackPanel Width="500" Height="250">
+                <Label Content="You got an Ace!" HorizontalAlignment="Center" Margin="0,20,0,0" VerticalAlignment="Center" Foreground="#FFFFB101" FontSize="25" FontFamily="Copperplate Gothic Bold"/>
+                <Label Content="Would you like it to be worth 1 or 11?" HorizontalAlignment="Center" Margin="0,30,0,0" VerticalAlignment="Center" Foreground="#FFFFB101" FontSize="16" FontFamily="Copperplate Gothic Bold"/>
+            </StackPanel>
+        </Border>
+        <WrapPanel HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,0,0,0">
+            <Button BorderThickness="4" Content="1" Height="57" Width="64"  Command="{Binding Choose1Command}" UseLayoutRounding="False" FontFamily="Cooper Black" FontSize="30" Foreground="#FFFFB101" Margin="0,0,40,0">
+                <Button.Resources>
+                    <Style TargetType="{x:Type Border}">
+                        <Setter Property="CornerRadius" Value="30"/>
+                    </Style>
 
+                </Button.Resources>
+                <Button.Style>
+                    <Style TargetType="Button">
+                        <Style.Triggers>
+                            <EventTrigger RoutedEvent="PreviewMouseDown">
+                                <SoundPlayerAction Source="\Sound\mixkit-click-error-1110.wav" />
+                            </EventTrigger>
+                        </Style.Triggers>
+                    </Style>
+                </Button.Style>
+                <Button.BorderBrush>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="#FFFFB101"/>
+                        <GradientStop Color="#FFFFB101" Offset="1"/>
+                    </LinearGradientBrush>
+                </Button.BorderBrush>
+                <Button.Background>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="Black" Offset="0.024"/>
+                        <GradientStop Color="#FF4C4C39" Offset="1"/>
+                    </LinearGradientBrush>
+                </Button.Background>
+            </Button>
+            <Button BorderThickness="4" Content="11" Height="57" Width="64"  Command="{Binding Choose11Command}" UseLayoutRounding="False" FontFamily="Cooper Black" FontSize="30" Foreground="#FFFFB101">
+                <Button.Resources>
+                    <Style TargetType="{x:Type Border}">
+                        <Setter Property="CornerRadius" Value="30"/>
+                    </Style>
+
+                </Button.Resources>
+                <Button.Style>
+                    <Style TargetType="Button">
+                        <Style.Triggers>
+                            <EventTrigger RoutedEvent="PreviewMouseDown">
+                                <SoundPlayerAction Source="\Sound\mixkit-click-error-1110.wav" />
+                            </EventTrigger>
+                        </Style.Triggers>
+                    </Style>
+                </Button.Style>
+                <Button.BorderBrush>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="#FFFFB101"/>
+                        <GradientStop Color="#FFFFB101" Offset="1"/>
+                    </LinearGradientBrush>
+                </Button.BorderBrush>
+                <Button.Background>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="Black" Offset="0.024"/>
+                        <GradientStop Color="#FF4C4C39" Offset="1"/>
+                    </LinearGradientBrush>
+                </Button.Background>
+            </Button>
+        </WrapPanel>
     </Grid>
 </UserControl>
