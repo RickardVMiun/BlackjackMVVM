@@ -8,7 +8,8 @@
              x:Name="placebetbutton"
              d:DesignHeight="70" d:DesignWidth="110">
     <Grid>
-        <Button BorderThickness="4" Content="Place bet" Height="57" Width="90"  Command="{Binding PlaceBetCommand}" UseLayoutRounding="False" FontFamily="Cooper Black" FontSize="18" Foreground="Black" IsEnabled="{Binding ButtonDisabling2, ElementName=placebetbutton, FallbackValue=True}">
+
+        <Button BorderThickness="4" Content="Bet" Height="57" Width="67"  Command="{Binding PlaceBetCommand}" UseLayoutRounding="False" FontFamily="Cooper Black" FontSize="18" Foreground="Black" Margin="20,0,0,0">
             <Button.Resources>
                 <Style TargetType="{x:Type Border}">
                     <Setter Property="CornerRadius" Value="30"/>
@@ -32,8 +33,8 @@
             </Button.BorderBrush>
             <Button.Background>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                    <GradientStop Color="#FFF0AF6E" Offset="0.024"/>
-                    <GradientStop Color="#FFDA1D06" Offset="1"/>
+                    <GradientStop Color="#FFBAD3FD" Offset="0.024"/>
+                    <GradientStop Color="#FF0610DA" Offset="1"/>
                 </LinearGradientBrush>
             </Button.Background>
         </Button>
