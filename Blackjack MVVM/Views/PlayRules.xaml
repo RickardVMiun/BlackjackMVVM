@@ -16,10 +16,13 @@
                 <GradientStop Color="#FF6B6C6B" Offset="1"/>
             </LinearGradientBrush>
         </Border.Background>
-        <StackPanel>
+
         <Grid Background="Transparent">
-            <RichTextBox VerticalAlignment="Center" BorderBrush="Transparent" Background="Transparent" Foreground="Black" FontSize="11" FontFamily="Copperplate Gothic Bold" >
+            <RichTextBox  VerticalAlignment="Center" BorderBrush="Transparent" Background="Transparent" Foreground="Black" FontSize="11" FontFamily="Copperplate Gothic Bold">
                 <FlowDocument TextAlignment="Center" Foreground="#FFFFB101" LineHeight="18">
+                    <Paragraph>
+                        
+                    </Paragraph>
                     <Paragraph Foreground="#FFFFB101" FontSize="15">
                         <Bold>Object Of The Game:</Bold>
                     </Paragraph>
@@ -71,6 +74,7 @@
                     </Paragraph>
                 </FlowDocument>
             </RichTextBox>
+
             
             <Button BorderThickness="4" Content="Close" Height="47" Width="57"  Command="{Binding CloseRulesCommand }" UseLayoutRounding="False" FontFamily="Cooper Black" FontSize="15" Foreground="Black" Margin="308,10,25,700">
                 <Button.Resources>
@@ -88,20 +92,21 @@
                     </Style>
                 </Button.Style>
 
-                <Button.BorderBrush>
-                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                        <GradientStop Color="#FFF0EC6E"/> 
-                        <GradientStop Color="#FFD8D910" Offset="1"/>
-                    </LinearGradientBrush>
-                </Button.BorderBrush>
-                <Button.Background>
-                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                        <GradientStop Color="#FFF0AF6E" Offset="0.024"/>
-                        <GradientStop Color="#FFDA1D06" Offset="1"/>
-                    </LinearGradientBrush>
-                </Button.Background>
-            </Button>
+
+                    <Button.BorderBrush>
+                        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                            <GradientStop Color="#FFF0EC6E"/>
+                            <GradientStop Color="#FFD8D910" Offset="1"/>
+                        </LinearGradientBrush>
+                    </Button.BorderBrush>
+                    <Button.Background>
+                        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                            <GradientStop Color="#FFF0AF6E" Offset="0.024"/>
+                            <GradientStop Color="#FFDA1D06" Offset="1"/>
+                        </LinearGradientBrush>
+                    </Button.Background>
+                </Button>
+            </StackPanel>
         </Grid>
-        </StackPanel>
     </Border>
 </UserControl>
