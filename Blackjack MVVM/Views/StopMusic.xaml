@@ -5,14 +5,14 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:Blackjack_MVVM.Views"
              mc:Ignorable="d" 
-             d:DesignHeight="80" d:DesignWidth="80"
+             d:DesignHeight="40" d:DesignWidth="40"
              x:Name="stopmusic">
     <UserControl.Resources>
-        <Image x:Key="MyImage" Source="C:\Users\bol\Source\Repos\SUP21_Grupp4\Blackjack MVVM\Images\SoundOff.png" Height="63" Width="80" />
+        <Image x:Key="MyImage" Source="C:\Users\bol\Source\Repos\SUP21_Grupp4\Blackjack MVVM\Images\SoundOff.png" Height="30" Width="50" />
     </UserControl.Resources>
     
     <Grid Background="Transparent">
-        <Button Content="{StaticResource MyImage}" BorderBrush="Transparent" Background="Transparent" HorizontalAlignment="Left" Margin="0,0,0,0" VerticalAlignment="Top" Width="80" Height="80"></Button>
+        <Button Content="{StaticResource MyImage}" BorderBrush="Transparent" Background="Transparent" HorizontalAlignment="center" Margin="0,0,0,0" VerticalAlignment="Top" Width="40" Height="40"></Button>
 
 
     </Grid>
