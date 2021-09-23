@@ -24,6 +24,8 @@ namespace Blackjack_MVVM.ViewModels
 
         public BettingButtons bettingButtons { get; set; }
         public PlaceBetButton placeBetButton { get; set; }
+        public HitButton hitButton { get; set; }
+        public StandButton standButton { get; set; }
         public CpuScore cpuScore { get; set; }
         private static readonly Random random = new Random();
         public ObservableCollection<GenericCard> DeckOfCards { get; set; }
@@ -64,6 +66,9 @@ namespace Blackjack_MVVM.ViewModels
         public string buttonDisabling { get; set; }
 
         public string buttonDisabling2 { get; set; }
+        public string hitToggle { get; set; }
+
+        public string standToggle { get; set; }
         int totalbet = 0;
         int bet = 0;
 
@@ -98,6 +103,10 @@ namespace Blackjack_MVVM.ViewModels
             playRules = new PlayRules();
             bettingButtons = new BettingButtons();
             placeBetButton = new PlaceBetButton();
+            hitButton = new HitButton();
+            hitToggle = "False";
+            standToggle = "False";
+
 
             AddMarkers();
             if (File.Exists(filename))
@@ -110,7 +119,8 @@ namespace Blackjack_MVVM.ViewModels
             buttonDisabling2 = "False";
             bettingButtons.ButtonDisabling = buttonDisabling;
             placeBetButton.ButtonDisabling2 = buttonDisabling2;
-            
+            hitToggle = "True";
+            standToggle = "True";            
         }
 
         #region CardFunctionality
@@ -119,6 +129,7 @@ namespace Blackjack_MVVM.ViewModels
             AddCard();
             AddCard();
         }
+
 
         public void AddStartingCardsCpu()
         {

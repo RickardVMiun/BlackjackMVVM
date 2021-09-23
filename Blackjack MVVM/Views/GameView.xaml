@@ -59,8 +59,8 @@
         <local:AceValueDecision Grid.Column="4" Grid.Row="2" AceVisible="{Binding acedecisionvisibility}" Grid.ColumnSpan="3" Margin="30,50,30,55" Grid.RowSpan="2"/>
         <local:BettingButtons Grid.Column="6" Grid.Row="5" Grid.ColumnSpan="4" ButtonDisabling="{Binding buttonDisabling}"/>
         <local:PlaceBetButton Grid.Column="6" Grid.Row="4" Grid.ColumnSpan="4" ButtonDisabling2="{Binding buttonDisabling2}"/>
-        <local:HitButton Grid.Column="6" Grid.Row="4" Grid.ColumnSpan="3"/>
-        <local:StandButton Grid.Column="5" Grid.Row="4" Grid.ColumnSpan="3"/>
+        <local:HitButton Grid.Column="6" Grid.Row="4" Grid.ColumnSpan="3" HitToggle="{Binding hitToggle}"/>
+        <local:StandButton Grid.Column="5" Grid.Row="4" Grid.ColumnSpan="3" StandToggle="{Binding standToggle}"/>
 
 
         <Border Background="#FF2B1D06" BorderThickness="0" BorderBrush="Black" Grid.Row="5" Grid.ColumnSpan="11" Margin="0,40,0,40" Grid.RowSpan="1" >
