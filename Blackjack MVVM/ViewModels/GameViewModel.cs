@@ -18,12 +18,15 @@ namespace Blackjack_MVVM.ViewModels
     {
         public int PlayerScore { get; set; }
         public int CpuScore { get; set; }
+        public int SessionScore { get; set; } // Variabel som ska hålla värdet får vunna/förlorade pengar under den aktuella sessionen
         public GenericCard Card { get; set; }
         public GameView gameView { get; set; }
         public PlayerScore playerScore { get; set; }
 
         public BettingButtons bettingButtons { get; set; }
         public PlaceBetButton placeBetButton { get; set; }
+        public HitButton hitButton { get; set; }
+        public StandButton standButton { get; set; }
         public CpuScore cpuScore { get; set; }
         private static readonly Random random = new Random();
         public ObservableCollection<GenericCard> DeckOfCards { get; set; }
@@ -32,6 +35,7 @@ namespace Blackjack_MVVM.ViewModels
         public Markers markers { get; set; }
         public SavedMarkers savedMarkers { get; set; }
         public CurrentBet currentbet { get; set; }
+        public SessionTotal sessionTotal { get; set; }
         public PlayRules playRules { get; set; }
         public EnumToSymbolConverter converter = new EnumToSymbolConverter();
         public ICommand HitCommand { get; }
@@ -64,6 +68,9 @@ namespace Blackjack_MVVM.ViewModels
         public string buttonDisabling { get; set; }
 
         public string buttonDisabling2 { get; set; }
+        public string hitToggle { get; set; }
+
+        public string standToggle { get; set; }
         int totalbet = 0;
         int bet = 0;
 
@@ -76,8 +83,6 @@ namespace Blackjack_MVVM.ViewModels
             gameView = new GameView();
             DeckOfCards = new ObservableCollection<GenericCard>();
             FillDeckOfCards();
-            //AddStartingCardsHuman();
-            //AddStartingCardsCpu();
             HitCommand = new HitCommand(this);
             PlayAgainCommand = new NavigationCommand<GameViewModel>(navStore, () => new GameViewModel(navStore));
             StopPlayingCommand = new StopPlayingCommand(this);
@@ -94,10 +99,16 @@ namespace Blackjack_MVVM.ViewModels
             Choose11Command = new Choose11Command(this);
             PlaceBetCommand = new PlaceBetCommand(this);
             currentbet = new CurrentBet();
+            sessionTotal = new SessionTotal();
             savedMarkers = new SavedMarkers();
             playRules = new PlayRules();
             bettingButtons = new BettingButtons();
             placeBetButton = new PlaceBetButton();
+            hitButton = new HitButton();
+            hitToggle = "False";
+            standToggle = "False";
+            //sessionTotal.TotalSessionScore = 1;
+
 
             AddMarkers();
             if (File.Exists(filename))
@@ -110,7 +121,8 @@ namespace Blackjack_MVVM.ViewModels
             buttonDisabling2 = "False";
             bettingButtons.ButtonDisabling = buttonDisabling;
             placeBetButton.ButtonDisabling2 = buttonDisabling2;
-            
+            hitToggle = "True";
+            standToggle = "True";            
         }
 
         #region CardFunctionality
@@ -119,6 +131,7 @@ namespace Blackjack_MVVM.ViewModels
             AddCard();
             AddCard();
         }
+
 
         public void AddStartingCardsCpu()
         {
@@ -400,11 +413,12 @@ namespace Blackjack_MVVM.ViewModels
             if (CpuWon() == true || HitAutoLoose() == true)
             {
                 savedMarkers.MarkersSaved = savedMarkers.MarkersSaved - totalbet;
+                sessionTotal.TotalSessionScore = sessionTotal.TotalSessionScore - totalbet; // värde för sessionscore, funkar tills vyn resettas
             }
             else
             {
                 savedMarkers.MarkersSaved = savedMarkers.MarkersSaved + (totalbet * 2);
-
+                sessionTotal.TotalSessionScore = sessionTotal.TotalSessionScore + (totalbet * 2); // värde för sessionscore
             }
             markers.MarkerTotal = savedMarkers.MarkersSaved;
             savedMarkers.MarkersSaved = savedMarkers.MarkersSaved;

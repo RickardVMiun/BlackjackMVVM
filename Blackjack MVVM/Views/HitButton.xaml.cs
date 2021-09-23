@@ -22,5 +22,19 @@ namespace Blackjack_MVVM.Views
         {
             InitializeComponent();
         }
+
+
+
+        public string HitToggle
+        {
+            get { return (string)GetValue(HitToggleProperty); }
+            set { SetValue(HitToggleProperty, value); }
+        }
+
+        // Using a DependencyProperty as the backing store for HitToggle.  This enables animation, styling, binding, etc...
+        public static readonly DependencyProperty HitToggleProperty =
+            DependencyProperty.Register("HitToggle", typeof(string), typeof(HitButton), new PropertyMetadata("True"));
+
+
     }
 }
