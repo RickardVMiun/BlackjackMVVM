@@ -14,10 +14,12 @@ namespace Blackjack_MVVM.Commands
         private GameViewModel gameViewModel;
         public event EventHandler CanExecuteChanged;
         private readonly NavigationStore navigationStore;
+        private MainWindow mainWindow;
 
-        public PlayAgainCommand(GameViewModel gameViewModel, NavigationStore navigationStore)
+        public PlayAgainCommand(GameViewModel gameViewModel, NavigationStore navigationStore, MainWindow mainWindow)
         {
             this.gameViewModel = gameViewModel;
+            this.mainWindow = mainWindow;
             navigationStore = navigationStore;
         }
 
@@ -29,7 +31,7 @@ namespace Blackjack_MVVM.Commands
         public override void Execute(object parameter)
         {
 
-            navigationStore.CurrentViewModel = new GameViewModel(navigationStore);
+            navigationStore.CurrentViewModel = new GameViewModel(navigationStore, mainWindow);
            
         }
     }

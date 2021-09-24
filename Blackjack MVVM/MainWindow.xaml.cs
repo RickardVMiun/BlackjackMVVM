@@ -29,9 +29,10 @@ namespace Blackjack_MVVM
         public MainWindow()
         {
             InitializeComponent();
-            DataContext = new MainViewModel(navStore);
-            navStore.CurrentViewModel = new StartingViewModel(navStore);
             BackgroundMusic();
+            DataContext = new MainViewModel(navStore);
+            navStore.CurrentViewModel = new StartingViewModel(navStore, this);
+            
         }
         public void BackgroundMusic()
         {
