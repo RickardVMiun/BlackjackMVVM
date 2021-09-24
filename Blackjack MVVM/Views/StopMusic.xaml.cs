@@ -22,5 +22,29 @@ namespace Blackjack_MVVM.Views
         {
             InitializeComponent();
         }
+
+        public string StopMusicVisible
+        {
+            get { return (string)GetValue(StopMusicVisibleProperty); }
+            set { SetValue(StopMusicVisibleProperty, value); }
+        }
+
+        // Using a DependencyProperty as the backing store for StopMusicVisible.  This enables animation, styling, binding, etc...
+        public static readonly DependencyProperty StopMusicVisibleProperty =
+            DependencyProperty.Register("StopMusicVisible", typeof(string), typeof(StopMusic), new PropertyMetadata("Visible"));
+
+        public string StopMusicDisabling
+        {
+            get { return (string)GetValue(StopMusicDisablingProperty); }
+            set { SetValue(StopMusicDisablingProperty, value); }
+        }
+
+        // Using a DependencyProperty as the backing store for StopMusicDisabling.  This enables animation, styling, binding, etc...
+        public static readonly DependencyProperty StopMusicDisablingProperty =
+            DependencyProperty.Register("StopMusicDisabling", typeof(string), typeof(StopMusic), new PropertyMetadata("True"));
+
+
+
+
     }
 }

@@ -8,16 +8,16 @@
              d:DesignHeight="80" d:DesignWidth="100"
              x:Name="stopmusic">
     <UserControl.Resources>
-        <Image x:Key="MyImage" Source="C:\Users\felix\Source\Repos\SUP21_Grupp4\Blackjack MVVM\Images\SoundOff.png" Height="60" Width="40" />
-    </UserControl.Resources>
 
+        <Image x:Key="MyImage" Source="\Images\SoundOff.png" Height="50" Width="70" Visibility="{Binding StopMusicVisible}" />
+    </UserControl.Resources>
     <Grid Background="Transparent">
 
 
         <Border Background="#FF2B1D06" BorderBrush="#FFFFB101" BorderThickness="3" CornerRadius="10">
             <StackPanel>
                 <Label Content="Sound" FontSize="15" HorizontalAlignment="Center" Foreground="#FFFFB101" FontFamily="Copperplate Gothic Bold"/>
-                <Button Command="{Binding StartMusicCommand}" Content="{StaticResource MyImage}"  Background="Transparent" HorizontalAlignment="Center" VerticalAlignment="Top" Width="60" Height="40">
+                <Button Command="{Binding StartMusicCommand}" Content="{StaticResource MyImage}" IsEnabled="{Binding StopMusicDisabling} Background="Transparent" HorizontalAlignment="Center" VerticalAlignment="Top" Width="60" Height="40">
                     <Button.BorderBrush>
                         <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                             <GradientStop Color="#FFFFB101"/>
@@ -27,6 +27,7 @@
                 </Button>
             </StackPanel>
         </Border>
+
 
     </Grid>
 </UserControl>

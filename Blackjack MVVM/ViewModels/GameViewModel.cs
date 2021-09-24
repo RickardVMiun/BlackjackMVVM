@@ -38,6 +38,8 @@ namespace Blackjack_MVVM.ViewModels
         public SessionTotal sessionTotal { get; set; }
         public PlayRules playRules { get; set; }
         public EnumToSymbolConverter converter = new EnumToSymbolConverter();
+        public PlayMusic playMusic { get; set; }
+        public StopMusic stopMusic { get; set; }
         public ICommand HitCommand { get; }
         public ICommand StandCommand { get; }
         public ICommand PlayAgainCommand { get; }
@@ -63,6 +65,10 @@ namespace Blackjack_MVVM.ViewModels
         public string winnervisibility { get; set; }
 
         public string rulesvisibility { get; set; }
+        public string playmusicvisibility { get; set; } = "Hidden";
+        public string stopmusicvisibility { get; set; } = "Visible";
+        public string playmusicdisabling { get; set; } = "False";
+        public string stopmusicdisabling { get; set; } = "True";
         public string acedecisionvisibility{ get; set; }
 
         public string cardvisibility { get; set; }
@@ -106,6 +112,8 @@ namespace Blackjack_MVVM.ViewModels
             sessionTotal = new SessionTotal();
             savedMarkers = new SavedMarkers();
             playRules = new PlayRules();
+            playMusic = new PlayMusic();
+            stopMusic = new StopMusic();
             bettingButtons = new BettingButtons();
             placeBetButton = new PlaceBetButton();
             hitButton = new HitButton();
