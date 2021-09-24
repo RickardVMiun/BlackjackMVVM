@@ -22,5 +22,15 @@ namespace Blackjack_MVVM.Views
         {
             InitializeComponent();
         }
+
+        private void PlayMusic_Loaded(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void PlayMusic_Loaded_1(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
