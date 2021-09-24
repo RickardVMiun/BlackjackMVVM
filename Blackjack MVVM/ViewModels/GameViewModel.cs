@@ -80,13 +80,13 @@ namespace Blackjack_MVVM.ViewModels
 
         public PlayViewModel playViewModel;
 
-        public GameViewModel(NavigationStore navStore)
+        public GameViewModel(NavigationStore navStore, MainWindow mainWindow)
         {
             gameView = new GameView();
             DeckOfCards = new ObservableCollection<GenericCard>();
             FillDeckOfCards();
             HitCommand = new HitCommand(this);
-            PlayAgainCommand = new NavigationCommand<GameViewModel>(navStore, () => new GameViewModel(navStore));
+            PlayAgainCommand = new NavigationCommand<GameViewModel>(navStore, () => new GameViewModel(navStore, mainWindow));
             StopPlayingCommand = new StopPlayingCommand(this);
             StandCommand = new StandCommand(this);
             Bet1Command = new Bet1Command(this);
@@ -100,8 +100,8 @@ namespace Blackjack_MVVM.ViewModels
             Choose1Command = new Choose1Command(this);
             Choose11Command = new Choose11Command(this);
             PlaceBetCommand = new PlaceBetCommand(this);
-            StartMusicCommand = new StartMusicCommand(this);
-            StopMusicCommand = new StopMusicCommand(this);
+            StartMusicCommand = new StartMusicCommand(this, mainWindow);
+            StopMusicCommand = new StopMusicCommand(this, mainWindow);
             currentbet = new CurrentBet();
             sessionTotal = new SessionTotal();
             savedMarkers = new SavedMarkers();

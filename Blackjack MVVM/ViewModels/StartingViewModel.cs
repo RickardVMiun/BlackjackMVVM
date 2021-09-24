@@ -12,9 +12,9 @@ namespace Blackjack_MVVM.ViewModels
         public ICommand Over18Command { get; }
         public ICommand Under18Command { get; }
 
-        public StartingViewModel(NavigationStore navStore)
+        public StartingViewModel(NavigationStore navStore, MainWindow mainWindow)
         {
-            Over18Command = new NavigationCommand<PlayViewModel>(navStore, () => new PlayViewModel(navStore));
+            Over18Command = new NavigationCommand<PlayViewModel>(navStore, () => new PlayViewModel(navStore, mainWindow));
             Under18Command = new Under18Command(this);
         }
     }

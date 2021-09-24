@@ -12,9 +12,10 @@ namespace Blackjack_MVVM.Commands
         public event EventHandler CanExecuteChanged;
         MainWindow mainWindow;
 
-        public StartMusicCommand(GameViewModel gameViewModel)
+        public StartMusicCommand(GameViewModel gameViewModel, MainWindow mainWindow)
         {
             this.gameViewModel = gameViewModel;
+            this.mainWindow = mainWindow;
            
         }
 
@@ -25,7 +26,7 @@ namespace Blackjack_MVVM.Commands
 
         public void Execute(object parameter)
         {
-            mainWindow = new MainWindow();
+           
             mainWindow.PlayMusic();
         }
     }

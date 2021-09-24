@@ -12,9 +12,10 @@ namespace Blackjack_MVVM.Commands
         public event EventHandler CanExecuteChanged;
         MainWindow mainWindow;
 
-        public StopMusicCommand(GameViewModel gameViewModel)
+        public StopMusicCommand(GameViewModel gameViewModel, MainWindow mainWindow)
         {
-            this.gameViewModel = gameViewModel; 
+            this.gameViewModel = gameViewModel;
+            this.mainWindow = mainWindow;
         }
 
         public bool CanExecute(object parameter)
@@ -24,7 +25,6 @@ namespace Blackjack_MVVM.Commands
 
         public void Execute(object parameter)
         {
-            mainWindow = new MainWindow();
             mainWindow.PauseMusic();
         }
     }

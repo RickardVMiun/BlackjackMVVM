@@ -18,11 +18,11 @@ namespace Blackjack_MVVM.ViewModels
         public string rulesvisibilitypm { get; set; }
         public PlayRules playRulespm { get; set; }
 
-        public PlayViewModel(NavigationStore navStore)
+        public PlayViewModel(NavigationStore navStore, MainWindow mainWindow)
         {
             playRulespm = new PlayRules();
-            gameViewModel = new GameViewModel(navStore);
-            StartPlayCommand = new NavigationCommand<GameViewModel>(navStore, () => new GameViewModel(navStore));
+            gameViewModel = new GameViewModel(navStore, mainWindow);
+            StartPlayCommand = new NavigationCommand<GameViewModel>(navStore, () => new GameViewModel(navStore, mainWindow));
             ReadRulesInPlayViewCommand = new ReadRulesInPlayViewCommand(this);
             CloseRulesInPlayViewCommand = new CloseRulesInPlayViewCommand(this);
         }
