@@ -5,14 +5,16 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:Blackjack_MVVM.Views"
              mc:Ignorable="d" 
-             d:DesignHeight="40" d:DesignWidth="40"
+             d:DesignHeight="50" d:DesignWidth="70"
              x:Name="playmusic">
     <UserControl.Resources>
-        <Image x:Key="MyImage" Source="C:\Users\bol\Source\Repos\SUP21_Grupp4\Blackjack MVVM\Images\SoundOn.png" Height="30" Width="50" />
+        <Image x:Key="MyImage" Source="\Images\SoundOn.png" Height="50" Width="70" />
     </UserControl.Resources>
 
     <Grid Background="Transparent">
-        <Button  Command="{Binding StartMusicCommand}" Content="{StaticResource MyImage}" BorderBrush="Transparent" Background="Transparent" HorizontalAlignment="Left" VerticalAlignment="Top" Width="40" Height="40"></Button>
+
+        <Button Command="{Binding StartMusicCommand}" Content="{StaticResource MyImage}" BorderBrush="Transparent" Background="Transparent" HorizontalAlignment="Center" VerticalAlignment="Top" Width="70" Height="50"></Button>
+
 
 
     </Grid>
