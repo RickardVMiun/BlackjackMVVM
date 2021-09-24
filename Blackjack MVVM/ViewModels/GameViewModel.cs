@@ -53,6 +53,8 @@ namespace Blackjack_MVVM.ViewModels
         public ICommand Choose1Command { get; }
         public ICommand Choose11Command { get; }
         public ICommand PlaceBetCommand { get; }
+        public ICommand StartMusicCommand { get; }
+        public ICommand StopMusicCommand { get; }
 
         public GenericCard newCard { get; set; }
         public Person p1 = new Person();
@@ -98,6 +100,8 @@ namespace Blackjack_MVVM.ViewModels
             Choose1Command = new Choose1Command(this);
             Choose11Command = new Choose11Command(this);
             PlaceBetCommand = new PlaceBetCommand(this);
+            StartMusicCommand = new StartMusicCommand(this);
+            StopMusicCommand = new StopMusicCommand(this);
             currentbet = new CurrentBet();
             sessionTotal = new SessionTotal();
             savedMarkers = new SavedMarkers();
@@ -108,7 +112,6 @@ namespace Blackjack_MVVM.ViewModels
             hitToggle = "False";
             standToggle = "False";
             //sessionTotal.TotalSessionScore = 1;
-
 
             AddMarkers();
             if (File.Exists(filename))

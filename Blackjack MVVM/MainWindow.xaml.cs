@@ -42,5 +42,15 @@ namespace Blackjack_MVVM
             mediaPlayer.Clock = timeline.CreateClock();
             mediaPlayer.Clock.Controller.Begin();
         }
+
+        public void PauseMusic()
+        {
+            mediaPlayer.Volume = 0f;
+        }
+
+        public void PlayMusic()
+        {
+            mediaPlayer.Volume = 0.3f;
+        }
     }
 }
