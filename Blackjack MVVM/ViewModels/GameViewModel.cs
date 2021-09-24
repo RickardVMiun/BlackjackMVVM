@@ -65,10 +65,10 @@ namespace Blackjack_MVVM.ViewModels
         public string winnervisibility { get; set; }
 
         public string rulesvisibility { get; set; }
-        public string playmusicvisibility { get; set; } = "Hidden";
-        public string stopmusicvisibility { get; set; } = "Visible";
-        public string playmusicdisabling { get; set; } = "False";
-        public string stopmusicdisabling { get; set; } = "True";
+        public string playmusicvisibility { get; set; } 
+        public string stopmusicvisibility { get; set; } 
+        public string playmusicdisabling { get; set; } 
+        public string stopmusicdisabling { get; set; } 
         public string acedecisionvisibility{ get; set; }
 
         public string cardvisibility { get; set; }
@@ -119,11 +119,44 @@ namespace Blackjack_MVVM.ViewModels
             hitButton = new HitButton();
             hitToggle = "False";
             standToggle = "False";
+            playmusicvisibility = "Hidden";
+            stopmusicvisibility = "Visible";
+            playmusicdisabling = "False";
+            stopmusicdisabling = "True";
             //sessionTotal.TotalSessionScore = 1;
 
             AddMarkers();
             if (File.Exists(filename))
                 GetSavedMarkers(filename); 
+        }
+
+        public void DisableAndHidePlayMusic()
+        {
+            playmusicvisibility = "Hidden";
+            
+            playmusicdisabling = "False";
+          
+            playMusic.PlayMusicDisabling = playmusicdisabling;
+            playMusic.PlayMusicVisible = playmusicvisibility;
+            stopmusicvisibility = "Visible";
+            stopmusicdisabling = "True";
+            stopMusic.StopMusicDisabling = stopmusicdisabling;
+            stopMusic.StopMusicVisible = stopmusicvisibility;
+        }
+
+        public void DisableAndHideStopMusic()
+        {
+            
+            stopmusicvisibility = "Hidden";
+            
+            stopmusicdisabling = "False";
+            stopMusic.StopMusicDisabling = stopmusicdisabling;
+            stopMusic.StopMusicVisible = stopmusicvisibility;
+            playmusicvisibility = "Visible";
+            playmusicdisabling = "True";
+            playMusic.PlayMusicDisabling = playmusicdisabling;
+            playMusic.PlayMusicVisible = playmusicvisibility;
+            
         }
 
         public void DisableBettingButtons()

@@ -19,7 +19,7 @@
         <Border Background="#FF2B1D06" BorderBrush="#FFFFB101" BorderThickness="3" CornerRadius="10">
             <StackPanel>
                 <Label Content="Sound" FontSize="15" HorizontalAlignment="Center" Foreground="#FFFFB101" FontFamily="Copperplate Gothic Bold"/>
-                <Button Command="{Binding StartMusicCommand}" IsEnabled="{Binding PlayMusicDisabling}" Content="{StaticResource MyImage}"  Background="Transparent" HorizontalAlignment="Center" VerticalAlignment="Top" Width="60" Height="40">
+                <Button Command="{Binding StartMusicCommand}" IsEnabled="{Binding PlayMusicDisabling, ElementName=playmusic, FallbackValue= False}" Content="{StaticResource MyImage}"  Background="Transparent" HorizontalAlignment="Center" VerticalAlignment="Top" Width="60" Height="40">
                     <Button.BorderBrush>
                     <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                         <GradientStop Color="#FFFFB101"/>
