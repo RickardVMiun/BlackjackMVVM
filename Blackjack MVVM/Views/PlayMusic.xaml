@@ -12,7 +12,7 @@
     </UserControl.Resources>
 
     <Grid Background="Transparent">
-        <Button Content="{StaticResource MyImage}" BorderBrush="Transparent" Background="Transparent" HorizontalAlignment="Left" VerticalAlignment="Top" Width="40" Height="40"></Button>
+        <Button  Command="{Binding StartMusicCommand}" Content="{StaticResource MyImage}" BorderBrush="Transparent" Background="Transparent" HorizontalAlignment="Left" VerticalAlignment="Top" Width="40" Height="40"></Button>
 
 
     </Grid>
