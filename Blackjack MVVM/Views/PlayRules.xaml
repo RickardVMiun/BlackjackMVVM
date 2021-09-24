@@ -5,11 +5,11 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:Blackjack_MVVM.Views"
              mc:Ignorable="d" 
-             d:DesignHeight="800" d:DesignWidth="400"
+             d:DesignHeight="650" d:DesignWidth="400"
              x:Name="playrules">
 
 
-    <Border BorderBrush="Gold" BorderThickness="5" CornerRadius="5" Visibility="{Binding RulesVisible, ElementName=playrules, FallbackValue=hidden}">
+    <Border BorderBrush="Gold" BorderThickness="5" CornerRadius="5" Visibility="{Binding RulesVisible, ElementName=playrules, FallbackValue=Hidden}">
         <Border.Background>
             <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                 <GradientStop Color="Black"/>
@@ -19,7 +19,7 @@
 
         <Grid Background="Transparent">
             <RichTextBox  VerticalAlignment="Center" BorderBrush="Transparent" Background="Transparent" Foreground="Black" FontSize="11" FontFamily="Copperplate Gothic Bold">
-                <FlowDocument TextAlignment="Center" Foreground="#FFFFB101" LineHeight="18">
+                <FlowDocument TextAlignment="Center" Foreground="#FFFFB101" LineHeight="15">
                     <Paragraph>
                         
                     </Paragraph>
@@ -28,7 +28,6 @@
                     </Paragraph>
                     <Paragraph FontFamily="Georgia Pro">
                         The goal is to get the score as close to 21 as possible. Without going over 21.
-
                     </Paragraph>
                     <Paragraph>
                         Card Value
@@ -41,42 +40,42 @@
                     </Paragraph>
                     <Paragraph FontFamily="Georgia Pro">
                         Before dealing the cards the player places a bet. 
-  The player begins the game with two cards face up while the dealer gets one face up card and one card face down.
+                        The player begins the game with two cards face up while the dealer gets one face up card and one card face down.
                     </Paragraph>
                     <Paragraph>
                         Player
                     </Paragraph>
                     <Paragraph FontFamily="Georgia Pro">
                         The player then continues by deciding whether to "stand" (not take another card) or to "hit" (take another card).
-  The player can now take a card until the score reaches 21 or the player gets "bust" (the score is more than 21).
+                        The player can now take a card until the score reaches 21 or the player gets "bust" (the score is more than 21).
                     </Paragraph>
                     <Paragraph>
                         Dealer
                     </Paragraph>
                     <Paragraph FontFamily="Georgia Pro">
                         When the dealer has served every player the dealers cards are revealed. The dealer must take cards until the score is 17 or more. 
-  This means that if the dealer has 16 or less, they must take a new card.
+                        This means that if the dealer has 16 or less, they must take a new card.
                     </Paragraph>
                     <Paragraph>
                         BlackJack
                     </Paragraph>
                     <Paragraph FontFamily="Georgia Pro">
                         The BlackJack is also called a Natural and is when you get a perfact 21. 
-  This means that the player only gets two cards to reach the score of 21. (One ace and a facecard)
+                        This means that the player only gets two cards to reach the score of 21. (One ace and a facecard)
                     </Paragraph>
                     <Paragraph>
                         Result
                     </Paragraph>
                     <Paragraph FontFamily="Georgia Pro">
                         If the players score is above the dealer you win (unless it's a "bust"). 
-  If the player has the same score as the dealer it's a tie and the dealer wins.
-  If the players score is below the dealers you lose.
+                        If the player has the same score as the dealer it's a tie and the dealer wins.
+                        If the players score is below the dealers you lose.
                     </Paragraph>
                 </FlowDocument>
             </RichTextBox>
 
             <StackPanel>
-                <Button BorderThickness="4" Content="Close" Height="47" Width="57"  Command="{Binding CloseRulesCommand }" UseLayoutRounding="False" FontFamily="Cooper Black" FontSize="15" Foreground="Black" Margin="308,10,25,700">
+                <Button BorderThickness="4" Content="Close" Height="47" Width="57"  Command="{Binding CloseRulesCommand }" UseLayoutRounding="False" FontFamily="Cooper Black" FontSize="15" Foreground="Black" Margin="310,10,0,700">
                 <Button.Resources>
                     <Style TargetType="{x:Type Border}">
                         <Setter Property="CornerRadius" Value="20"/>

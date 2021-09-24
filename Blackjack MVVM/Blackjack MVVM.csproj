@@ -12,8 +12,6 @@
     <None Remove="BlackJackBord4.png" />
     <None Remove="Images\BlackJackBord6.png" />
     <None Remove="Images\image %281%29.png" />
-    <None Remove="Images\SoundOff.png" />
-    <None Remove="Images\SoundOn.png" />
     <None Remove="Sound\mixkit-click-error-1110.wav" />
     <None Remove="Sound\mixkit-coins-handling-1939.wav" />
     <None Remove="Sound\mixkit-select-click-1109.wav" />
@@ -51,8 +49,6 @@
     <Resource Include="Images\BlackJackBord6.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
-    <Resource Include="Images\SoundOff.png" />
-    <Resource Include="Images\SoundOn.png" />
     <Content Include="Sound\mixkit-select-click-1109.wav">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
