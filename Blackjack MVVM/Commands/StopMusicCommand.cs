@@ -25,6 +25,10 @@ namespace Blackjack_MVVM.Commands
 
         public void Execute(object parameter)
         {
+            gameViewModel.playmusicvisibility = "Visible";
+            gameViewModel.stopmusicvisibility = "Hidden";
+            gameViewModel.playmusicdisabling = "True";
+            gameViewModel.stopmusicdisabling = "False";
             mainWindow.PauseMusic();
         }
     }

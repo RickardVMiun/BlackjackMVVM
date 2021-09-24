@@ -8,14 +8,12 @@
              d:DesignHeight="50" d:DesignWidth="70"
              x:Name="stopmusic">
     <UserControl.Resources>
-        <Image x:Key="MyImage" Source="\Images\SoundOff.png" Height="50" Width="70" />
+        <Image x:Key="MyImage" Source="\Images\SoundOff.png" Height="50" Width="70" Visibility="{Binding StopMusicVisible}" />
     </UserControl.Resources>
     
     <Grid Background="Transparent">
 
-        <Button Command="{Binding StopMusicCommand}" Content="{StaticResource MyImage}" BorderBrush="Transparent" Background="Transparent" HorizontalAlignment="center" Margin="0,0,0,0" VerticalAlignment="Top" Width="70" Height="50"></Button>
-
-
+        <Button Command="{Binding StopMusicCommand}" Content="{StaticResource MyImage}" IsEnabled="{Binding StopMusicDisabling}"  BorderBrush="Transparent" Background="Transparent" HorizontalAlignment="center" Margin="0,0,0,0" VerticalAlignment="Top" Width="70" Height="50"></Button>
 
     </Grid>
 </UserControl>

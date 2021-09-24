@@ -8,12 +8,12 @@
              d:DesignHeight="50" d:DesignWidth="70"
              x:Name="playmusic">
     <UserControl.Resources>
-        <Image x:Key="MyImage" Source="\Images\SoundOn.png" Height="50" Width="70" />
+        <Image x:Key="MyImage" Source="\Images\SoundOn.png" Height="50" Width="70" Visibility="{Binding PlayMusicVisible}" />
     </UserControl.Resources>
 
     <Grid Background="Transparent">
 
-        <Button Command="{Binding StartMusicCommand}" Content="{StaticResource MyImage}" BorderBrush="Transparent" Background="Transparent" HorizontalAlignment="Center" VerticalAlignment="Top" Width="70" Height="50"></Button>
+        <Button Command="{Binding StartMusicCommand}" IsEnabled="{Binding PlayMusicDisabling}" Content="{StaticResource MyImage}" BorderBrush="Transparent" Background="Transparent" HorizontalAlignment="Center" VerticalAlignment="Top" Width="70" Height="50"></Button>
 
 
 
