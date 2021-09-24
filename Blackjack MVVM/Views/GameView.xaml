@@ -95,7 +95,7 @@
                 </Style>
             </Border.Resources>
             <StackPanel>
-                <Label Content="Sound" Width="90" FontSize="20" Foreground="#FFFFB101" Height="34" FontFamily="Copperplate Gothic Bold"/>
+                <Label Content="Music" Width="74" FontSize="20" Foreground="#FFFFB101" Height="34" FontFamily="Copperplate Gothic Bold"/>
                 <local:PlayMusic HorizontalAlignment="Left" PlayMusicDisabling="{Binding playmusicdisabling}" PlayMusicVisible="{Binding playmusicvisibility}" Margin="20,-30,0,0"/>
                 <local:StopMusic HorizontalAlignment="Right" StopMusicDisabling="{Binding stopmusicdisabling}" StopMusicVisible="{Binding stopmusicvisibility}" Margin="0,-75,20,0"/>
 
