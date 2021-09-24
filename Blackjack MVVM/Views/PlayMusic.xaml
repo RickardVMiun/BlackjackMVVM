@@ -5,15 +5,31 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:Blackjack_MVVM.Views"
              mc:Ignorable="d" 
-             d:DesignHeight="50" d:DesignWidth="70"
+             d:DesignHeight="80" d:DesignWidth="100"
              x:Name="playmusic">
     <UserControl.Resources>
+
         <Image x:Key="MyImage" Source="\Images\SoundOn.png" Height="50" Width="70" Visibility="{Binding PlayMusicVisible}" />
+
     </UserControl.Resources>
 
     <Grid Background="Transparent">
 
-        <Button Command="{Binding StartMusicCommand}" IsEnabled="{Binding PlayMusicDisabling}" Content="{StaticResource MyImage}" BorderBrush="Transparent" Background="Transparent" HorizontalAlignment="Center" VerticalAlignment="Top" Width="70" Height="50"></Button>
+
+        <Border Background="#FF2B1D06" BorderBrush="#FFFFB101" BorderThickness="3" CornerRadius="10">
+            <StackPanel>
+                <Label Content="Sound" FontSize="15" HorizontalAlignment="Center" Foreground="#FFFFB101" FontFamily="Copperplate Gothic Bold"/>
+                <Button Command="{Binding StartMusicCommand}" IsEnabled="{Binding PlayMusicDisabling}" Content="{StaticResource MyImage}"  Background="Transparent" HorizontalAlignment="Center" VerticalAlignment="Top" Width="60" Height="40">
+                    <Button.BorderBrush>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="#FFFFB101"/>
+                        <GradientStop Color="#FF595907" Offset="1"/>
+                    </LinearGradientBrush>
+                </Button.BorderBrush>
+                </Button>
+            </StackPanel>
+        </Border>
+
 
 
 
