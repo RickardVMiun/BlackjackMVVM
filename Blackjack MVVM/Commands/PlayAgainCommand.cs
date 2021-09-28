@@ -20,7 +20,7 @@ namespace Blackjack_MVVM.Commands
         {
             this.gameViewModel = gameViewModel;
             this.mainWindow = mainWindow;
-            navigationStore = navigationStore;
+            this.navigationStore = navigationStore;
         }
 
         //public bool CanExecute(object parameter)

@@ -96,7 +96,7 @@ namespace Blackjack_MVVM.ViewModels
             FillDeckOfCards();
             HitCommand = new HitCommand(this);
             PlayAgainCommand = new NavigationCommand<GameViewModel>(navStore, () => new GameViewModel(navStore, mainWindow));
-            StopPlayingCommand = new StopPlayingCommand(this);
+            StopPlayingCommand = new StopPlayingCommand(this, mainWindow, navStore);
             StandCommand = new StandCommand(this);
             Bet1Command = new Bet1Command(this);
             Bet5Command = new Bet5Command(this);
