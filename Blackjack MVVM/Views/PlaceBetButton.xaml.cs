@@ -33,7 +33,7 @@ namespace Blackjack_MVVM.Views
 
         // Using a DependencyProperty as the backing store for ButtonDisabling2.  This enables animation, styling, binding, etc...
         public static readonly DependencyProperty ButtonDisabling2Property =
-            DependencyProperty.Register("ButtonDisabling2", typeof(string), typeof(PlaceBetButton), new PropertyMetadata("True"));
+            DependencyProperty.Register("ButtonDisabling2", typeof(string), typeof(PlaceBetButton), new PropertyMetadata("False"));
 
 
     }

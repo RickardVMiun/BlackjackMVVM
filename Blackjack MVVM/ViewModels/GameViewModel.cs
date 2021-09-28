@@ -166,7 +166,7 @@ namespace Blackjack_MVVM.ViewModels
         public void DisableBettingButtons()
         {
             buttonDisabling = "False";
-            buttonDisabling2 = "False";
+            buttonDisabling2 = "True";
             bettingButtons.ButtonDisabling = buttonDisabling;
             placeBetButton.ButtonDisabling2 = buttonDisabling2;
             hitToggle = "True";
@@ -456,6 +456,9 @@ namespace Blackjack_MVVM.ViewModels
             totalbet = totalbet += bet;
             p1.Bet = totalbet;
             currentbet.BetTotal = p1.Bet;
+
+            buttonDisabling2 = "True";
+            placeBetButton.ButtonDisabling2 = buttonDisabling2;
         }
 
         public void ClearBet()
