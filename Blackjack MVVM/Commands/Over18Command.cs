@@ -9,7 +9,6 @@ namespace Blackjack_MVVM.Commands
     class Over18Command : BaseCommand
     {
         private MainViewModel mainViewModel;
-      //  private GameViewModel gameViewModel;
         private PlayViewModel playViewModel;
         private MainWindow mainWindow;
 
@@ -20,13 +19,8 @@ namespace Blackjack_MVVM.Commands
         {
             this.playViewModel = playViewModel;
             this.mainWindow = mainWindow;
-            navigationStore = navigationStore;
+            this.navigationStore = navigationStore;
         }
-
-        //public bool CanExecute(object parameter)
-        //{
-        //    return true;
-        //}
 
         public override void Execute(object parameter)
         {

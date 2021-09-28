@@ -22,6 +22,7 @@ namespace Blackjack_MVVM.ViewModels
         public int SessionScore { get; set; } // Variabel som ska hålla värdet får vunna/förlorade pengar under den aktuella sessionen
         public GenericCard Card { get; set; }
         public GameView gameView { get; set; }
+        public PlayView playView { get; set; }
         public PlayerScore playerScore { get; set; }
 
         public BettingButtons bettingButtons { get; set; }
@@ -41,6 +42,7 @@ namespace Blackjack_MVVM.ViewModels
         public EnumToSymbolConverter converter = new EnumToSymbolConverter();
         public PlayMusic playMusic { get; set; }
         public StopMusic stopMusic { get; set; }
+        public PlayerName playerName { get; set; }
         public ICommand HitCommand { get; }
         public ICommand StandCommand { get; }
         public ICommand PlayAgainCommand { get; }
@@ -68,11 +70,11 @@ namespace Blackjack_MVVM.ViewModels
         public string betviewvisibility { get; set; }
 
         public string rulesvisibility { get; set; }
-        public string playmusicvisibility { get; set; } 
-        public string stopmusicvisibility { get; set; } 
-        public string playmusicdisabling { get; set; } 
-        public string stopmusicdisabling { get; set; } 
-        public string acedecisionvisibility{ get; set; }
+        public string playmusicvisibility { get; set; }
+        public string stopmusicvisibility { get; set; }
+        public string playmusicdisabling { get; set; }
+        public string stopmusicdisabling { get; set; }
+        public string acedecisionvisibility { get; set; }
 
         public string cardvisibility { get; set; }
 
@@ -80,6 +82,7 @@ namespace Blackjack_MVVM.ViewModels
 
         public string buttonDisabling2 { get; set; }
         public string hitToggle { get; set; }
+        public string setPlayerName { get; set; }
 
         public string standToggle { get; set; }
         int totalbet = 0;
@@ -89,13 +92,13 @@ namespace Blackjack_MVVM.ViewModels
 
         public PlayViewModel playViewModel;
 
-        public GameViewModel(NavigationStore navStore, MainWindow mainWindow)
+        public GameViewModel(NavigationStore navStore, MainWindow mainWindow, string playerName)
         {
             gameView = new GameView();
             DeckOfCards = new ObservableCollection<GenericCard>();
             FillDeckOfCards();
             HitCommand = new HitCommand(this);
-            PlayAgainCommand = new NavigationCommand<GameViewModel>(navStore, () => new GameViewModel(navStore, mainWindow));
+            PlayAgainCommand = new NavigationCommand<GameViewModel>(navStore, () => new GameViewModel(navStore, mainWindow, playerName));
             StopPlayingCommand = new StopPlayingCommand(this, mainWindow, navStore);
             StandCommand = new StandCommand(this);
             Bet1Command = new Bet1Command(this);
@@ -128,12 +131,22 @@ namespace Blackjack_MVVM.ViewModels
             stopmusicdisabling = "True";
 
             betviewvisibility = "Visible";
+
+            setPlayerName = playerName;
             //sessionTotal.TotalSessionScore = 1;
 
             AddMarkers();
             if (File.Exists(filename))
-                GetSavedMarkers(filename); 
+                GetSavedMarkers(filename);
         }
+
+        //public void CreatePlayer()
+        //{
+        //    setPlayerName = playerName;
+        //    p1.Name = playerName;
+        //    playerName.SetPlayerName = playerName;
+            
+        //}
 
         public void DisableAndHidePlayMusic()
         {

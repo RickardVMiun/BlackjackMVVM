@@ -18,9 +18,14 @@ namespace Blackjack_MVVM.Views
     /// </summary>
     public partial class PlayView : UserControl
     {
+        string playerName;
         public PlayView()
         {
             InitializeComponent();
+
+            playerName = txtPlayerName.Text;
         }
+
+
     }
 }
