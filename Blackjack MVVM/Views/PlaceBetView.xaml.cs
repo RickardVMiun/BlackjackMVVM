@@ -22,5 +22,19 @@ namespace Blackjack_MVVM.Views
         {
             InitializeComponent();
         }
+
+
+
+        public string BettingViewVisibility
+        {
+            get { return (string)GetValue(BettingViewVisibilityProperty); }
+            set { SetValue(BettingViewVisibilityProperty, value); }
+        }
+
+        // Using a DependencyProperty as the backing store for BettingViewVisibility.  This enables animation, styling, binding, etc...
+        public static readonly DependencyProperty BettingViewVisibilityProperty =
+            DependencyProperty.Register("BettingViewVisibility", typeof(string), typeof(PlaceBetView), new PropertyMetadata("Visible"));
+
+
     }
 }
