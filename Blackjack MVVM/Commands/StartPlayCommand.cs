@@ -13,12 +13,14 @@ namespace Blackjack_MVVM.Commands
         public event EventHandler CanExecuteChanged;
         private readonly NavigationStore navigationStore;
         private MainWindow mainWindow;
+        string playerName;
 
-        public StartPlayCommand(GameViewModel gameViewModel, NavigationStore navigationStore, MainWindow mainWindow)
+        public StartPlayCommand(GameViewModel gameViewModel, NavigationStore navigationStore, MainWindow mainWindow, string playerName)
         {
             this.gameViewModel = gameViewModel;
             this.mainWindow = mainWindow;
-            navigationStore = navigationStore;
+            this.navigationStore = navigationStore;
+            this.playerName = playerName;
         }
 
         //public bool CanExecute(object parameter)
@@ -28,8 +30,10 @@ namespace Blackjack_MVVM.Commands
 
         public override void Execute(object parameter)
         {
+            //gameViewModel.CreatePlayer();
+            navigationStore.CurrentViewModel = new GameViewModel(navigationStore, mainWindow, playerName);
 
-            navigationStore.CurrentViewModel = new GameViewModel(navigationStore, mainWindow);
+            
         }
     }
 }
