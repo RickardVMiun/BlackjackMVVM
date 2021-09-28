@@ -1,4 +1,5 @@
-﻿using Blackjack_MVVM.ViewModels;
+﻿using Blackjack_MVVM.Stores;
+using Blackjack_MVVM.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -10,12 +11,15 @@ namespace Blackjack_MVVM.Commands
     class StopPlayingCommand : ICommand
     {
         public event EventHandler CanExecuteChanged;
-
+        private readonly NavigationStore navigationStore;
+        private readonly MainWindow mainWindow;
         private GameViewModel gameViewModel;
 
-        public StopPlayingCommand(GameViewModel gameViewModel)
+        public StopPlayingCommand(GameViewModel gameViewModel, MainWindow mainWindow, NavigationStore navigationStore)
         {
             this.gameViewModel = gameViewModel;
+            this.mainWindow = mainWindow;
+            this.navigationStore = navigationStore;
         }
 
         public bool CanExecute(object parameter)
@@ -25,8 +29,7 @@ namespace Blackjack_MVVM.Commands
 
         public void Execute(object parameter)
         {
-            System.Diagnostics.Process.Start(Application.ResourceAssembly.Location);
-            Application.Current.Shutdown();
+            navigationStore.CurrentViewModel = new PlayViewModel(navigationStore, mainWindow);
         }
     }
 }
