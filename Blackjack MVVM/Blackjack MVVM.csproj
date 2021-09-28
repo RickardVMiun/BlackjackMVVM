@@ -11,6 +11,7 @@
     <None Remove="BlackJackBord2.png" />
     <None Remove="BlackJackBord4.png" />
     <None Remove="Images\BlackJackBord6.png" />
+    <None Remove="Images\BlackJackBordBlurrig.PNG" />
     <None Remove="Images\image %281%29.png" />
     <None Remove="Images\SoundOff.png" />
     <None Remove="Images\SoundOn.png" />
@@ -47,8 +48,13 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Resource Include="Images\BlackJackBord4.png" />
+    <Resource Include="Images\BlackJackBord4.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
     <Resource Include="Images\BlackJackBord6.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\BlackJackBordBlurrig.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
     <Resource Include="Images\SoundOff.png">

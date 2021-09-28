@@ -9,7 +9,7 @@
              x:Name="playrules">
 
 
-    <Border BorderBrush="Gold" BorderThickness="5" CornerRadius="5" Visibility="{Binding RulesVisible, ElementName=playrules, FallbackValue=Hidden}">
+    <Border BorderBrush="Gold" BorderThickness="5" CornerRadius="5" Visibility="{Binding RulesVisible, ElementName=playrules, FallbackValue=Visible}">
         <Border.Background>
             <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                 <GradientStop Color="#FF1B8506"/>
@@ -18,47 +18,49 @@
         </Border.Background>
 
         <Grid Background="Transparent">
-            <RichTextBox  VerticalAlignment="Center" BorderBrush="Transparent" Background="Transparent" Foreground="Black" FontSize="14" FontFamily="Copperplate Gothic Bold" Height="570">
+            <RichTextBox  VerticalAlignment="Center" BorderBrush="Transparent" Background="Transparent" Foreground="Black" FontSize="14" FontFamily="Copperplate Gothic Bold" Height="640" Visibility="Visible">
+
                 <FlowDocument TextAlignment="Center" Foreground="#FFFFB101" LineHeight="15">
                     <Paragraph>
-
-
-
                     </Paragraph>
-                    <Paragraph Foreground="#FFFFB101" FontSize="15">
+                    <Paragraph>
+                    </Paragraph>
+                    <Paragraph>
+                    </Paragraph>
+                    <Paragraph Foreground="White" FontSize="15">
                         <Bold>Object Of The Game:</Bold>
                     </Paragraph>
                     <Paragraph FontFamily="Verdana">
                         The goal is to get the score as close to 21 as possible. Without going over 21.
                     </Paragraph>
-                    <Paragraph>
+                    <Paragraph Foreground="White">
                         Card Value
                     </Paragraph>
                     <Paragraph FontFamily="Verdana">
                         Each card has a value betweeen 1-11 and all face cardes are valued 10. The ace has the value of 1 or 11 depending on what the player choose.
                     </Paragraph>
-                    <Paragraph>
+                    <Paragraph Foreground="White">
                         The Deal
                     </Paragraph>
                     <Paragraph FontFamily="Verdana">
                         Before dealing the cards the player places a bet. 
                         The player begins the game with two cards face up while the dealer gets one card face up.
                     </Paragraph>
-                    <Paragraph>
+                    <Paragraph Foreground="White">
                         Player
                     </Paragraph>
                     <Paragraph FontFamily="Verdana">
                         The player then continues by deciding whether to "stand" (not take another card) or to "hit" (take another card).
                         The player can now take a card until the score reaches 21 or the player gets "bust" (the score is more than 21).
                     </Paragraph>
-                    <Paragraph>
+                    <Paragraph Foreground="White">
                         Dealer
                     </Paragraph>
                     <Paragraph FontFamily="Verdana">
                         When the dealer has served the player the dealers cards are revealed. The dealer must take cards until the score is 17 or more. 
                         This means that if the dealer has 16 or less, they must take a new card. The dealers value for the ace is always 11.
                     </Paragraph>
-                    <Paragraph>
+                    <Paragraph Foreground="White">
                         Result
                     </Paragraph>
                     <Paragraph FontFamily="Verdana">
