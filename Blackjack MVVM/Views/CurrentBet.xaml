@@ -8,6 +8,6 @@
              d:DesignHeight="450" d:DesignWidth="800"
              x:Name="currentbet">
     <Grid>
-        <TextBlock HorizontalAlignment="Center" Text="{Binding BetTotal, ElementName=currentbet, FallbackValue=0}" VerticalAlignment="Top"  Foreground="White"  FontSize="40" RenderTransformOrigin="-0.121,1.286" />
+        <TextBlock HorizontalAlignment="Center" Text="{Binding BetTotal, ElementName=currentbet, FallbackValue=0}" VerticalAlignment="Top"  Foreground="#FFFFB101"  FontSize="30" RenderTransformOrigin="-0.121,1.286" FontFamily="Copperplate Gothic Bold" />
     </Grid>
 </UserControl>
