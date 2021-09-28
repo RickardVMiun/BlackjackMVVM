@@ -65,6 +65,8 @@ namespace Blackjack_MVVM.ViewModels
         public string visibility { get; set; }
         public string winnervisibility { get; set; }
 
+        public string betviewvisibility { get; set; }
+
         public string rulesvisibility { get; set; }
         public string playmusicvisibility { get; set; } 
         public string stopmusicvisibility { get; set; } 
@@ -124,6 +126,8 @@ namespace Blackjack_MVVM.ViewModels
             stopmusicvisibility = "Visible";
             playmusicdisabling = "False";
             stopmusicdisabling = "True";
+
+            betviewvisibility = "Visible";
             //sessionTotal.TotalSessionScore = 1;
 
             AddMarkers();
