@@ -9,6 +9,7 @@ using System.Collections.ObjectModel;
 using System.IO;
 using System.Linq;
 using System.Text;
+using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Input;
 
@@ -156,7 +157,6 @@ namespace Blackjack_MVVM.ViewModels
             playmusicdisabling = "True";
             playMusic.PlayMusicDisabling = playmusicdisabling;
             playMusic.PlayMusicVisible = playmusicvisibility;
-            
         }
 
         public void DisableBettingButtons()
@@ -268,6 +268,7 @@ namespace Blackjack_MVVM.ViewModels
             if (true)
             {
                 newCard = DeckOfCards[x];
+                Task.Delay(1000); // delay
             }
             CpuCardsInGame.Add(newCard);
             AddCpuPoints(newCard);
@@ -353,9 +354,13 @@ namespace Blackjack_MVVM.ViewModels
             cpuScore = new CpuScore();
             int value;
 
-            if (card.CardValue == "A" || card.CardValue == "J" || card.CardValue == "Q" || card.CardValue == "K")
+            if (card.CardValue == "J" || card.CardValue == "Q" || card.CardValue == "K")
             {
                 value = 10;
+            }
+            else if (card.CardValue == "A")
+            {
+                value = 11;
             }
             else
             {
