@@ -9,7 +9,7 @@
              x:Name="playrules">
 
 
-    <Border BorderBrush="Gold" BorderThickness="5" CornerRadius="5" Visibility="{Binding RulesVisible, ElementName=playrules, FallbackValue=Hidden}">
+    <Border BorderBrush="Gold" BorderThickness="5" CornerRadius="5" Visibility="{Binding RulesVisible, ElementName=playrules, FallbackValue=Visible}">
         <Border.Background>
             <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                 <GradientStop Color="Black"/>

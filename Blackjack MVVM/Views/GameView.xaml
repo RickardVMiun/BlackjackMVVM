@@ -4,12 +4,14 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:Blackjack_MVVM.Views"
-             mc:Ignorable="d" d:DesignWidth="1500" Height="800">
-
-    <Grid  Margin="0,0,0,-70" Height="718" Width="1400">
+             mc:Ignorable="d" d:DesignWidth="1500" Height="800" >
+ 
+    <Grid  Margin="0,0,0,-70" Height="718" Width="1400" >
 
         <Grid.Background>
-            <ImageBrush AlignmentX="Center" AlignmentY="Top" ImageSource="\Images\BlackJackBord4.png" Stretch="Uniform" />
+            
+            <ImageBrush   AlignmentX="Center" AlignmentY="Top" ImageSource="\Images\BlackJackBord4.png" Stretch="Uniform" />
+            
         </Grid.Background>
         <Grid.RowDefinitions>
             <RowDefinition Height="*"/>
@@ -56,14 +58,10 @@
         <local:AceValueDecision Grid.Column="4" Grid.Row="2" AceVisible="{Binding acedecisionvisibility}" Grid.ColumnSpan="4" Margin="-40,50,100,55" Grid.RowSpan="3"/>
         
 
-        <Border Background="#FF2B1D06" BorderThickness="0" BorderBrush="Black" Grid.Row="5" Grid.ColumnSpan="11" Margin="0,40,0,40" Grid.RowSpan="1" >
-            <WrapPanel Orientation="Horizontal" HorizontalAlignment="Right">
+        <Border Background="#FF2B1D06" BorderThickness="0" BorderBrush="Black" Grid.Row="5" Grid.ColumnSpan="11" Margin="0,40,0,35" Grid.RowSpan="1" >
+            <WrapPanel Orientation="Horizontal" HorizontalAlignment="Center">
                 <local:HitButton Grid.Column="6" Grid.Row="4" Grid.ColumnSpan="3" HitToggle="{Binding hitToggle}"/>
                 <local:StandButton Grid.Column="5" Grid.Row="4" Grid.ColumnSpan="3" StandToggle="{Binding standToggle}"/>
-                <local:PlaceBetButton Grid.Column="6" Grid.Row="4" Grid.ColumnSpan="4" ButtonDisabling2="{Binding buttonDisabling2}"/>
-
-                <local:BettingButtons Grid.Column="6" Grid.Row="5" Grid.ColumnSpan="4" ButtonDisabling="{Binding buttonDisabling}" Margin="180,5,10,0"/>
-
             </WrapPanel>
 
         </Border>
