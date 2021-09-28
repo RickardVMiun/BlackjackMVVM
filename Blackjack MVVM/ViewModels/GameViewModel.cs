@@ -189,7 +189,7 @@ namespace Blackjack_MVVM.ViewModels
 
         public char GetSuit()
         {
-            int i = random.Next(1, 4);
+            int i = random.Next(1, 5);
             if (i == 1)
             {
                 Card.CardSuit = '♥';
@@ -244,11 +244,11 @@ namespace Blackjack_MVVM.ViewModels
                 CardValue = GetValue(),
                 CardSuit = GetSuit(),
                 CardVisibility = "Visible"
-
             });
-
             return Card;
         }
+
+        
 
         public void AddCard()
         {
@@ -260,6 +260,11 @@ namespace Blackjack_MVVM.ViewModels
                 newCard = DeckOfCards[x];
                 newCard.CardVisibility = cardvisibility;
             }
+            if (newCard.CardSuit == '♥' || newCard.CardSuit == '♦')
+            {
+                newCard.CardColor = "Red";
+            }
+
             PersonCardsInGame.Add(newCard);
             PersonCardsInGame[0].CardVisibility = "Visible";
             AddPlayerPoints(newCard);
@@ -274,6 +279,11 @@ namespace Blackjack_MVVM.ViewModels
                 newCard = DeckOfCards[x];
                 Task.Delay(1000); // delay
             }
+            if (newCard.CardSuit == '♥' || newCard.CardSuit == '♦')
+            {
+                newCard.CardColor = "Red";
+            }
+
             CpuCardsInGame.Add(newCard);
             AddCpuPoints(newCard);
         }
