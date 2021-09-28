@@ -56,7 +56,7 @@
         <local:WinnerMessage Grid.Column="4" Grid.Row="2" Visible="{Binding winnervisibility}" Grid.ColumnSpan="3" Margin="30,50,30,55" Grid.RowSpan="2"/>
         <local:PlayRules Grid.Column="3" Grid.Row="1" RulesVisible="{Binding rulesvisibility}" Grid.RowSpan="5" Grid.ColumnSpan="4" Margin="133,26,12,117" />
         <local:AceValueDecision Grid.Column="4" Grid.Row="2" AceVisible="{Binding acedecisionvisibility}" Grid.ColumnSpan="4" Margin="-40,50,100,55" Grid.RowSpan="3"/>
-        <local:PlaceBetView Grid.Column="4" Grid.Row="2" BettingViewVisibility="{Binding betviewvisibility}" Grid.ColumnSpan="3" Margin="30,50,30,55" Grid.RowSpan="2"/>
+        <local:PlaceBetView Height="800" Grid.Column="4" Grid.Row="2" BettingViewVisibility="{Binding betviewvisibility}" Grid.ColumnSpan="4" Margin="30,50,30,55" Grid.RowSpan="4"/>
 
 
         <Border Background="#FF2B1D06" BorderThickness="0" BorderBrush="Black" Grid.Row="5" Grid.ColumnSpan="11" Margin="0,40,0,35" Grid.RowSpan="1" >

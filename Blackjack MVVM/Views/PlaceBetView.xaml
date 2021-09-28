@@ -6,10 +6,10 @@
              xmlns:local="clr-namespace:Blackjack_MVVM.Views"
              mc:Ignorable="d" 
              x:Name="placebetview"
-             d:DesignHeight="450" d:DesignWidth="800">
+             d:DesignHeight="800" d:DesignWidth="800">
 
 
-    <Border BorderBrush="Gold" BorderThickness="5" CornerRadius="5" >
+    <Border BorderBrush="Gold" BorderThickness="5" CornerRadius="5" Visibility="{Binding BettingViewVisibility, ElementName=placebetview, FallbackValue=Visible}">
         <Border.Background>
             <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                 <GradientStop Color="Black"/>
