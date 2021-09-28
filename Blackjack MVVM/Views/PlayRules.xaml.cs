@@ -34,8 +34,6 @@ namespace Blackjack_MVVM.Views
         public static readonly DependencyProperty RulesVisibleProperty =
             DependencyProperty.Register("RulesVisible", typeof(string), typeof(PlayRules), new PropertyMetadata("Hidden"));
 
-
-
-
+    
     }
 }
