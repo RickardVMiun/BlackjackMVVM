@@ -9,7 +9,7 @@
              d:DesignHeight="70" d:DesignWidth="110">
     <Grid>
 
-        <Button BorderThickness="4" Content="Bet" Height="57" Width="67"  Command="{Binding PlaceBetCommand}" UseLayoutRounding="False" FontFamily="Cooper Black" FontSize="18" Foreground="Black" Margin="20,0,0,0" IsEnabled="{Binding ButtonDisabling2, ElementName=placebetbutton, FallbackValue=True}">
+        <Button BorderThickness="6" Content="Bet" Height="67" Width="72"  Command="{Binding PlaceBetCommand}" UseLayoutRounding="False" FontFamily="Cooper Black" FontSize="25" Foreground="Black" Margin="20,0,0,0" IsEnabled="{Binding ButtonDisabling2, ElementName=placebetbutton, FallbackValue=True}">
             <Button.Resources>
                 <Style TargetType="{x:Type Border}">
                     <Setter Property="CornerRadius" Value="30"/>
