@@ -17,6 +17,7 @@ namespace Blackjack_MVVM.ViewModels
 {
     public class GameViewModel : BaseViewModel
     {
+        #region Properties
         public int PersonScore { get; set; }
         public int CpuScore { get; set; }
         public int SessionScore { get; set; } // Variabel som ska hålla värdet får vunna/förlorade pengar under den aktuella sessionen
@@ -30,7 +31,23 @@ namespace Blackjack_MVVM.ViewModels
         public HitButton hitButton { get; set; }
         public StandButton standButton { get; set; }
         public CpuScore cpuScore { get; set; }
-        private static readonly Random random = new Random();
+
+        public PlayMusic playMusic { get; set; }
+        public StopMusic stopMusic { get; set; }
+
+        public string loserMsgVisibility { get; set; }
+        public string winnerMsgVisibility { get; set; }
+        public string placeBetViewVisibility { get; set; }
+        public string rulesVisibility { get; set; }
+        public string playMusicEnabled { get; set; }
+        public string stopMusicEnabled { get; set; }
+        public string aceDecisionVisibility { get; set; }
+        public string cardVisibility { get; set; }
+        public string bettingValueButtonsEnabled { get; set; }
+        public string bettingButtonEnabled { get; set; }
+        public string hitButtonEnabled { get; set; }
+        public string setPersonName { get; set; }
+        public string standButtonEnabled { get; set; }
         public ObservableCollection<GenericCard> DeckOfCards { get; set; }
         public ObservableCollection<GenericCard> PersonCardsInGame { get; set; } = new ObservableCollection<GenericCard>();
         public ObservableCollection<GenericCard> CpuCardsInGame { get; set; } = new ObservableCollection<GenericCard>();
@@ -39,9 +56,19 @@ namespace Blackjack_MVVM.ViewModels
         public CurrentBet currentbet { get; set; }
         public SessionTotal sessionTotal { get; set; }
         public PlayRules playRules { get; set; }
+        public GenericCard newCard { get; set; }
+        #endregion
+        #region Variables
         public EnumToSymbolConverter converter = new EnumToSymbolConverter();
-        public PlayMusic playMusic { get; set; }
-        public StopMusic stopMusic { get; set; }
+        public PlayerViewModel p1 = new PlayerViewModel();
+        public CpuViewModel p2 = new CpuViewModel();
+        private static readonly Random random = new Random();
+        int totalbet = 0;
+        int bet = 0;
+        public string filename = "Blackjack_MVVM.json";
+        public PlayViewModel playViewModel;
+        #endregion
+        #region Commands
         public ICommand HitCommand { get; }
         public ICommand StandCommand { get; }
         public ICommand PlayAgainCommand { get; }
@@ -58,35 +85,13 @@ namespace Blackjack_MVVM.ViewModels
         public ICommand Choose11Command { get; }
         public ICommand PlaceBetCommand { get; }
         public ICommand StartMusicCommand { get; }
-        public ICommand StopMusicCommand { get; }
-
-        public GenericCard newCard { get; set; }
-        public PlayerViewModel p1 = new PlayerViewModel();
-        public CpuViewModel p2 = new CpuViewModel();
-        public string loserMsgVisibility { get; set; }
-        public string winnerMsgVisibility { get; set; }
-        public string placeBetViewVisibility { get; set; }
-        public string rulesVisibility { get; set; }
-        public string playmusicdisabling { get; set; }
-        public string stopmusicdisabling { get; set; }
-        public string aceDecisionVisibility { get; set; }
-        public string cardvisibility { get; set; }
-        public string buttonDisabling { get; set; }
-        public string buttonDisabling2 { get; set; }
-        public string hitToggle { get; set; }
-        public string setPersonName { get; set; }
-        public string standToggle { get; set; }
-        int totalbet = 0;
-        int bet = 0;
-
-        public string filename = "Blackjack_MVVM.json";
-        public PlayViewModel playViewModel;
-
+        public ICommand StopMusicCommand { get; } 
+        #endregion
         public GameViewModel(NavigationStore navStore, MainWindow mainWindow, string personName)
         {
+            #region StartUpThings
             gameView = new GameView();
             DeckOfCards = new ObservableCollection<GenericCard>();
-            FillDeckOfCards();
             HitCommand = new HitCommand(this);
             PlayAgainCommand = new NavigationCommand<GameViewModel>(navStore, () => new GameViewModel(navStore, mainWindow, personName));
             StopPlayingCommand = new StopPlayingCommand(this, mainWindow, navStore);
@@ -113,43 +118,18 @@ namespace Blackjack_MVVM.ViewModels
             bettingButtons = new BettingButtons();
             placeBetButton = new PlaceBetButton();
             hitButton = new HitButton();
-            hitToggle = "False";
-            standToggle = "False";
-            playmusicdisabling = "False";
-            stopmusicdisabling = "True";
+            hitButtonEnabled = "False";
+            standButtonEnabled = "False";
+            playMusicEnabled = "False";
+            stopMusicEnabled = "True";
             placeBetViewVisibility = "Visible";
-            setPersonName = personName;
+            setPersonName = personName; 
+            #endregion
+            FillDeckOfCards();
             AddMarkers();
             if (File.Exists(filename))
                 GetSavedMarkers(filename);
         }
-
-        public void DisableAndHidePlayMusic()
-        {
-            playmusicdisabling = "False";
-            playMusic.PlayMusicDisabling = playmusicdisabling;       
-            stopmusicdisabling = "True";
-            stopMusic.StopMusicDisabling = stopmusicdisabling;
-        }
-
-        public void DisableAndHideStopMusic()
-        {
-            stopmusicdisabling = "False";
-            stopMusic.StopMusicDisabling = stopmusicdisabling;
-            playmusicdisabling = "True";
-            playMusic.PlayMusicDisabling = playmusicdisabling;
-        }
-
-        public void DisableBettingButtons()
-        {
-            buttonDisabling = "False";
-            buttonDisabling2 = "True";
-            bettingButtons.ButtonDisabling = buttonDisabling;
-            placeBetButton.ButtonDisabling2 = buttonDisabling2;
-            hitToggle = "True";
-            standToggle = "True";            
-        }
-
         #region CardFunctionality
         public void AddStartingCardsPerson()
         {
@@ -164,7 +144,7 @@ namespace Blackjack_MVVM.ViewModels
 
         public char GetSuit()
         {
-            int i = random.Next(1, 5);
+            int i = random.Next(0, 4);
             if (i == 1)
             {
                 Card.CardSuit = '♥';
@@ -225,13 +205,13 @@ namespace Blackjack_MVVM.ViewModels
 
         public void AddCard()
         {
-            cardvisibility = "Visible";
+            cardVisibility = "Visible";
             newCard = new GenericCard();
             int x = GetRandomCard();
             if (true)
             {
                 newCard = DeckOfCards[x];
-                newCard.CardVisibility = cardvisibility;
+                newCard.CardVisibility = cardVisibility;
             }
             if (newCard.CardSuit == '♥' || newCard.CardSuit == '♦')
             {
@@ -250,13 +230,11 @@ namespace Blackjack_MVVM.ViewModels
             if (true)
             {
                 newCard = DeckOfCards[x];
-                Task.Delay(1000); // delay
             }
             if (newCard.CardSuit == '♥' || newCard.CardSuit == '♦')
             {
                 newCard.CardColor = "Red";
             }
-
             CpuCardsInGame.Add(newCard);
             AddCpuPoints(newCard);
         }
@@ -264,31 +242,25 @@ namespace Blackjack_MVVM.ViewModels
         public void FillDeckOfCards()
         {
             int count = 0;
-
             while (count < 52)
             {
                 GenerateCards();
                 count++;
             }
         }
-
         public int GetRandomCard()
         {
             int idRandomCard;
-
             Random randomCard = new Random();
             idRandomCard = randomCard.Next(1, 52);
-
             return idRandomCard;
         }
         #endregion
-
         #region GameMechanics
         public void AddPersonPoints(GenericCard card)
         {
             personScore = new PersonScore();
             int value;
-           
             if (card.CardValue == "J" || card.CardValue == "Q" || card.CardValue == "K")
             {
                 value = 10;
@@ -303,44 +275,35 @@ namespace Blackjack_MVVM.ViewModels
                 value = int.Parse(card.CardValue);
             }
             p1.HandScore += value;
-
             personScore.personScore = p1.HandScore;
         }
-
         public int SetAceValue(int aceValue)
         {
             int chosenAceValue;
             chosenAceValue = aceValue;
             return chosenAceValue;
         }
-
         public void SetAceValueTo11()
         {
             p1.HandScore += 11;
             personScore.personScore = p1.HandScore;
         }
-
         public void SetAceValueTo1()
         {
             p1.HandScore += 1;
             personScore.personScore = p1.HandScore;
         }
-
         public int ReturnAceValue()
         {
             int ace = 0;
             int returnAce;
             returnAce = SetAceValue(ace);
-
             return returnAce;
         }
-
         public void AddCpuPoints(GenericCard card)
         {
-            // gör om till en int så att vi kan räkna ut värdet.
             cpuScore = new CpuScore();
             int value;
-
             if (card.CardValue == "J" || card.CardValue == "Q" || card.CardValue == "K")
             {
                 value = 10;
@@ -356,10 +319,8 @@ namespace Blackjack_MVVM.ViewModels
             p2.HandScore += value;
             cpuScore.cpuScore = p2.HandScore;
         }
-
         public bool PersonIsBust(PlayerViewModel p1)
         {
-
             if (p1.HandScore > 21 || HitAutoLoose() == true)
             {
                 loserMsgVisibility = "Visible";
@@ -370,20 +331,17 @@ namespace Blackjack_MVVM.ViewModels
                 return false;
             }
         }
-
         public bool CpuIsBust(CpuViewModel p2)
         {
             if (p2.HandScore > 21)
             {
                 return true;
-
             }
             else
             {
                 return false;
             }
         }
-
         public bool CpuWon()
         {
             if (p2.HandScore > p1.HandScore && p2.HandScore < 22 || p2.HandScore == p1.HandScore)
@@ -395,12 +353,10 @@ namespace Blackjack_MVVM.ViewModels
                 return false;
             }
         }
-
         public bool HitAutoLoose()
         {
             if (p1.HandScore > 21)
             {
-               
                 return true;
             }
             else
@@ -408,7 +364,6 @@ namespace Blackjack_MVVM.ViewModels
                 return false;
             }
         }
-
         public void ShowMessage()
         {
             if (CpuWon() == true)
@@ -421,7 +376,6 @@ namespace Blackjack_MVVM.ViewModels
                 winnerMsgVisibility = "Visible";
             }
         }
-
         #endregion
         #region BettingFunctionality
         public void BettingTotal(int bet)
@@ -430,8 +384,16 @@ namespace Blackjack_MVVM.ViewModels
             p1.Bet = totalbet;
             currentbet.BetTotal = p1.Bet;
 
-            buttonDisabling2 = "True";
-            placeBetButton.ButtonDisabling2 = buttonDisabling2;
+            bettingButtonEnabled = "True";
+            placeBetButton.ButtonDisabling2 = bettingButtonEnabled;
+        }
+
+        public void DisableBettingButtons()
+        {
+            bettingValueButtonsEnabled = "False";
+            bettingButtonEnabled = "True";
+            hitButtonEnabled = "True";
+            standButtonEnabled = "True";
         }
 
         public void ClearBet()
@@ -472,7 +434,24 @@ namespace Blackjack_MVVM.ViewModels
             savedMarkers = FileHandler.Open<SavedMarkers>(filename);
             savedMarkers.MarkersSaved = savedMarkers.MarkersSaved;
             markers.MarkerTotal = savedMarkers.MarkersSaved;
-        } 
+        }
+        #endregion
+        #region MusicFunctionality
+        public void DisablePlayMusic()
+        {
+            playMusicEnabled = "False";
+            playMusic.PlayMusicDisabling = playMusicEnabled;
+            stopMusicEnabled = "True";
+            stopMusic.StopMusicDisabling = stopMusicEnabled;
+        }
+
+        public void DisableStopMusic()
+        {
+            stopMusicEnabled = "False";
+            stopMusic.StopMusicDisabling = stopMusicEnabled;
+            playMusicEnabled = "True";
+            playMusic.PlayMusicDisabling = playMusicEnabled;
+        }
         #endregion
     }
 }

@@ -9,7 +9,7 @@
              d:DesignHeight="70" d:DesignWidth="110">
     <Grid>
 
-        <Button BorderThickness="4" Content="Stand" Height="57" Width="64"  Command="{Binding StandCommand}" UseLayoutRounding="False" FontFamily="Cooper Black" FontSize="18" Foreground="Black" IsEnabled="{Binding StandToggle, ElementName=standbutton, FallbackValue=True}">
+        <Button BorderThickness="4" Content="Stand" Height="57" Width="64"  Command="{Binding StandCommand}" UseLayoutRounding="False" FontFamily="Cooper Black" FontSize="18" Foreground="Black" IsEnabled="{Binding standButtonEnabled, ElementName=standbutton, FallbackValue=True}">
 
             <Button.Resources>
                 <Style TargetType="{x:Type Border}">

@@ -26,7 +26,7 @@ namespace Blackjack_MVVM.Commands
         public void Execute(object parameter)
         {
             mainWindow.PauseMusic();
-            gameViewModel.DisableAndHideStopMusic();
+            gameViewModel.DisableStopMusic();
         }
     }
 }

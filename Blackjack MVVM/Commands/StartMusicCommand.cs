@@ -29,7 +29,7 @@ namespace Blackjack_MVVM.Commands
            
             mainWindow.PlayMusic();
 
-            gameViewModel.DisableAndHidePlayMusic();
+            gameViewModel.DisablePlayMusic();
         }
     }
 }

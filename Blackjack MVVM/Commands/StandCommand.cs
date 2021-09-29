@@ -35,7 +35,7 @@ namespace Blackjack_MVVM.Commands
             gameViewModel.ShowMessage();
             gameViewModel.CalculateMarkers();
             gameViewModel.SaveMarkers();
-            gameViewModel.standToggle = "False";
+            gameViewModel.standButtonEnabled = "False";
         }
     }
 }

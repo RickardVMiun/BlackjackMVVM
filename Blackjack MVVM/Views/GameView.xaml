@@ -62,8 +62,8 @@
 
         <Border Background="#FF2B1D06" BorderThickness="0" BorderBrush="Black" Grid.Row="5" Grid.ColumnSpan="11" Margin="0,40,0,35" Grid.RowSpan="1" >
             <WrapPanel Orientation="Horizontal" HorizontalAlignment="Center">
-                <local:HitButton Grid.Column="6" Grid.Row="4" Grid.ColumnSpan="3" HitToggle="{Binding hitToggle}"/>
-                <local:StandButton Grid.Column="5" Grid.Row="4" Grid.ColumnSpan="3" StandToggle="{Binding standToggle}"/>
+                <local:HitButton Grid.Column="6" Grid.Row="4" Grid.ColumnSpan="3" hitButtonEnabled="{Binding hitButtonEnabled}"/>
+                <local:StandButton Grid.Column="5" Grid.Row="4" Grid.ColumnSpan="3" standButtonEnabled="{Binding standButtonEnabled}"/>
             </WrapPanel>
 
         </Border>
@@ -97,8 +97,8 @@
             </Border.Resources>
             <StackPanel>
                 <Label Content="Music" Width="74" FontSize="20" Foreground="#FFFFB101" Height="34" FontFamily="Copperplate Gothic Bold"/>
-                <local:PlayMusic HorizontalAlignment="Left" PlayMusicDisabling="{Binding playmusicdisabling}" PlayMusicVisible="{Binding playmusicvisibility}" Margin="20,-30,0,0"/>
-                <local:StopMusic HorizontalAlignment="Right" StopMusicDisabling="{Binding stopmusicdisabling}" StopMusicVisible="{Binding stopmusicvisibility}" Margin="0,-75,20,0"/>
+                <local:PlayMusic HorizontalAlignment="Left" PlayMusicDisabling="{Binding playMusicEnabled}" Margin="20,-30,0,0"/>
+                <local:StopMusic HorizontalAlignment="Right" StopMusicDisabling="{Binding stopMusicEnabled}" Margin="0,-75,20,0"/>
 
             </StackPanel>
         </Border>
