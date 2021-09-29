@@ -16,9 +16,9 @@ namespace Blackjack_MVVM.Views
     /// <summary>
     /// Interaction logic for PlayerView.xaml
     /// </summary>
-    public partial class PlayerView : UserControl
+    public partial class PersonView : UserControl
     {
-        public PlayerView()
+        public PersonView()
         {
             InitializeComponent();
         }

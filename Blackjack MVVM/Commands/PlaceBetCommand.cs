@@ -23,7 +23,7 @@ namespace Blackjack_MVVM.Commands
 
         public void Execute(object parameter)
         {
-            gameViewModel.AddStartingCardsHuman();
+            gameViewModel.AddStartingCardsPerson();
             gameViewModel.AddStartingCardsCpu();
             gameViewModel.DisableBettingButtons();
             gameViewModel.placeBetViewVisibility = "Hidden";
