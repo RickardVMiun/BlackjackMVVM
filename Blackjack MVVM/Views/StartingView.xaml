@@ -43,7 +43,7 @@
             <RowDefinition Height="200"/>
 
         </Grid.RowDefinitions>
-        
+
         <WrapPanel Orientation="Horizontal" VerticalAlignment="Top" HorizontalAlignment="Center" Grid.Row="4">
             <Button BorderThickness="6" Content="Yes" Height="97" Width="107"  Command="{Binding Over18Command}" UseLayoutRounding="False" FontFamily="Cooper Black" FontSize="35" Foreground="Black" Margin="0,0,20,0">
                 <Button.Resources>
@@ -105,23 +105,6 @@
             </Button>
 
         </WrapPanel>
-        <StackPanel Grid.Row="3" Height="100" Width="220" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="0,0,50,-10">
-            <Border BorderThickness="5" Background="#FF2B1D06" BorderBrush="#FFFFB101"  >
-                <Border.Resources>
-                    <Style TargetType="{x:Type Border}">
-                        <Setter Property="CornerRadius" Value="20"/>
-                    </Style>
-                </Border.Resources>
-                <StackPanel>
-                    <Label Content="Music" Width="74" FontSize="20" Foreground="#FFFFB101" Height="34" FontFamily="Copperplate Gothic Bold"/>
-                    <local:PlayMusic HorizontalAlignment="Left" PlayMusicDisabling="{Binding playmusicdisabling}" PlayMusicVisible="{Binding playmusicvisibility}" Margin="20,-30,0,0"/>
-                    <local:StopMusic HorizontalAlignment="Right" StopMusicDisabling="{Binding stopmusicdisabling}" StopMusicVisible="{Binding stopmusicvisibility}" Margin="0,-75,20,0"/>
-
-                </StackPanel>
-            </Border>
-        </StackPanel>
-       
-        <!--//<Border BorderBrush="DarkRed" BorderThickness="5" CornerRadius="1"/>-->
         <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Row="1">
 
             <Label x:Name="myLabel" Content = "♠ BlackJack ♣" Foreground="#FFFFB101" FontSize="70" FontFamily="Copperplate Gothic Bold" >
