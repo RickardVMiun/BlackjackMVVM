@@ -9,10 +9,7 @@ namespace Blackjack_MVVM.ViewModels
     [AddINotifyPropertyChangedInterface]
     public class BaseViewModel : INotifyPropertyChanged
     {
-        public int savedMarkers;
         public event PropertyChangedEventHandler PropertyChanged;
-
-
 
         protected void OnPropertyChanged(string propertyName = null)
         {

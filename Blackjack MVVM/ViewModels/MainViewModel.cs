@@ -15,7 +15,6 @@ namespace Blackjack_MVVM.ViewModels
         public MainViewModel(NavigationStore navStore)
         {
             navStore1 = navStore;
-
             navStore1.CurrentViewModelChanged += OnCurrentViewModelChanged;
         }
 

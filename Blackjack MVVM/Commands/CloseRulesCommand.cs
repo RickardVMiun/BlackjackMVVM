@@ -22,8 +22,8 @@ namespace Blackjack_MVVM.Commands
 
         public void Execute(object parameter)
         {
-            gameViewModel.rulesvisibility = "Hidden";
-            gameViewModel.playRules.RulesVisible = gameViewModel.rulesvisibility;
+            gameViewModel.rulesVisibility = "Hidden";
+            gameViewModel.playRules.RulesVisible = gameViewModel.rulesVisibility;
         }
     }
 }

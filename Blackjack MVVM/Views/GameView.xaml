@@ -52,14 +52,14 @@
         <local:GenericCard CardValue="{Binding PersonCardsInGame[4].CardValue}" CardSuit="{Binding PersonCardsInGame[4].CardSuit}" CardColor="{Binding PersonCardsInGame[4].CardColor}" Grid.Column="5" Grid.Row="4" Height="100" Width="80" VerticalAlignment="Top" HorizontalAlignment="Left" CardVisibility="{Binding PersonCardsInGame[4].CardVisibility}" Grid.ColumnSpan="2" Margin="120,-20,0,0" />
         <local:CpuScore cpuScore="{Binding cpuScore.cpuScore}"  Grid.Column="3" Grid.Row="1" Height="60" Width="60" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="112,69,0,0" Grid.ColumnSpan="2" />
         <local:PlayerScore playerScore="{Binding playerScore.playerScore}"  Grid.Column="3" Grid.Row="4" Height="60" Width="60" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="112,0,0,0" Grid.ColumnSpan="2" RenderTransformOrigin="0.55,0.535"/>
-        <local:LoserMessage Grid.Column="4" Grid.Row="2" Visible="{Binding visibility}" Grid.ColumnSpan="3" Margin="30,50,30,55" Grid.RowSpan="2"/>
-        <local:WinnerMessage Grid.Column="4" Grid.Row="2" Visible="{Binding winnervisibility}" Grid.ColumnSpan="3" Margin="30,50,30,55" Grid.RowSpan="2"/>
-        <local:AceValueDecision Grid.Column="4" Grid.Row="2" AceVisible="{Binding acedecisionvisibility}" Grid.ColumnSpan="4" Margin="-40,50,100,55" Grid.RowSpan="3"/>
+        <local:LoserMessage Grid.Column="4" Grid.Row="2" Visible="{Binding loserMsgVisibility}" Grid.ColumnSpan="3" Margin="30,50,30,55" Grid.RowSpan="2"/>
+        <local:WinnerMessage Grid.Column="4" Grid.Row="2" Visible="{Binding winnerMsgVisibility}" Grid.ColumnSpan="3" Margin="30,50,30,55" Grid.RowSpan="2"/>
+        <local:AceValueDecision Grid.Column="4" Grid.Row="2" AceVisible="{Binding aceDecisionVisibility}" Grid.ColumnSpan="4" Margin="-40,50,100,55" Grid.RowSpan="3"/>
 
-        <local:PlaceBetView Height="800" Grid.Column="4" Grid.Row="2" BettingViewVisibility="{Binding betviewvisibility}" Grid.ColumnSpan="6" Margin="30,50,30,55" Grid.RowSpan="4"/>
+        <local:PlaceBetView Height="800" Grid.Column="4" Grid.Row="2" BettingViewVisibility="{Binding placeBetViewVisibility}" Grid.ColumnSpan="6" Margin="30,50,30,55" Grid.RowSpan="4"/>
         <local:PlayerName Height="800" Grid.Column="2" Grid.Row="3" SetPlayerName="{Binding setPlayerName}"/>
 
-        <local:PlayRules Grid.Column="3" Grid.Row="1" RulesVisible="{Binding rulesvisibility}" Grid.RowSpan="5" Grid.ColumnSpan="5" Margin="70,0,50,117" />
+        <local:PlayRules Grid.Column="3" Grid.Row="1" RulesVisible="{Binding rulesVisibility}" Grid.RowSpan="5" Grid.ColumnSpan="5" Margin="70,0,50,117" />
 
 
         <Border Background="#FF2B1D06" BorderThickness="0" BorderBrush="Black" Grid.Row="5" Grid.ColumnSpan="11" Margin="0,40,0,35" Grid.RowSpan="1" >
