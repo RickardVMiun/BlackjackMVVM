@@ -42,6 +42,6 @@
             </Button>
         </StackPanel>
         <TextBox x:Name="txtPersonName" FontSize="26" BorderBrush="#FFFFB101" BorderThickness="5" HorizontalAlignment="Center" Margin="0,301,0,0" Text="{Binding personName}" TextWrapping="Wrap" VerticalAlignment="Top" Width="198" Height="41" FontFamily="Verdana"/>
-        <Label Content="Create Players" HorizontalAlignment="Center" Margin="0,220,0,0" VerticalAlignment="Top" Foreground="#FFFFB101" FontSize="45" FontFamily="Copperplate Gothic Bold"/>
+        <Label Content="Create Player" HorizontalAlignment="Center" Margin="0,220,0,0" VerticalAlignment="Top" Foreground="#FFFFB101" FontSize="45" FontFamily="Copperplate Gothic Bold"/>
     </Grid>
 </UserControl>
