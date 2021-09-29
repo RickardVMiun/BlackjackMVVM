@@ -51,14 +51,12 @@
         <local:GenericCard CardValue="{Binding PersonCardsInGame[3].CardValue}" CardSuit="{Binding PersonCardsInGame[3].CardSuit}" CardColor="{Binding PersonCardsInGame[3].CardColor}" Grid.Column="5" Grid.Row="4" Height="100" Width="80" VerticalAlignment="Top" HorizontalAlignment="Left" CardVisibility="{Binding PersonCardsInGame[3].CardVisibility}" Grid.ColumnSpan="2" Margin="90,-10,0,0" />
         <local:GenericCard CardValue="{Binding PersonCardsInGame[4].CardValue}" CardSuit="{Binding PersonCardsInGame[4].CardSuit}" CardColor="{Binding PersonCardsInGame[4].CardColor}" Grid.Column="5" Grid.Row="4" Height="100" Width="80" VerticalAlignment="Top" HorizontalAlignment="Left" CardVisibility="{Binding PersonCardsInGame[4].CardVisibility}" Grid.ColumnSpan="2" Margin="120,-20,0,0" />
         <local:CpuScore cpuScore="{Binding cpuScore.cpuScore}"  Grid.Column="3" Grid.Row="1" Height="60" Width="60" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="112,69,0,0" Grid.ColumnSpan="2" />
-        <local:PlayerScore playerScore="{Binding playerScore.playerScore}"  Grid.Column="3" Grid.Row="4" Height="60" Width="60" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="112,0,0,0" Grid.ColumnSpan="2" RenderTransformOrigin="0.55,0.535"/>
+        <local:PlayerScore playerScore="{Binding playerScore.playerScore}"  Grid.Column="2" Grid.Row="3" Height="200" Width="400" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="91,84,0,0" Grid.ColumnSpan="3" RenderTransformOrigin="0.55,0.535" Grid.RowSpan="2"/>
         <local:LoserMessage Grid.Column="4" Grid.Row="2" Visible="{Binding visibility}" Grid.ColumnSpan="3" Margin="30,50,30,55" Grid.RowSpan="2"/>
         <local:WinnerMessage Grid.Column="4" Grid.Row="2" Visible="{Binding winnervisibility}" Grid.ColumnSpan="3" Margin="30,50,30,55" Grid.RowSpan="2"/>
         <local:AceValueDecision Grid.Column="4" Grid.Row="2" AceVisible="{Binding acedecisionvisibility}" Grid.ColumnSpan="4" Margin="-40,50,100,55" Grid.RowSpan="3"/>
 
-        <local:PlaceBetView Height="800" Grid.Column="4" Grid.Row="2" BettingViewVisibility="{Binding betviewvisibility}" Grid.ColumnSpan="6" Margin="30,50,30,55" Grid.RowSpan="4"/>
-        <local:PlayerName Height="800" Grid.Column="2" Grid.Row="3" SetPlayerName="{Binding setPlayerName}"/>
-
+        <local:PlaceBetView Height="450" Grid.Column="3" Grid.Row="1" BettingViewVisibility="{Binding betviewvisibility}" Grid.ColumnSpan="6" Margin="-20,20,115,55" Grid.RowSpan="4"/>
         <local:PlayRules Grid.Column="3" Grid.Row="1" RulesVisible="{Binding rulesvisibility}" Grid.RowSpan="5" Grid.ColumnSpan="5" Margin="70,0,50,117" />
 
 
@@ -71,13 +69,14 @@
         </Border>
         <WrapPanel Orientation="Horizontal" HorizontalAlignment="Left" Grid.Column="0" Grid.Row="5" Grid.ColumnSpan="10">
             <Label Content="Bet:" Margin="30,61,0,0" Grid.RowSpan="2" Width="180" FontSize="20" Foreground="#FFFFB101" Grid.ColumnSpan="2" Height="46" FontFamily="Copperplate Gothic Bold"/>
-            <Label Content="{Binding currentbet.BetTotal}" Margin="-145,40,0,0" Grid.RowSpan="2" Width="100" FontSize="35" Foreground="#FFFFB101" Grid.ColumnSpan="2" Height="46" FontFamily="Copperplate Gothic Bold"/>
-            <Label Content="Total win:" Margin="60,61,0,0" Grid.RowSpan="2" Width="125" FontSize="20" Foreground="#FFFFB101" Height="46" FontFamily="Copperplate Gothic Bold"/>
-
-            <Label Content="{Binding sessionTotal.TotalSessionScore, FallbackValue=0}" Foreground="#FFFFB101" Margin="5,50,0,0"  Width="100" FontSize="35" Height="53" FontFamily="Copperplate Gothic Bold"/>
+            <Label Content="{Binding currentbet.BetTotal}" Margin="-125,40,0,0" Grid.RowSpan="2" Width="150" FontSize="35" Foreground="#FFFFB101" Grid.ColumnSpan="2" Height="46" FontFamily="Copperplate Gothic Bold"/>
+            <Label Content="Total win:" Margin="50,61,0,0" Grid.RowSpan="2" Width="125" FontSize="20" Foreground="#FFFFB101" Height="46" FontFamily="Copperplate Gothic Bold"/>
+            <Label Content="{Binding sessionTotal.TotalSessionScore, FallbackValue=0}" Foreground="#FFFFB101" Margin="5,50,0,0"  Width="150" FontSize="35" Height="53" FontFamily="Copperplate Gothic Bold"/>
 
         </WrapPanel>
-
+        <WrapPanel Orientation="Horizontal" HorizontalAlignment="Left" Grid.Row="5" Grid.Column="8" Grid.ColumnSpan="2" Margin="0,65,0,35" Width="400">
+            <TextBlock Foreground="#FFFFB101" FontSize="20" VerticalAlignment="Center" HorizontalAlignment="Center" FontFamily="Copperplate Gothic Bold" Height="35" Width="373" ><Run Text="User: "/><Run Text="{Binding setPlayerName}" /></TextBlock>
+        </WrapPanel>
 
         <Border BorderThickness="5" Background="#FF2B1D06" BorderBrush="#FFFFB101" Grid.Row="4" Grid.ColumnSpan="3" Margin="0,70,75,115" Grid.RowSpan="2">
             <Border.Resources>
