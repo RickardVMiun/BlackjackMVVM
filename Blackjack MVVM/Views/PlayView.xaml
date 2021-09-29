@@ -10,8 +10,8 @@
         <Grid.Background>
             <ImageBrush AlignmentX="Center" AlignmentY="Top" ImageSource="\Images\BlackJackBordBlurrig.png" Stretch="Uniform" />
         </Grid.Background>
-        <StackPanel HorizontalAlignment="Left" VerticalAlignment="Top" Margin="553,200,0,0">
-            <Button BorderThickness="8" Content="PLAY" Height="150" Width="175"  Command="{Binding StartPlayCommand}" UseLayoutRounding="False" FontFamily="Cooper Black" FontSize="35" Foreground="#FFFFB101" Margin="50,50,50,50">
+        <StackPanel HorizontalAlignment="Left" VerticalAlignment="Center" Margin="580,200,0,0">
+            <Button BorderThickness="8" Content="PLAY" Height="124" Width="142"  Command="{Binding StartPlayCommand}" UseLayoutRounding="False" FontFamily="Cooper Black" FontSize="35" Foreground="#FFFFB101" Margin="50,50,50,50">
                 <Button.Resources>
                     <Style TargetType="{x:Type Border}">
                         <Setter Property="CornerRadius" Value="30"/>
@@ -41,7 +41,7 @@
                 </Button.Background>
             </Button>
         </StackPanel>
-        <TextBox x:Name="txtPersonName" HorizontalAlignment="Left" Margin="630,188,0,0" Text="{Binding personName}" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <Label Content="Create Player" HorizontalAlignment="Center" Margin="0,157,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="txtPersonName" FontSize="26" BorderBrush="#FFFFB101" BorderThickness="5" HorizontalAlignment="Center" Margin="0,301,0,0" Text="{Binding personName}" TextWrapping="Wrap" VerticalAlignment="Top" Width="198" Height="41" FontFamily="Verdana"/>
+        <Label Content="Create Players" HorizontalAlignment="Center" Margin="0,220,0,0" VerticalAlignment="Top" Foreground="#FFFFB101" FontSize="45" FontFamily="Copperplate Gothic Bold"/>
     </Grid>
 </UserControl>

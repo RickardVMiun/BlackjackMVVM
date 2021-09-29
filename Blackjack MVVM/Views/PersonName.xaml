@@ -6,8 +6,8 @@
              xmlns:local="clr-namespace:Blackjack_MVVM.Views"
              mc:Ignorable="d" 
              x:Name="personname"
-             d:DesignHeight="100" d:DesignWidth="200">
-    <Grid Background="AntiqueWhite">
-        <TextBlock HorizontalAlignment="Center" Text="{Binding SetPersonName, ElementName=personname, FallbackValue=No Name}" VerticalAlignment="Top"  Foreground="Black"  FontSize="40" RenderTransformOrigin="-0.121,1.286" />
+             d:DesignHeight="100" d:DesignWidth="200" FontFamily="Copperplate Gothic Light">
+    <Grid Background="Transparent">
+        <TextBlock HorizontalAlignment="Center" Text="{Binding SetPersonName, ElementName=personname}" VerticalAlignment="Top"  Foreground="#FFFFB101"  FontSize="30" RenderTransformOrigin="-0.121,1.286" FontFamily="Copperplate Gothic Bold" />
     </Grid>
 </UserControl>
