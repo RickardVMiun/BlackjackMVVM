@@ -26,6 +26,9 @@ namespace Blackjack_MVVM.Views
             personName = txtPersonName.Text;
         }
 
-
+        private void txtPersonName_PreviewMouseDown(object sender, MouseButtonEventArgs e)
+        {
+            txtPersonName.Clear();
+        }
     }
 }
