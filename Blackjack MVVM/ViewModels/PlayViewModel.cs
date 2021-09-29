@@ -13,15 +13,12 @@ namespace Blackjack_MVVM.ViewModels
         public ICommand StartPlayCommand { get; }
        
         public GameViewModel gameViewModel;
-        public string rulesvisibilitypm { get; set; }
-        public PlayRules playRulespm { get; set; }
+     
         public string playerName { get; set; } = "Enter name";
    
         public PlayViewModel(NavigationStore navStore, MainWindow mainWindow)
         {
-            playRulespm = new PlayRules();
-            StartPlayCommand = new NavigationCommand<GameViewModel>(navStore, () => new GameViewModel(navStore, mainWindow, playerName));
-                        
+            StartPlayCommand = new NavigationCommand<GameViewModel>(navStore, () => new GameViewModel(navStore, mainWindow, playerName));               
         }
     }
 }

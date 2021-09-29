@@ -62,19 +62,15 @@ namespace Blackjack_MVVM.ViewModels
         public ICommand StopMusicCommand { get; }
 
         public GenericCard newCard { get; set; }
-        public Person p1 = new Person();
-        public Cpu p2 = new Cpu();
-        public string visibility { get; set; }
-        public string winnervisibility { get; set; }
-
-        public string betviewvisibility { get; set; }
-
-        public string rulesvisibility { get; set; }
-        public string playmusicvisibility { get; set; }
-        public string stopmusicvisibility { get; set; }
+        public PlayerViewModel p1 = new PlayerViewModel();
+        public CpuViewModel p2 = new CpuViewModel();
+        public string loserMsgVisibility { get; set; }
+        public string winnerMsgVisibility { get; set; }
+        public string placeBetViewVisibility { get; set; }
+        public string rulesVisibility { get; set; }
         public string playmusicdisabling { get; set; }
         public string stopmusicdisabling { get; set; }
-        public string acedecisionvisibility { get; set; }
+        public string aceDecisionVisibility { get; set; }
 
         public string cardvisibility { get; set; }
 
@@ -125,55 +121,33 @@ namespace Blackjack_MVVM.ViewModels
             hitButton = new HitButton();
             hitToggle = "False";
             standToggle = "False";
-            playmusicvisibility = "Hidden";
-            stopmusicvisibility = "Visible";
+         
             playmusicdisabling = "False";
             stopmusicdisabling = "True";
 
-            betviewvisibility = "Visible";
+            placeBetViewVisibility = "Visible";
 
             setPlayerName = playerName;
-            //sessionTotal.TotalSessionScore = 1;
 
             AddMarkers();
             if (File.Exists(filename))
                 GetSavedMarkers(filename);
         }
 
-        //public void CreatePlayer()
-        //{
-        //    setPlayerName = playerName;
-        //    p1.Name = playerName;
-        //    playerName.SetPlayerName = playerName;
-            
-        //}
-
         public void DisableAndHidePlayMusic()
         {
-            playmusicvisibility = "Hidden";
-            
             playmusicdisabling = "False";
-          
-            playMusic.PlayMusicDisabling = playmusicdisabling;
-            playMusic.PlayMusicVisible = playmusicvisibility;
-            stopmusicvisibility = "Visible";
+            playMusic.PlayMusicDisabling = playmusicdisabling;       
             stopmusicdisabling = "True";
             stopMusic.StopMusicDisabling = stopmusicdisabling;
-            stopMusic.StopMusicVisible = stopmusicvisibility;
         }
 
         public void DisableAndHideStopMusic()
         {
-            
-            stopmusicvisibility = "Hidden";
-            
             stopmusicdisabling = "False";
             stopMusic.StopMusicDisabling = stopmusicdisabling;
-            stopMusic.StopMusicVisible = stopmusicvisibility;
-            playmusicvisibility = "Visible";
             playmusicdisabling = "True";
             playMusic.PlayMusicDisabling = playmusicdisabling;
-            playMusic.PlayMusicVisible = playmusicvisibility;
         }
 
         public void DisableBettingButtons()
@@ -335,7 +309,7 @@ namespace Blackjack_MVVM.ViewModels
             }
             else if (card.CardValue == "A")
             {
-                acedecisionvisibility = "Visible";
+                aceDecisionVisibility = "Visible";
                 value = 0;
             }
             else
@@ -397,12 +371,12 @@ namespace Blackjack_MVVM.ViewModels
             cpuScore.cpuScore = p2.HandScore;
         }
 
-        public bool PersonIsBust(Person p1)
+        public bool PersonIsBust(PlayerViewModel p1)
         {
 
             if (p1.HandScore > 21 || HitAutoLoose() == true)
             {
-                visibility = "Visible";
+                loserMsgVisibility = "Visible";
                 return true;
             }
             else
@@ -411,7 +385,7 @@ namespace Blackjack_MVVM.ViewModels
             }
         }
 
-        public bool CpuIsBust(Cpu p2)
+        public bool CpuIsBust(CpuViewModel p2)
         {
             if (p2.HandScore > 21)
             {
@@ -453,12 +427,12 @@ namespace Blackjack_MVVM.ViewModels
         {
             if (CpuWon() == true)
             {
-                visibility = "Visible";
+                loserMsgVisibility = "Visible";
             }
             else
             {
-                visibility = "Hidden";
-                winnervisibility = "Visible";
+                loserMsgVisibility = "Hidden";
+                winnerMsgVisibility = "Visible";
             }
         }
 
