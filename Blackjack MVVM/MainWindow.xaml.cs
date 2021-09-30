@@ -36,7 +36,7 @@ namespace Blackjack_MVVM
         }
         public void BackgroundMusic()
         {
-            var timeline = new MediaTimeline(new Uri("Sound/test.wav", UriKind.Relative));
+            var timeline = new MediaTimeline(new Uri("Sound/backgroundmusic.wav", UriKind.Relative));
             timeline.RepeatBehavior = RepeatBehavior.Forever;
             mediaPlayer = new MediaPlayer();
             mediaPlayer.Volume = 0.3f;
