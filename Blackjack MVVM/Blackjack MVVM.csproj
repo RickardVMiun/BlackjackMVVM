@@ -44,10 +44,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Models\" />
-  </ItemGroup>
-
-  <ItemGroup>
     <Resource Include="Images\BlackJackBord4.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>

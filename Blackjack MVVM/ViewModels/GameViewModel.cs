@@ -1,5 +1,4 @@
 ﻿using Blackjack_MVVM.Commands;
-using Blackjack_MVVM.Converters;
 using Blackjack_MVVM.Data;
 using Blackjack_MVVM.Stores;
 using Blackjack_MVVM.Views;
@@ -59,7 +58,6 @@ namespace Blackjack_MVVM.ViewModels
         public GenericCard newCard { get; set; }
         #endregion
         #region Variables
-        public EnumToSymbolConverter converter = new EnumToSymbolConverter();
         public PlayerViewModel p1 = new PlayerViewModel();
         public CpuViewModel p2 = new CpuViewModel();
         private static readonly Random random = new Random();
