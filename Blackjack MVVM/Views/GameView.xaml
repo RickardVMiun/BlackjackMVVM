@@ -85,7 +85,7 @@
             </Border.Resources>
             <StackPanel>
                 <Label Content="$:" Grid.Column="3" Margin="15,15,30,50" HorizontalAlignment="Center" Grid.RowSpan="2" VerticalAlignment="Center" Width="180" FontSize="40" Foreground="#FFFFB101" Grid.ColumnSpan="2" Height="60" FontFamily="Copperplate Gothic Bold"/>
-                <Label Content="{Binding markers.MarkerTotal}" Margin="90,-160,10,0" Grid.Column="3" HorizontalAlignment="Center" Grid.RowSpan="2" Width="140" FontSize="40" Foreground="#FFFFB101" Grid.ColumnSpan="2" Height="60" FontFamily="Copperplate Gothic Bold"/>
+                <Label Content="{Binding markers.MarkerTotal}" Margin="90,-160,10,0" Grid.Column="3" HorizontalAlignment="Center" Grid.RowSpan="2" Width="150" FontSize="40" Foreground="#FFFFB101" Grid.ColumnSpan="2" Height="60" FontFamily="Copperplate Gothic Bold"/>
             </StackPanel>
         </Border>
         <Border BorderThickness="5" Background="#FF2B1D06" BorderBrush="#FFFFB101" Grid.Column="8" Grid.Row="4" Grid.ColumnSpan="3" Margin="75,70,0,115" Grid.RowSpan="2">
